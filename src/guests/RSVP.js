@@ -2,7 +2,9 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
+import RadioButton from 'material-ui/RadioButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
+import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
 import DropDownMenu from 'material-ui/DropDownMenu'
@@ -13,13 +15,13 @@ import 'medium-editor/dist/css/themes/default.css'
 import './RSVP.css'
 
 const ATTENDING = [
-  "Yes",
-  "No"
+  "Yes, I will be there",
+  "Sorry, I cannot make it"
 ]
 
 const TRANSPORT = [
   "Yes",
-  "No"
+  "No, travelling by car"
 ]
 
 const EVENTS = [
@@ -32,19 +34,21 @@ class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, eventsAttending, transport, diet, songs, fullName } = props
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, fullName, value } = props
 
     this.state = {
       firstName,
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
       fullName,
-      value: 1,
+      value,
       errors: {},
     }
   }
@@ -75,9 +79,21 @@ class RSVP extends PureComponent {
     })
   }
 
-  setEventsAttending(event) {
+  setEvent1(event, x) {
     this.setState({
-      eventsAttending: event.target.value
+      event1: x
+    })
+  }
+
+  setEvent2(event, x) {
+    this.setState({
+      event2: x
+    })
+  }
+
+  setEvent3(event, x) {
+    this.setState({
+      event3: x
     })
   }
 
@@ -136,12 +152,15 @@ class RSVP extends PureComponent {
   }
 
   saveGuest() {
+    debugger
     const {
       firstName,
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
@@ -154,7 +173,9 @@ class RSVP extends PureComponent {
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
@@ -202,16 +223,22 @@ class RSVP extends PureComponent {
             return <label key={att} htmlFor={att}>
               <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
               {att}
-            </label>
+            <br /></label>
           })}<br />
 
           <p>What events are you attending?</p>
-        {EVENTS.map((events) => {
-            return <label key={events} htmlFor={events}>
-              <input id={events} type="checkbox" name="attending" value={events} onChange={this.setEventsAttending.bind(this)} />
-              {events}
-            </label>
-          })}<br />
+          <Checkbox
+            label="Event 1"
+            onCheck={this.setEvent1.bind(this)}
+          />
+          <Checkbox
+            label="Event 2"
+            onCheck={this.setEvent2.bind(this)}
+          />
+          <Checkbox
+            label="Event 3"
+            onCheck={this.setEvent3.bind(this)}
+          />
 
           <p>Do you require transport to and from each event?</p>
         {TRANSPORT.map((trnsprt) => {
