@@ -18,7 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={Home} />
+        <IndexRoute component={HomeContainer} />
         <Route path="/accomodation" component={Accomodation} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/adminpage" component={AdminPage} />
