@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react'
 import MapContainer from './MapContainer'
 
-export class MapContainer extends PureComponent {
+export class Home extends PureComponent {
   render() {
     return (
       <div>
