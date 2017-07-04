@@ -34,3 +34,5 @@ export class Marker extends Component {
     return null
   }
 }
+
+export default Marker
