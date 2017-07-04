@@ -2919,6 +2919,13 @@ globule@^1.0.0:
     lodash "~4.17.4"
     minimatch "~3.0.2"
 
+google-maps-react@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/google-maps-react/-/google-maps-react-1.0.19.tgz#4ac6e337d7e2c28235e8890e4fa611fba7d00eaf"
+  dependencies:
+    history "^3.0.0"
+    invariant "^2.2.1"
+
 got@^5.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
