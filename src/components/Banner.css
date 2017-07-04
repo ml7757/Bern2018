@@ -1,0 +1,19 @@
+.photo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  margin-bottom: 10px; }
+  .photo-header .banner {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover; }
+  .photo-header .banner-logo {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    bottom: 12%; }
