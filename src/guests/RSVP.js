@@ -2,22 +2,26 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
+import RadioButton from 'material-ui/RadioButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
+import Checkbox from 'material-ui/Checkbox'
+import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
 import { showError } from '../actions/loading'
 import 'medium-editor/dist/css/medium-editor.css'
 import 'medium-editor/dist/css/themes/default.css'
+import './RSVP.css'
 
 const ATTENDING = [
-  "Yes",
-  "No"
+  "Yes, I will be there",
+  "Sorry, I cannot make it"
 ]
 
 const TRANSPORT = [
   "Yes",
-  "No"
+  "No, travelling by car"
 ]
 
 const EVENTS = [
@@ -30,30 +34,24 @@ class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, eventsAttending, transport, diet, songs, fullName } = props
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, fullName, value } = props
 
     this.state = {
       firstName,
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
       fullName,
-      child: 1,
-      visible: false,
+      value,
       errors: {},
     }
   }
-
-
-  handleTouchTap = () => {
-   this.setState({
-     visible: true,
-   });
- };
 
 
   updateFirstName(event) {
@@ -81,9 +79,21 @@ class RSVP extends PureComponent {
     })
   }
 
-  setEventsAttending(event) {
+  setEvent1(event, x) {
     this.setState({
-      eventsAttending: event.target.value
+      event1: x
+    })
+  }
+
+  setEvent2(event, x) {
+    this.setState({
+      event2: x
+    })
+  }
+
+  setEvent3(event, x) {
+    this.setState({
+      event3: x
     })
   }
 
@@ -111,17 +121,28 @@ class RSVP extends PureComponent {
     })
   }
 
-  handleChange = (event, index, child) => this.setState({child});
+  handleChange = (event, index, value) => this.setState({value});
 
-
+  show() {
+    if(document.getElementById('benefits').className==='hiddendiv') {
+      document.getElementById('benefits').className='visiblediv';
+    }
+    return false;
+  }
+  hide() {
+    if(document.getElementById('benefits').className==='visiblediv') {
+        document.getElementById('benefits').className='hiddendiv';
+    }
+    return false;
+  }
 
   validate(guest) {
     const { firstName, lastName } = guest
 
     let errors = {}
 
-    if (!firstName || firstName === '') errors.firstName = "Please add a name of the student"
-    if (!lastName || lastName === '') errors.lastName = 'Please add a f=photo of the student'
+    if (!firstName || firstName === '') errors.firstName = "Please add your first name"
+    if (!lastName || lastName === '') errors.lastName = 'Please add your last name'
 
     this.setState({
       errors,
@@ -131,17 +152,20 @@ class RSVP extends PureComponent {
   }
 
   saveGuest() {
+    debugger
     const {
       firstName,
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
       fullName,
-      child
+      value
     } = this.state
 
     const guest = {
@@ -149,12 +173,14 @@ class RSVP extends PureComponent {
       lastName,
       email,
       attending,
-      eventsAttending,
+      event1,
+      event2,
+      event3,
       transport,
       diet,
       songs,
       fullName,
-      child
+      value
     }
 
     if (this.validate(guest)) {
@@ -197,16 +223,22 @@ class RSVP extends PureComponent {
             return <label key={att} htmlFor={att}>
               <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
               {att}
-            </label>
+            <br /></label>
           })}<br />
 
           <p>What events are you attending?</p>
-        {EVENTS.map((events) => {
-            return <label key={events} htmlFor={events}>
-              <input id={events} type="checkbox" name="attending" value={events} onChange={this.setEventsAttending.bind(this)} />
-              {events}
-            </label>
-          })}<br />
+          <Checkbox
+            label="Event 1"
+            onCheck={this.setEvent1.bind(this)}
+          />
+          <Checkbox
+            label="Event 2"
+            onCheck={this.setEvent2.bind(this)}
+          />
+          <Checkbox
+            label="Event 3"
+            onCheck={this.setEvent3.bind(this)}
+          />
 
           <p>Do you require transport to and from each event?</p>
         {TRANSPORT.map((trnsprt) => {
@@ -232,22 +264,28 @@ class RSVP extends PureComponent {
 
         <h3>Plus ones</h3>
 
-        <FloatingActionButton mini={true} onTouchTap={this.handleTouchTap}>
+        <FloatingActionButton mini={true} onClick={this.show}>
           <ContentAdd />
         </FloatingActionButton>
 
-        <input
-            type="text"
-            ref="fullname"
-            visible={this.state.open}
-            className="fullname"
-            placeholder="Full Name"
-            onChange={this.updatefullName.bind(this)} />
+        <div id="benefits" className="hiddendiv">
+          <input
+              type="text"
+              ref="fullname"
+              open={this.state.open}
+              className="fullname"
+              placeholder="Full Name"
+              onChange={this.updatefullName.bind(this)} />
 
-        <DropDownMenu value={this.state.child} onChange={this.handleChange} visible={this.state.visible}>
-          <MenuItem child={1} primaryText="Adult" />
-          <MenuItem child={2} primaryText="Child" />
-        </DropDownMenu>
+          <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+            <MenuItem value={1} primaryText="Adult" />
+            <MenuItem value={2} primaryText="Child" />
+          </DropDownMenu>
+
+          <FloatingActionButton mini={true} onClick={this.hide}>
+            <ContentMinus />
+          </FloatingActionButton>
+        </div>
 
         <div className="actions">
           <button className="primary" onClick={this.saveGuest.bind(this)}>Send</button>
