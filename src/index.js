@@ -8,7 +8,7 @@ import store, { history } from './store'
 import { Provider } from 'react-redux'
 import SignIn from './users/SignIn'
 import AdminPage from './users/AdminPage'
-import Home from './container/Home'
+import Home from './containers/Home'
 import Accomodation from './guests/Accomodation'
 
 injectTapEventPlugin()
