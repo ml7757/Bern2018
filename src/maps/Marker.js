@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export class Marker extends Component {
-  Marker.propTypes = {
+  static propTypes = {
     position: React.PropTypes.object,
     map: React.PropTypes.object
   }
@@ -28,7 +28,7 @@ export class Marker extends Component {
       }
       this.marker = new google.maps.Marker(pref)
   }
-}
+
 
   render() {
     return null

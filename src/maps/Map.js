@@ -15,12 +15,12 @@ export class Map extends PureComponent {
     }
   }
 
-  Map.propTypes = {
+  static propTypes = {
     google: React.PropTypes.object,
     zoom: React.PropTypes.number,
     initialCenter: React.PropTypes.object
   }
-  Map.defaultProps = {
+  static defaultProps = {
     zoom: 13,
     // Bern, by default
     initialCenter: {
@@ -59,20 +59,21 @@ export class Map extends PureComponent {
 
      this.map = new maps.Map(node, mapConfig);
     }
+  }
 
-    renderChildren() {
-      const {children} = this.props;
+  renderChildren() {
+    const {children} = this.props;
 
-      if (!children) return;
+    if (!children) return;
 
-      return React.Children.map(children, c => {
-        return React.cloneElement(c, {
-          map: this.map,
-          google: this.props.google,
-          mapCenter: this.state.currentLocation
-        });
-      })
-    }
+    return React.Children.map(children, c => {
+      return React.cloneElement(c, {
+        map: this.map,
+        google: this.props.google,
+        mapCenter: this.state.currentLocation
+      });
+    })
+  }
 
   render() {
     return (
@@ -83,3 +84,5 @@ export class Map extends PureComponent {
     )
   }
 }
+
+export default Map
