@@ -5,7 +5,7 @@ import "./Navigation.css";
 export class Navigation extends PureComponent {
   render() {
     return (
-      <Navbar collapseOnSelect>
+      <Navbar collapseOnSelect id="navbar-scroll">
         <Navbar.Header>
           <Navbar.Toggle />
         </Navbar.Header>
