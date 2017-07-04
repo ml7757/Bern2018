@@ -12,17 +12,17 @@ class MapContainer extends PureComponent {
     if (!this.props.loaded) {
       return <div>Loading...</div>
     }
-    const style = {
-      width: '500px',
-      height: '500px'
-    }
+    // const style = {
+    //   width: '500px',
+    //   height: '500px'
+    // }
     const pos = {lat: 37.759703, lng: -122.428093}
 
     return (
-      <div style={style}>
+      <div>
         <Map google={this.props.google}>
           <Marker />
-          <Marker position={pos}/>
+          {/* <Marker position={pos}/> */}
         </Map>
       </div>
     )

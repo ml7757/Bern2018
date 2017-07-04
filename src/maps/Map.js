@@ -76,8 +76,13 @@ export class Map extends PureComponent {
   }
 
   render() {
+    const style = {
+      height: '500px',
+      width: '500px'
+    }
+
     return (
-      <div ref='map'>
+      <div ref='map' style={style}>
         Loading map...
         {this.renderChildren()}
       </div>
