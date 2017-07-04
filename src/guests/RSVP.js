@@ -30,7 +30,7 @@ class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, eventsAttending, transport, diet, songs, plusOnes } = props
+    const { firstName, lastName, email, attending, eventsAttending, transport, diet, songs, fullName } = props
 
     this.state = {
       firstName,
