@@ -8,8 +8,8 @@ import store, { history } from './store'
 import { Provider } from 'react-redux'
 import SignIn from './users/SignIn'
 import AdminPage from './users/AdminPage'
-import Home from './guests/home'
-import Accomodation from './guests/accomodation'
+import Home from './container/Home'
+import Accomodation from './guests/Accomodation'
 
 injectTapEventPlugin()
 
@@ -18,7 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={HomeContainer} />
+        <IndexRoute component={Home} />
         <Route path="/accomodation" component={Accomodation} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/adminpage" component={AdminPage} />
