@@ -2,15 +2,16 @@
 
 import React, { PureComponent } from 'react'
 import MapContainer from './MapContainer'
+import Banner from '../components/Banner'
 import RSVP from '../guests/RSVP'
 
 export class Home extends PureComponent {
   render() {
     return (
       <div>
-
-        <MapContainer />
+        <Banner />
         <RSVP />
+        <MapContainer />
       </div>
     )
   }

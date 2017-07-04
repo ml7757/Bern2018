@@ -10,6 +10,8 @@ import SignIn from './users/SignIn'
 import AdminPage from './users/AdminPage'
 import Home from './containers/Home'
 import Accomodation from './guests/Accomodation'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 injectTapEventPlugin()
 
