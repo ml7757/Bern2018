@@ -28,7 +28,7 @@ class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, fullName, child, count } = props
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count } = props
 
     this.state = {
       firstName,
@@ -41,17 +41,14 @@ class RSVP extends PureComponent {
       transport,
       diet,
       songs,
-      fullName: [],
-      child: [],
+      plusOnes: [],
+      fullName,
+      child,
+      value,
       errors: {},
       count: [0]
     }
   }
-
-  getInitialState() {
-       return {count:[0]};
-   }
-
 
   updateFirstName(event) {
     this.setState({
@@ -114,16 +111,23 @@ class RSVP extends PureComponent {
     })
   }
 
-  updatefullName(i, event) {
-    let fullName = this.state.fullName.slice();
-    fullName[i] = this.refs.fullname.value
-    this.setState({fullName})
+  updatefullName(event) {
+    this.setState({ fullName: this.refs.fullname.value})
   }
 
-  handleChange = (event, index, i, value) =>  {
-    let child = this.state.child.slice()
-    child[i] = event.target.value
-    this.setState({child});
+  handleChange = (event, index, value) =>  {
+    this.setState({value})
+    this.setState({child: value})
+    this.addPlusOneToArray()
+  }
+
+  addPlusOneToArray() {
+    const { plusOnes, fullName, child, value } = this.state
+    let tempOne = {
+      fullName,
+      child
+    }
+    this.setState({plusOnes: plusOnes.concat(tempOne)})
   }
 
   add() {
@@ -134,9 +138,9 @@ class RSVP extends PureComponent {
   }
 
   remove(i) {
-    this.setState({count: this.state.count.filter((e)}, => {
-      if (e !== i) return e
-    }))
+    this.setState({count: this.state.count.filter((c) => {
+      if (c !== i) return c
+    })})
   }
 
   validate(guest) {
@@ -166,9 +170,7 @@ class RSVP extends PureComponent {
       transport,
       diet,
       songs,
-      plusOnes,
-      fullName,
-      value
+      plusOnes
     } = this.state
 
     const guest = {
@@ -183,8 +185,6 @@ class RSVP extends PureComponent {
       diet,
       songs,
       plusOnes,
-      fullName,
-      value
     }
 
     if (this.validate(guest)) {
@@ -283,16 +283,16 @@ class RSVP extends PureComponent {
                 ref="fullname"
                 className="fullname"
                 placeholder="Full Name"
-                onChange={this.updatefullName.bind(this, i)} />
+                onChange={this.updatefullName.bind(this)} />
 
             <SelectField
                 value={this.state.child}
-                onChange={this.handleChange.bind(this, i)}
+                onChange={this.handleChange.bind(this)}
                 floatingLabelText="Guest Type"
                 floatingLabelStyle={{color: 'darkGreen'}}
             >
-                <MenuItem value={1} primaryText="Adult" />
-                <MenuItem value={2} primaryText="Child" />
+                <MenuItem value={0} primaryText="Adult" />
+                <MenuItem value={1} primaryText="Child" />
             </SelectField>
 
             <FloatingActionButton mini={true} onClick={this.remove.bind(this, i)}>
