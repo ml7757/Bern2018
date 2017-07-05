@@ -7,13 +7,15 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
+export const GUEST_REMOVED = "GUEST_REMOVED"
+
 const api = new API()
 
 export default (guestId) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    const backend = api.service('batches')
+    const backend = api.service('guests')
 
     api.app.authenticate()
       .then(() => {
@@ -24,13 +26,11 @@ export default (guestId) => {
             dispatch({ type: LOAD_SUCCESS })
 
             dispatch({
-              type: DELETE_STUDENT,
+              type: GUEST_REMOVED,
               payload: result
             })
 
-            api.app.set('batches', _id)
-
-            history.replace(`/batches/${_id}`)
+            history.replace(`/admin`)
 
           })
           .catch((error) => {

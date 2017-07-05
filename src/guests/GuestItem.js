@@ -7,7 +7,8 @@ import IconButton from 'material-ui/IconButton'
 import FaEdit from 'react-icons/lib/fa/edit'
 import FaClose from 'react-icons/lib/fa/close'
 // import DeleteIcon from 'react-icons/md/highlight-remove'
-import removeGuest from '../actions/guests/guest'
+import editGuest from '../actions/guests/edit-guest'
+import removeGuest from '../actions/guests/remove-guest'
 import { showError } from '../actions/loading'
 
 class GuestItem extends PureComponent {
@@ -72,5 +73,5 @@ class GuestItem extends PureComponent {
 const mapStateToProps = ({ guests }) => ({
 guests })
 
-export default connect(mapStateToProps//, { removeGuest, showError, push }
+export default connect(mapStateToProps//, { editGuest, removeGuest, showError, push }
 )(GuestItem)

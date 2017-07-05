@@ -3,7 +3,7 @@
 import { FETCHED_GUESTS } from '../actions/guests/fetch'
 import { GUEST_CREATED } from '../actions/guests/create-guest'
 import { GUEST_UPDATED } from '../actions/guests/edit-guest'
-import { GUEST_REMOVED } from from '../actions/guests/remove-guest'
+import { GUEST_REMOVED } from '../actions/guests/remove-guest'
 
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
