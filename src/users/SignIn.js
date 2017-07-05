@@ -38,9 +38,6 @@ export class SignIn extends PureComponent {
     this.props.signIn(user)
   }
 
-  signUp() {
-    this.props.push('/sign-up')
-  }
 
   render() {
     return (
