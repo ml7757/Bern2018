@@ -19,7 +19,7 @@ class MapContainer extends PureComponent {
     const pos = {lat: 37.759703, lng: -122.428093}
 
     return (
-      <div>
+      <div id="brideGuide">
         <Map google={this.props.google}>
           <Marker />
           {/* <Marker position={pos}/> */}
