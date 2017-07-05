@@ -27,7 +27,7 @@ class GuestItem extends PureComponent {
       diet,
       songs,
       fullName,
-      value,
+      child,
     } = this.props
 
     return (

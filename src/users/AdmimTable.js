@@ -5,7 +5,7 @@ import 'react-table/react-table.css'
 
 
 const columns = [{
-  Header: 'Name',
+  Header: 'Wedding guests',
   columns: [{
     Header: 'First Name',
     accessor: 'firstName'
