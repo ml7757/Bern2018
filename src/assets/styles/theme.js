@@ -1,28 +1,24 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors
-export const green        = '#00AA86'
-export const red          = '#D32F2F'
-export const yes          = '#18BC97'
-export const yess         = '#ffb400'
-export const darkRed      = '#C1272D'
-export const white        = '#ffffff'
+export const darkGreen    = '#294b2d'
+export const green        = '#526a52'
+export const nude         = '#ddbea1'
 export const black        = '#000000'
-export const darkGrey     = '#757575'
-export const grey         = '#DEDEDE'
-export const grey50       = 'rgba(222, 222, 222, 0.5)'
+export const darkGrey     = '#5c5c5c'
+export const greywhite    = '#f4f4f6'
+export const nudewhite    = '#fefcfc'
 export const grey30       = 'rgba(222, 222, 222, 0.7)'
 
 // Palette
 export const palette = {
-  primary1Color: yes,
-  primary2Color: yess,
-  primary3Color: green,
-  accent1Color: green,
+  primary1Color: green,
+  primary2Color: darkGreen,
+  primary3Color: darkGrey,
+  accent1Color: nude,
   textColor: black,
-  alternateTextColor: white,
-  canvasColor: white,
-  borderColor: grey,
+  alternateTextColor: nudewhite,
+  canvasColor: greywhite,
   disabledColor: grey30
 }
 
