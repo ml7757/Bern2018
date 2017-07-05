@@ -6,6 +6,8 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
+export const GUEST_UPDATED = "GUEST_UPDATED"
+
 const api = new API()
 
 export default (guest) => {
