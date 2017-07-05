@@ -30,7 +30,7 @@ class GuestItem extends PureComponent {
 
     return (
       <div>
-        Name: {firstName}
+        <Link to={`/guests/${_id}`}>{ firstName + " " + lastName }</Link>
       </div>
       //
       // <article className="guest">
@@ -68,8 +68,8 @@ class GuestItem extends PureComponent {
 
 
 
-const mapStateToProps = ({ StudentId }) => ({
-  StudentId
-})
+const mapStateToProps = ({ guests }) => ({
+guests })
 
-export default connect(mapStateToProps, { removeGuest, showError, push })(GuestItem)
+export default connect(mapStateToProps//, { removeGuest, showError, push }
+)(GuestItem)
