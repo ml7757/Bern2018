@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import IconButton from 'material-ui/IconButton'
-import EditIcon from 'react-icons/lib/fa/edit'
-import DeleteIcon from 'react-icons/lib/md/highlight-remove'
+import FaEdit from 'react-icons/lib/fa/edit'
+import FaClose from 'react-icons/lib/fa/close'
+// import DeleteIcon from 'react-icons/md/highlight-remove'
 import removeGuest from '../actions/guests/guest'
 import { showError } from '../actions/loading'
 
@@ -30,7 +31,7 @@ class GuestItem extends PureComponent {
 
     return (
       <div>
-        <Link to={`/guests/${_id}`}>{ firstName + " " + lastName }</Link>
+        <Link to={`/guests/${_id}`}>{ firstName + " " + lastName }<FaEdit /><FaClose /></Link>
       </div>
       //
       // <article className="guest">
