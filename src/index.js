@@ -24,7 +24,7 @@ ReactDOM.render(
         <IndexRoute component={Home} />
         <Route path="/accomodation" component={Accomodation} />
         <Route path="/sign-in" component={SignIn} />
-        <Route path="/admin-page" component={AdminPage} />
+        <Route path="/admin" component={AdminPage} />
         {/* <Route path="/guests/:guestId" component={GuestPage} /> */}
       </Route>
     </Router>

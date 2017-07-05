@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import AdminNavigation from './AdminNavigation'
 import GuestItem from '../guests/GuestItem'
 import fetchGuests from '../actions/guests/fetch'
 // import './AdminPage.css'
@@ -22,7 +23,9 @@ export class AdminPage extends PureComponent {
 
   render() {
       return(
+
         <div className="guests wrapper">
+          <AdminNavigation />
 
           <main>
             { this.props.guests.map(this.renderGuest.bind(this)) }
