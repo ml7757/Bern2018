@@ -23,7 +23,7 @@ export default (user) => {
 
         api.app.set('user', user)
 
-        history.replace('/adminpage')
+        history.replace('/admin')
 
         dispatch({
           type: USER_SIGNED_IN,

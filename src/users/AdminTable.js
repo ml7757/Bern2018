@@ -5,7 +5,6 @@ import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import GuestItem from '../guests/GuestItem'
 import 'react-table/react-table.css'
-
 export class AdminTable extends PureComponent {
 
   renderGuest(guest, index) {

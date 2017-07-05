@@ -1,0 +1,23 @@
+.countdownSection {
+  background-color: #294B2D;
+  height: 120px;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: center; }
+  .countdownSection .count-down {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column; }
+    .countdownSection .count-down h3 {
+      font-size: 1.2rem; }
+    .countdownSection .count-down .count-down-timer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      .countdownSection .count-down .count-down-timer p {
+        max-width: 50px;
+        font-size: 1rem; }
+        .countdownSection .count-down .count-down-timer p span {
+          font-size: 3rem; }
