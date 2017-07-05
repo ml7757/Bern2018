@@ -1,14 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
 .storySection {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-left: 60px;
-  padding-right: 60px; }
+  padding-left: 80px;
+  padding-right: 80px; }
   .storySection .storyPhoto {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     margin: 20px 0; }
   .storySection .quote {
-    margin: 30px 0; }
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 45px; }
+
+.story {
+  font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
+  color: #ddbea1;
+  font-size: 50px; }
+
+p {
+  font-size: 19px; }
