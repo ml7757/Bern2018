@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 import Story from '../components/Story'
 import CountDown from '../components/CountDown'
 import RSVP from '../guests/RSVP'
+import Footer from '../components/Footer'
 
 export class Home extends PureComponent {
   render() {
@@ -18,6 +19,7 @@ export class Home extends PureComponent {
         <CountDown />
         <RSVP />
         <MapContainer />
+        <Footer />
       </div>
     )
   }
