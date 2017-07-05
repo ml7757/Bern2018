@@ -1,3 +1,17 @@
-.footer-shield {
-  height: 50px;
-  width: auto; }
+.footer {
+  background-color: #294B2D; }
+  .footer .footer-shield {
+    height: 50px;
+    width: auto;
+    display: inline-block;
+    margin: 5px;
+    margin-left: 8px; }
+  .footer .newlyweds {
+    display: inline-block;
+    font-weight: bold;
+    color: white; }
+  .footer .footer-mail {
+    height: 40px;
+    width: auto;
+    display: inline-block;
+    margin: 5px; }
