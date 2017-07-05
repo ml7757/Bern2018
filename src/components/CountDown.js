@@ -33,11 +33,14 @@ export class CountDown extends PureComponent {
   }
 
   countDownTimer() {
-    const dateDif = weddingDay - rightNow
-    let difDays = Math.floor(dateDif / (24 * 60 * 60 *1000))
-    let difDaysDisplay = difDays % 30
-    let difMonths = Math.floor(difDays / 30)
-    let difHours = dateDif.getHours
+    const dateDif = new Date(weddingDay.getTime() - rightNow.getTime())
+    let difYears = dateDif.getUTCFullYear() - 1970
+    let difMonths = dateDif.getUTCMonth()
+    let difDays = dateDif.getUTCDate() - 1
+    let difHours = dateDif.getUTCHours()
+    if (difYears >0){
+      difMonths += difYears *12
+    }
     return (
       <div className="count-down-timer">
         <p> {difMonths} months </p>
