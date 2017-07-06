@@ -1,26 +1,28 @@
 // src/users/PoiEditor.js
 import React, { PureComponent } from 'react'
 import Editor from 'react-medium-editor'
+// import toMarkdown from 'to-markdown'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import createPoi from '../actions/points/create-poi'
 import { showError } from '../actions/loading'
 import 'medium-editor/dist/css/medium-editor.css'
 import 'medium-editor/dist/css/themes/default.css'
-import './PoiEditor.css'
+// import './PoiEditor.css'
 
 
 class PoiEditor extends PureComponent {
   constructor(props) {
     super()
 
-    const { title, latitude, longitude, description } = props
+    const { title, latitude, longitude, description, link } = props
 
     this.state = {
       title,
       latitude,
       longitude,
       description,
+      link,
       errors: {},
     }
   }
@@ -34,10 +36,6 @@ class PoiEditor extends PureComponent {
   }
 
   updateTitle(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault()
-      this.refs.summary.medium.elements[0].focus()
-    }
     this.setState({
       title: this.refs.title.value
     })
@@ -45,13 +43,13 @@ class PoiEditor extends PureComponent {
 
   updateLatitude(event) {
     this.setState({
-      photo: this.refs.latitude.value
+      latitude: this.refs.latitude.value
     })
   }
 
   updateLongitude(event) {
     this.setState({
-      photo: this.refs.longitude.value
+      longitude: this.refs.longitude.value
     })
   }
 
@@ -61,15 +59,22 @@ class PoiEditor extends PureComponent {
     })
   }
 
+  updateLink(event) {
+    this.setState({
+      link: this.refs.link.value
+    })
+  }
+
   validate(poi) {
-    const { title, latitude, longitude, description } = poi
+    const { title, latitude, longitude, description, link } = poi
 
     let errors = {}
 
-    if (!title || title === '') errors.title = 'Title please...'
-    if (!latitude || latitude === '') errors.latitude = 'Latitude please...'
-    if (!longitude || longitude === '') errors.longitude = 'Longitude please...'
-    if (!description || description === '') errors.description = 'Description please...!'
+    if (!title || title === '') errors.title = 'Please provide a Title'
+    if (!latitude || latitude === '') errors.latitude = 'Please provide a Latitude'
+    if (!longitude || longitude === '') errors.longitude = 'Please provide a Longitude'
+    if (!description || description === '') errors.description = 'Please provide a Description!'
+    if (!link || link === '') errors.link = 'Please provide a link!'
 
     this.setState({
       errors,
@@ -84,13 +89,15 @@ class PoiEditor extends PureComponent {
       latitude,
       longitude,
       description,
+      link,
     } = this.state
 
     const poi = {
       title,
       latitude,
       longitude,
-      description: toMarkdown(summary || ''),
+      description,
+      link,
     }
 
     if (this.validate(poi)) {
@@ -136,8 +143,19 @@ class PoiEditor extends PureComponent {
 
         { errors.longitude && <p className="error">{ errors.longitude }</p> }
 
+        <input
+          type="text"
+          ref="link"
+          className="link"
+          placeholder="Link"
+          defaultValue={this.state.link}
+          onChange={this.updateLink.bind(this)}
+          onKeyDown={this.updateLink.bind(this)} />
+
+        { errors.link && <p className="error">{ errors.link }</p> }
+
         <Editor
-          ref="summary"
+          ref="description"
           options={{
             placeholder: {text: 'Decription...'}
           }}
