@@ -1,0 +1,8 @@
+.gift-text {
+  background-color: #526A52; }
+  .gift-text p {
+    text-align: center;
+    padding: 40px 0;
+    color: white; }
+    .gift-text p span {
+      font-weight: bold; }
