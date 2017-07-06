@@ -198,18 +198,18 @@ class RSVP extends PureComponent {
 
     return (
       <div className="editor">
-      <div className="form">
-      <h2 className="title">RSVP</h2>
-        <input
-          type="text"
-          ref="firstname"
-          className="firstname"
-          placeholder="First Name"
-          onChange={this.updateFirstName.bind(this)} />
+        <div className="form">
+          <h2 className="title">RSVP</h2>
+          <input
+            type="text"
+            ref="firstname"
+            className="firstname"
+            placeholder="First Name"
+            onChange={this.updateFirstName.bind(this)} />
 
-        { errors.firstName && <p className="error">{ errors.firstName }</p> }
-
-        <input
+          { errors.firstName && <p className="error">{ errors.firstName }</p> }
+          
+          <input
             type="text"
             ref="lastname"
             className="lastname"

@@ -161,7 +161,7 @@ class PoiEditor extends PureComponent {
           }}
           onChange={this.updateDescription.bind(this)}
           text={this.state.description} />
-
+        
         <div className="actions">
           <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
         </div>
