@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchPois from '../actions/points/fetch-pois'
+import './PoiInfo.css'
 
 export class PoiInfo extends PureComponent {
 
@@ -16,9 +17,9 @@ export class PoiInfo extends PureComponent {
         <div key="index" className="number-of-point">
           <span>{ index+1 }</span>
         </div>
-        <div>
+        <div className="poi-text">
           <h4>{poi.title}</h4>
-          {poi.description}
+          <p className="poi-description">{poi.description}</p>
         </div>
         <div>
           <a href={poi.link} className="more-button" >More</a>

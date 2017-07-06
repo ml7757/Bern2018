@@ -21,7 +21,7 @@ export class Map extends PureComponent {
     initialCenter: PropTypes.object,
   }
   static defaultProps = {
-    zoom: 14,
+    zoom: 15,
     // Bern, by default
     initialCenter: {
       lat: 46.947999,
