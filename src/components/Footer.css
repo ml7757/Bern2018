@@ -1,19 +1,42 @@
 .footer {
-  background-color: #294B2D; }
-  .footer .footer-shield {
-    height: 50px;
-    width: auto;
-    display: inline-block;
-    margin: 5px;
-    margin-left: 8px; }
-  .footer .newlyweds {
-    display: inline-block;
-    font-weight: bold;
+  background-color: #294B2D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  .footer .couple {
+    margin-top: 5px; }
+    .footer .couple .footer-shield {
+      height: 50px;
+      width: auto;
+      display: inline-block;
+      margin: 5px;
+      margin-left: 8px; }
+    .footer .couple .newlyweds {
+      display: inline-block;
+      font-weight: bold;
+      color: white; }
+  .footer .email-contact {
+    margin-bottom: 20px; }
+    .footer .email-contact .footer-mail {
+      height: 35px;
+      width: auto;
+      display: inline-block;
+      margin: 5px; }
+    .footer .email-contact .email-link {
+      color: white; }
+  .footer .footer-made {
+    font-size: 1rem;
+    font-style: italic;
     color: white; }
-  .footer .footer-mail {
-    height: 40px;
-    width: auto;
-    display: inline-block;
-    margin: 5px; }
-  .footer .email-link {
-    color: white; }
+    .footer .footer-made .footer-heart {
+      height: 17px;
+      width: auto;
+      margin: 0 5px; }
+  .footer a {
+    display: inline-block; }
+    .footer a .footer-codaisseur {
+      display: inline-block;
+      height: 18px;
+      width: auto;
+      margin-left: 5px; }
