@@ -7,7 +7,7 @@ import pic3 from "../assets/imgs/whenwhere3.jpg"
 export class WhenWhere extends PureComponent {
   render() {
     return (
-      <div className="whenwhere">
+      <div className="whenwhere" id="when-and-where">
         <h2 className="title">When & Where</h2>
         <div className="columns">
           <div className="column1">
