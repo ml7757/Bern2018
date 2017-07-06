@@ -208,7 +208,7 @@ class RSVP extends PureComponent {
             onChange={this.updateFirstName.bind(this)} />
 
           { errors.firstName && <p className="error">{ errors.firstName }</p> }
-          
+
           <input
             type="text"
             ref="lastname"

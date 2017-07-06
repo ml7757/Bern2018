@@ -1,5 +1,7 @@
 // src/users/PoiEditor.js
 import React, { PureComponent } from 'react'
+import Editor from 'react-medium-editor'
+// import toMarkdown from 'to-markdown'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import createPoi from '../actions/points/create-poi'
