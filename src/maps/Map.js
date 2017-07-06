@@ -58,7 +58,9 @@ export class Map extends PureComponent {
       const center = new maps.LatLng(lat, lng);
       const mapConfig = Object.assign({}, {
         center: center,
-        // disableDefaultUI: true,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        zoomControl: true,
         zoom: zoom
         // ,
         // styles: [
@@ -72,7 +74,6 @@ export class Map extends PureComponent {
         //     ]
         //   }
         // ]
-
       })
 
      this.map = new maps.Map(node, mapConfig);
