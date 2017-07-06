@@ -1,17 +1,21 @@
+Nav.fixed {
+  position: fixed;
+  top: 0; }
+
 Nav.navbar-default {
   background-color: #526A52;
   border-radius: 0;
   border: none;
   color: white; }
   Nav.navbar-default .container .navbar-collapse {
-    display: flex;
-    align-items: center;
     text-align: center; }
     Nav.navbar-default .container .navbar-collapse ul {
       float: none;
-      display: flex;
-      justify-content: space-between;
       align-items: center; }
+      @media screen and (min-width: 767px) {
+        Nav.navbar-default .container .navbar-collapse ul {
+          display: flex;
+          justify-content: space-between; } }
       Nav.navbar-default .container .navbar-collapse ul.navbar-nav {
         align-items: center; }
       Nav.navbar-default .container .navbar-collapse ul li a {

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AdminNavigation from './AdminNavigation'
 import AdminTable from './AdminTable'
+import PoiForm from './PoiForm'
 import GuestItem from '../guests/GuestItem'
 import fetchGuests from '../actions/guests/fetch'
 // If JS webpack
@@ -28,11 +29,12 @@ export class AdminPage extends PureComponent {
 
         <div className="guests wrapper">
           <AdminNavigation />
-          <AdminTable />
+          {/* <AdminTable /> */}
 
 
           <main>
-            {/* { this.props.guests.map(this.renderGuest.bind(this)) } */}
+            { this.props.guests.map(this.renderGuest.bind(this)) }
+            <PoiForm />
           </main>
         </div>
       )

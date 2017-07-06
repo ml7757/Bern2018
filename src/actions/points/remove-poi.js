@@ -7,26 +7,26 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
-export const GUEST_REMOVED = "GUEST_REMOVED"
+export const POI_REMOVED = "POI_REMOVED"
 
 const api = new API()
 
-export default (guestId) => {
+export default (poi) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    const backend = api.service('guests')
+    const backend = api.service('points')
 
     api.app.authenticate()
       .then(() => {
 
-        backend.remove(guestId)
+        backend.remove(poi)
           .then((result) => {
             dispatch({ type: APP_DONE_LOADING })
             dispatch({ type: LOAD_SUCCESS })
 
             dispatch({
-              type: GUEST_REMOVED,
+              type: POI_REMOVED,
               payload: result
             })
 

@@ -9,15 +9,15 @@ export class Footer extends PureComponent {
       <div className="footer">
         <div>
           <p className="newlyweds">Julia Wieser</p>
-          <img className="footer-shield"src={shield} />
+          <img className="footer-shield" src={shield} />
           <p className="newlyweds">Matthew LaPorte</p>
         </div>
-          <img className="footer-mail"src={mail} />
-          <a href="mailto:julesandmatt2018@gmail.com">julesandmatt2018@gmail.com</a>
-        <div>
-        </div>
-        <div>
-        </div>
+        <img className="footer-mail" src={mail} />
+        <a className="email-link" href="mailto:julesandmatt2018@gmail.com">
+          julesandmatt2018@gmail.com
+        </a>
+        <div />
+        <div />
       </div>
     );
   }

@@ -32,8 +32,9 @@ class GuestItem extends PureComponent {
 
     return (
       <div>
-
-        Hallo {firstName}
+        
+        "firstName": {firstName},
+        "lastName": {lastName}
         {/* <Link to={`/guests/${_id}`}>{ firstName + " " + lastName }<FaEdit /><FaClose /></Link> */}
 
       </div>
