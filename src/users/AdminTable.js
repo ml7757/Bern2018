@@ -3,6 +3,8 @@ import ReactTable from 'react-table'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
+import FaEdit from 'react-icons/lib/fa/edit'
+import FaClose from 'react-icons/lib/fa/close'
 import fetchGuests from '../actions/guests/fetch'
 import GuestItem from '../guests/GuestItem'
 import 'react-table/react-table.css'
@@ -19,19 +21,31 @@ export class AdminTable extends PureComponent {
     // debugger
   }
 
-  // makeData(renderGuest()) {
-  //   const { fullName, lastName } = guest
-  //   return (
-  //     {
-  //       "fullName": fullName,
-  //       "lastName": lastName
-  //     }
-  //   )
-  // }
+  makeDataFromGuests() {
+    console.log("HI::: " + this.props.guests);
+    const { guests } = this.props
+    const guestsData = guests.map(g  =>  ({
+      "firstName": g.firstName,
+      "lastName": g.lastName,
+      "email": g.email,
+      "attending": g.attending,
+      "event1": g.event1,
+      "event2": g.event2,
+      "event3": g.event3,
+      "transport": g.transport,
+      "diet": g.diet,
+      "songs": g.songs,
+      "plusOnes": g.plusOnes.length,
+      "buttons": <div><Link to={g._id}><FaEdit /></Link><Link to={g._id}><FaClose /></Link></div>
+    }))
+    // const { firstName } = guest
+    return guestsData
+  }
 
   renderGuests(guest) {}
 
   render() {
+    console.log("Hello" + this.props);
     if (!this.props.guests) return null
 
     const columns = [{
@@ -70,16 +84,20 @@ export class AdminTable extends PureComponent {
       }, {
         Header: 'Songs',
         accessor: 'songs'
-      }
-      // , {
+      },
+      // {
       //   Header: 'Plus One(s)',
       //   // if (plusOnes.length > 0) return "Yes"
       //   accessor: 'plusOnes'
-      // }
+      // },
+      {
+        Header: "",
+        accessor: "buttons"
+      }
       ]
     }]
 
-    console.log("Hello" + this.props);
+    console.log("bblabla" + this.props);
     // debugger
     const data = [{
       "firstName": "hello",
@@ -94,11 +112,14 @@ export class AdminTable extends PureComponent {
       "songs": "hello"
     }]
 
+    const { guests } = this.props
+
     return(
 
       <div className="admin-table">
         <ReactTable
-          data={ this.props.guests.map(this.renderGuest).bind(this) }
+          // data={ this.props.guests.map(this.renderGuest).bind(this) }
+          data={ this.makeDataFromGuests(guests) }
           // data={data}
           columns={columns}
         />

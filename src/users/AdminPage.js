@@ -29,11 +29,10 @@ export class AdminPage extends PureComponent {
 
         <div className="guests wrapper">
           <AdminNavigation />
-          {/* <AdminTable /> */}
+          <AdminTable />
 
 
           <main>
-            { this.props.guests.map(this.renderGuest.bind(this)) }
             <PoiForm />
           </main>
         </div>
