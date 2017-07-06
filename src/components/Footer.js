@@ -13,7 +13,7 @@ export class Footer extends PureComponent {
           <p className="newlyweds">Matthew LaPorte</p>
         </div>
           <img className="footer-mail"src={mail} />
-          <a href="#" />
+          <a href="mailto:julesandmatt2018@gmail.com">julesandmatt2018@gmail.com</a>
         <div>
         </div>
         <div>
