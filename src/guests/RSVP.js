@@ -197,7 +197,7 @@ class RSVP extends PureComponent {
     const { errors, count } = this.state
 
     return (
-      <div className="editor">
+      <div className="editor" id="RSVP-section">
         <div className="rsvp-form">
           <h2 className="title">RSVP</h2>
           <input
