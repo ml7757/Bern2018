@@ -11,7 +11,7 @@ export class Marker extends Component {
       if ((this.props.map !== prevProps.map) ||
         (this.props.position !== prevProps.position)) {
           // The relevant props have changed
-          debugger
+
         this.renderMarker()
       }
     }
@@ -20,7 +20,7 @@ export class Marker extends Component {
     let {
       map, google, mapCenter
     } = this.props
-    debugger
+
 
     let position = {lat: 46.953261, lng: 7.435668}
 
