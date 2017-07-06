@@ -33,7 +33,6 @@ export class AdminPage extends PureComponent {
 
 
           <main>
-            { this.props.guests.map(this.renderGuest.bind(this)) }
             <PoiForm />
           </main>
         </div>

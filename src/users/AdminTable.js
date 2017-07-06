@@ -3,6 +3,8 @@ import ReactTable from 'react-table'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
+import FaEdit from 'react-icons/lib/fa/edit'
+import FaClose from 'react-icons/lib/fa/close'
 import fetchGuests from '../actions/guests/fetch'
 import GuestItem from '../guests/GuestItem'
 import 'react-table/react-table.css'
@@ -33,7 +35,8 @@ export class AdminTable extends PureComponent {
       "transport": g.transport,
       "diet": g.diet,
       "songs": g.songs,
-      // "plusOnes": g.plusOnes.length
+      "plusOnes": g.plusOnes.length,
+      "buttons": <div><Link to={g._id}><FaEdit /></Link><Link to={g._id}><FaClose /></Link></div>
     }))
     // const { firstName } = guest
     return guestsData
@@ -81,12 +84,16 @@ export class AdminTable extends PureComponent {
       }, {
         Header: 'Songs',
         accessor: 'songs'
-      }
-      // , {
+      },
+      // {
       //   Header: 'Plus One(s)',
       //   // if (plusOnes.length > 0) return "Yes"
       //   accessor: 'plusOnes'
-      // }
+      // },
+      {
+        Header: "",
+        accessor: "buttons"
+      }
       ]
     }]
 
