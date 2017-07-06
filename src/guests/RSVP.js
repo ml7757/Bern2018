@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
+import RaisedButton from 'material-ui/RaisedButton'
 import RadioButton from 'material-ui/RadioButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import Checkbox from 'material-ui/Checkbox'
@@ -122,7 +123,7 @@ class RSVP extends PureComponent {
   }
 
   addPlusOneToArray() {
-    const { plusOnes, fullName, child, value } = this.state
+    const { plusOnes, fullName, child } = this.state
     let tempOne = {
       fullName,
       child
@@ -197,6 +198,8 @@ class RSVP extends PureComponent {
 
     return (
       <div className="editor">
+      <div className="form">
+      <h2 className="title">RSVP</h2>
         <input
           type="text"
           ref="firstname"
@@ -211,7 +214,7 @@ class RSVP extends PureComponent {
             ref="lastname"
             className="lastname"
             placeholder="Last Name"
-            onChange={this.updateLastName.bind(this)} />
+            onChange={this.updateLastName.bind(this)} /><br /><br />
 
           { errors.lastName && <p className="error">{ errors.lastName }</p> }
 
@@ -220,18 +223,19 @@ class RSVP extends PureComponent {
             ref="email"
             className="email"
             placeholder="Email"
-            onChange={this.updateEmail.bind(this)} />
+            onChange={this.updateEmail.bind(this)} /><br /><br />
 
-          <p>Will you attend?</p>
+          <p className="attend">Will you attend?</p>
         {ATTENDING.map((att) => {
             return <label key={att} htmlFor={att}>
               <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
               {att}
-            <br /></label>
-          })}<br />
+              </label>
+          })}<br /><br />
 
-          <p>What events will you be attending?</p>
+          <p className="eventsattending">What events will you be attending?</p>
           <Checkbox
+            className="event1"
             label="Casual Meet & Greet (Apero)"
             onCheck={this.setEvent1.bind(this)}
           />
@@ -242,42 +246,42 @@ class RSVP extends PureComponent {
           <Checkbox
             label="Farewell Get Together"
             onCheck={this.setEvent3.bind(this)}
-          />
+          /><br />
 
-          <p>Do you require transport to and from each event?</p>
-          <p>Transport will be picking up from and dropping guests off at the Hotel Allegro in Bern</p>
+          <p className="transport">Do you require transport to and from each event?</p>
+          <p className="sub">Transport will be picking up from and dropping guests off at the Hotel Allegro in Bern</p>
         {TRANSPORT.map((trnsprt) => {
             return <label key={trnsprt} htmlFor={trnsprt}>
               <input id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
               {trnsprt}
             </label>
-          })}<br />
+          })}<br /><br />
 
         <input
             type="text"
             ref="diet"
             className="diet"
             placeholder="Dietary requirements or needs"
-            onChange={this.updateDiet.bind(this)} />
+            onChange={this.updateDiet.bind(this)} /><br /><br />
 
         <input
             type="text"
             ref="songs"
             className="songs"
-            placeholder="Song recommendations"
-            onChange={this.updateSongs.bind(this)} />
+            placeholder="Song recommendation(s)"
+            onChange={this.updateSongs.bind(this)} /><br /><br />
 
-        <p>Plus ones</p>
-        <p>Subject to approval by bride and/or groom </p>
-
-        <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
-          <ContentAdd />
-        </FloatingActionButton>
+        <p className="plus">Plus ones</p>
+        <p className="sub">Subject to approval by bride and/or groom </p>
 
         {count.map((i) => {
           return (
 
-          <div key={i}>
+          <div key={i} className="plusones">
+            <FloatingActionButton mini={true} className="minus" onClick={this.remove.bind(this, i)}>
+              <ContentMinus />
+            </FloatingActionButton>
+
             <input
                 type="text"
                 ref="fullname"
@@ -286,25 +290,31 @@ class RSVP extends PureComponent {
                 onChange={this.updatefullName.bind(this)} />
 
             <SelectField
-                value={this.state.child}
+                value="value"
                 onChange={this.handleChange.bind(this)}
                 floatingLabelText="Guest Type"
+                autoWidth={false}
+                id="dropdown"
                 floatingLabelStyle={{color: 'darkGreen'}}
             >
                 <MenuItem value={0} primaryText="Adult" />
                 <MenuItem value={1} primaryText="Child" />
             </SelectField>
-
-            <FloatingActionButton mini={true} onClick={this.remove.bind(this, i)}>
-              <ContentMinus />
-            </FloatingActionButton>
           </div>
         )
 
-        })}
+      })}<br />
+        <div className="addone">
+          <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
+            <ContentAdd />
+          </FloatingActionButton>
+          <p className="add">Add plus one</p>
+        </div><br /><br />
 
         <div className="actions">
-          <button className="primary" onClick={this.saveGuest.bind(this)}>RSVP</button>
+          <RaisedButton label="RSVP" className="RSVPbutton" primary={true} onClick={this.saveGuest.bind(this)} />
+          <RaisedButton className="cancelbutton" label="Cancel" />
+        </div>
         </div>
       </div>
     )
