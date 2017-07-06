@@ -101,7 +101,6 @@ export class Map extends PureComponent {
       height: '500px',
       width: '850px'
     }
-    debugger
 
     return (
       <div ref='map' className="map-style" style={style}>
