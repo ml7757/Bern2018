@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 import Story from '../components/Story'
 import CountDown from '../components/CountDown'
 import RSVP from '../guests/RSVP'
+import WhenWhere from '../components/WhenWhere'
 
 export class Home extends PureComponent {
   render() {
@@ -16,6 +17,7 @@ export class Home extends PureComponent {
         <Navigation />
         <Story />
         <CountDown />
+        <WhenWhere />
         <RSVP />
         <MapContainer />
       </div>

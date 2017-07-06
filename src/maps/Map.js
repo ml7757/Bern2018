@@ -16,12 +16,12 @@ export class Map extends PureComponent {
   }
 
   static propTypes = {
-    google: React.PropTypes.object,
-    zoom: React.PropTypes.number,
-    initialCenter: React.PropTypes.object
+    google: PropTypes.object,
+    zoom: PropTypes.number,
+    initialCenter: PropTypes.object,
   }
   static defaultProps = {
-    zoom: 13,
+    zoom: 14,
     // Bern, by default
     initialCenter: {
       lat: 46.947999,
@@ -31,12 +31,16 @@ export class Map extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.google !== this.props.google) {
-      this.loadMap();
     }
+    if (prevState.currentLocation !== this.state.currentLocation) {
+      this.recenterMap();
+    }
+    this.loadMap();
   }
 
   componentDidMount() {
     this.loadMap();
+    this.renderChildren()
   }
 
   loadMap() {
@@ -54,11 +58,27 @@ export class Map extends PureComponent {
       const center = new maps.LatLng(lat, lng);
       const mapConfig = Object.assign({}, {
         center: center,
+        // disableDefaultUI: true,
         zoom: zoom
+        // ,
+        // styles: [
+        //   {
+        //     "featureType": "all",
+        //     "elementType": "all",
+        //     "stylers": [
+        //       {
+        //         "saturation": "-100"
+        //       }
+        //     ]
+        //   }
+        // ]
+
       })
 
      this.map = new maps.Map(node, mapConfig);
     }
+    // this.renderChildren()
+// debugger
   }
 
   renderChildren() {
@@ -71,6 +91,7 @@ export class Map extends PureComponent {
         map: this.map,
         google: this.props.google,
         mapCenter: this.state.currentLocation
+        // position: this.props.position
       });
     })
   }
@@ -78,13 +99,13 @@ export class Map extends PureComponent {
   render() {
     const style = {
       height: '500px',
-      width: '500px'
+      width: '850px'
     }
 
     return (
-      <div ref='map' style={style}>
+      <div ref='map' className="map-style" style={style}>
         Loading map...
-        {this.renderChildren()}
+        {/* {this.renderChildren()} */}
       </div>
     )
   }

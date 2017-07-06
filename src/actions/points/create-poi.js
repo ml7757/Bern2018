@@ -1,4 +1,3 @@
-import { history } from '../../store'
 import API from '../../api'
 import {
   APP_LOADING,
@@ -7,30 +6,24 @@ import {
   LOAD_SUCCESS
 } from '../loading'
 
-export const GUEST_REMOVED = "GUEST_REMOVED"
+export const POI_CREATED = 'POI_CREATED'
 
 const api = new API()
 
-export default (guestId) => {
+export default (poi) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
-    const backend = api.service('guests')
-
-    api.app.authenticate()
-      .then(() => {
-
-        backend.remove(guestId)
+    const backend = api.service('points')
+      backend.create(poi)
           .then((result) => {
             dispatch({ type: APP_DONE_LOADING })
             dispatch({ type: LOAD_SUCCESS })
 
             dispatch({
-              type: GUEST_REMOVED,
+              type: POI_CREATED,
               payload: result
             })
-
-            history.replace(`/admin`)
 
           })
           .catch((error) => {
@@ -40,7 +33,7 @@ export default (guestId) => {
               payload: error.message
             })
           })
-      })
+
       .catch((error) => {
         dispatch({ type: APP_DONE_LOADING })
         dispatch({

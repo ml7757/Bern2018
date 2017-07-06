@@ -3,15 +3,36 @@ import ReactTable from 'react-table'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
+import fetchGuests from '../actions/guests/fetch'
 import GuestItem from '../guests/GuestItem'
 import 'react-table/react-table.css'
+
 export class AdminTable extends PureComponent {
+
+  componentWillMount() {
+    this.props.fetchGuests()
+  }
 
   renderGuest(guest, index) {
     return <GuestItem key={index} { ...guest }  />
+    console.log(guest);
+    // debugger
   }
 
+  // makeData(renderGuest()) {
+  //   const { fullName, lastName } = guest
+  //   return (
+  //     {
+  //       "fullName": fullName,
+  //       "lastName": lastName
+  //     }
+  //   )
+  // }
+
+  renderGuests(guest) {}
+
   render() {
+    if (!this.props.guests) return null
 
     const columns = [{
       Header: 'Wedding Guests',
@@ -49,17 +70,36 @@ export class AdminTable extends PureComponent {
       }, {
         Header: 'Songs',
         accessor: 'songs'
-      }, {
-        Header: 'Plus One(s)',
-        // if (plusOnes.length > 0) return "Yes"
-        accessor: 'plusOnes'
-      }]
+      }
+      // , {
+      //   Header: 'Plus One(s)',
+      //   // if (plusOnes.length > 0) return "Yes"
+      //   accessor: 'plusOnes'
+      // }
+      ]
+    }]
+
+    console.log("Hello" + this.props);
+    // debugger
+    const data = [{
+      "firstName": "hello",
+      "lastName": "hello",
+      "email": "hello@hello.nl",
+      "attending": "hello",
+      "event1": "hello",
+      "event2": "hello",
+      "event3": "hello",
+      "transport": "hello",
+      "diet": "hello",
+      "songs": "hello"
     }]
 
     return(
+
       <div className="admin-table">
         <ReactTable
-          data={ this.props.guests.map(this.renderGuest.bind(this)) }
+          data={ this.props.guests.map(this.renderGuest).bind(this) }
+          // data={data}
           columns={columns}
         />
       </div>
@@ -69,7 +109,7 @@ export class AdminTable extends PureComponent {
 
 const mapStateToProps = ({ guests }) => ({ guests })
 
-export default connect(mapStateToProps)(AdminTable)
+export default connect(mapStateToProps, { fetchGuests })(AdminTable)
 
 
 // export default AdminTable
