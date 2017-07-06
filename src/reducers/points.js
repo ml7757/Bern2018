@@ -1,6 +1,6 @@
 // src/reducers/points.js
 
-import { FETCHED_POIS } from '../actions/points/fetch'
+import { FETCHED_POIS } from '../actions/points/fetch-pois'
 import { POI_CREATED } from '../actions/points/create-poi'
 import { POI_UPDATED } from '../actions/points/edit-poi'
 import { POI_REMOVED } from '../actions/points/remove-poi'

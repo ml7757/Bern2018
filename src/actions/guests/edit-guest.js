@@ -20,7 +20,7 @@ export default (guestId) => {
     api.app.authenticate()
       .then(() => {
 
-        backend.patch(guestId, { edit: guestId })
+        backend.patch(guestId)
           .then((result) => {
             dispatch({ type: APP_DONE_LOADING })
             dispatch({ type: LOAD_SUCCESS })
