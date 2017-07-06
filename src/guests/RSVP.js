@@ -198,18 +198,18 @@ class RSVP extends PureComponent {
 
     return (
       <div className="editor">
-      <div className="form">
-      <h2 className="title">RSVP</h2>
-        <input
-          type="text"
-          ref="firstname"
-          className="firstname"
-          placeholder="First Name"
-          onChange={this.updateFirstName.bind(this)} />
+        <div className="rsvp-form">
+          <h2 className="title">RSVP</h2>
+          <input
+            type="text"
+            ref="firstname"
+            className="firstname"
+            placeholder="First Name"
+            onChange={this.updateFirstName.bind(this)} />
 
-        { errors.firstName && <p className="error">{ errors.firstName }</p> }
-
-        <input
+          { errors.firstName && <p className="error">{ errors.firstName }</p> }
+          
+          <input
             type="text"
             ref="lastname"
             className="lastname"
@@ -218,7 +218,7 @@ class RSVP extends PureComponent {
 
           { errors.lastName && <p className="error">{ errors.lastName }</p> }
 
-        <input
+          <input
             type="text"
             ref="email"
             className="email"
@@ -226,11 +226,11 @@ class RSVP extends PureComponent {
             onChange={this.updateEmail.bind(this)} /><br /><br />
 
           <p className="attend">Will you attend?</p>
-        {ATTENDING.map((att) => {
+          {ATTENDING.map((att) => {
             return <label key={att} htmlFor={att}>
               <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
               {att}
-              </label>
+            </label>
           })}<br /><br />
 
           <p className="eventsattending">What events will you be attending?</p>
@@ -250,14 +250,14 @@ class RSVP extends PureComponent {
 
           <p className="transport">Do you require transport to and from each event?</p>
           <p className="sub">Transport will be picking up from and dropping guests off at the Hotel Allegro in Bern</p>
-        {TRANSPORT.map((trnsprt) => {
+          {TRANSPORT.map((trnsprt) => {
             return <label key={trnsprt} htmlFor={trnsprt}>
               <input id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
               {trnsprt}
             </label>
           })}<br /><br />
 
-        <input
+          <input
             type="text"
             ref="diet"
             className="diet"

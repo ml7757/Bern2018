@@ -1,7 +1,5 @@
 // src/users/PoiEditor.js
 import React, { PureComponent } from 'react'
-import Editor from 'react-medium-editor'
-// import toMarkdown from 'to-markdown'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import createPoi from '../actions/points/create-poi'
@@ -53,9 +51,9 @@ class PoiEditor extends PureComponent {
     })
   }
 
-  updateDescription(text, medium) {
+  updateDescription(event) {
     this.setState({
-      description: text
+      description: this.refs.description.value
     })
   }
 
@@ -145,6 +143,17 @@ class PoiEditor extends PureComponent {
 
         <input
           type="text"
+          ref="description"
+          className="description"
+          placeholder="Description"
+          defaultValue={this.state.description}
+          onChange={this.updateDescription.bind(this)}
+          onKeyDown={this.updateDescription.bind(this)} />
+
+        { errors.description && <p className="error">{ errors.description }</p> }
+
+        <input
+          type="text"
           ref="link"
           className="link"
           placeholder="Link"
@@ -153,14 +162,6 @@ class PoiEditor extends PureComponent {
           onKeyDown={this.updateLink.bind(this)} />
 
         { errors.link && <p className="error">{ errors.link }</p> }
-
-        <Editor
-          ref="description"
-          options={{
-            placeholder: {text: 'Decription...'}
-          }}
-          onChange={this.updateDescription.bind(this)}
-          text={this.state.description} />
 
         <div className="actions">
           <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
