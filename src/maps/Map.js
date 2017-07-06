@@ -21,7 +21,7 @@ export class Map extends PureComponent {
     initialCenter: React.PropTypes.object
   }
   static defaultProps = {
-    zoom: 13,
+    zoom: 14,
     // Bern, by default
     initialCenter: {
       lat: 46.947999,
@@ -54,7 +54,20 @@ export class Map extends PureComponent {
       const center = new maps.LatLng(lat, lng);
       const mapConfig = Object.assign({}, {
         center: center,
-        zoom: zoom
+        disableDefaultUI: true,
+        zoom: zoom,
+        styles: [
+          {
+            "featureType": "all",
+            "elementType": "all",
+            "stylers": [
+              {
+                "saturation": "-100"
+              }
+            ]
+          }
+        ]
+
       })
 
      this.map = new maps.Map(node, mapConfig);
@@ -78,11 +91,11 @@ export class Map extends PureComponent {
   render() {
     const style = {
       height: '500px',
-      width: '500px'
+      width: '850px'
     }
 
     return (
-      <div ref='map' style={style}>
+      <div ref='map' className="map-style" style={style}>
         Loading map...
         {this.renderChildren()}
       </div>
