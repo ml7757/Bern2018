@@ -1,14 +1,11 @@
-// src/users/PoiEditor.js
 import React, { PureComponent } from 'react'
 import Editor from 'react-medium-editor'
-// import toMarkdown from 'to-markdown'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import createPoi from '../actions/points/create-poi'
 import { showError } from '../actions/loading'
 import 'medium-editor/dist/css/medium-editor.css'
 import 'medium-editor/dist/css/themes/default.css'
-// import './PoiEditor.css'
 
 
 class PoiEditor extends PureComponent {

@@ -19,4 +19,7 @@ Nav.navbar-default {
       Nav.navbar-default .container .navbar-collapse ul.navbar-nav {
         align-items: center; }
       Nav.navbar-default .container .navbar-collapse ul li a {
-        color: white; }
+        color: white;
+        font-weight: bold;
+        font-size: 19px;
+        padding: 30px; }

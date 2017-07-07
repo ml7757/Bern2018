@@ -1,11 +1,12 @@
 .poi-info-container {
-  margin: 40px 0;
-  width: 100%; }
+  margin-bottom: 40px;
+  width: 80%; }
   .poi-info-container .point-of-interest {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center; }
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px; }
     .poi-info-container .point-of-interest .number-of-point {
       height: 100px;
       width: 100px;
@@ -16,13 +17,14 @@
       justify-content: center;
       align-items: center; }
       .poi-info-container .point-of-interest .number-of-point span {
-        font-family: "Raleway Bold";
+        font-family: "Raleway";
         font-size: 6rem;
         color: white;
         font-weight: 800; }
     .poi-info-container .point-of-interest .poi-text {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      width: 70%; }
       .poi-info-container .point-of-interest .poi-text .poi-description {
         font-size: 1.7rem; }
     .poi-info-container .point-of-interest .more-button {
@@ -32,4 +34,4 @@
       color: white;
       text-align: center;
       font-weight: bold;
-      padding: 5px 30px; }
+      padding: 8px 40px; }

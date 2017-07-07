@@ -15,7 +15,7 @@ export class Map extends PureComponent {
 
   static defaultProps = {
     onMove: function() {},
-    zoom: 14,
+    zoom: 16,
     initialCenter: {
       lat: 46.947999,
       lng: 7.448148
@@ -102,8 +102,8 @@ export class Map extends PureComponent {
 
   render() {
     const style = {
-      height: '500px',
-      width: '850px'
+      height: '800px',
+      width: '1200px'
     }
 
     return (
