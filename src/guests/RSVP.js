@@ -119,6 +119,13 @@ class RSVP extends PureComponent {
   handleChange = (event, index, value) =>  {
     this.setState({value})
     this.setState({child: value})
+  }
+
+  add() {
+    var newInput = this.state.count.length;
+    this.setState({count: this.state.count.concat(newInput)},function(){
+            return;
+        })
     this.addPlusOneToArray()
   }
 
@@ -129,13 +136,6 @@ class RSVP extends PureComponent {
       child
     }
     this.setState({plusOnes: plusOnes.concat(tempOne)})
-  }
-
-  add() {
-    var newInput = this.state.count.length;
-    this.setState({count: this.state.count.concat(newInput)},function(){
-            return;
-        })
   }
 
   remove(i) {
@@ -197,9 +197,9 @@ class RSVP extends PureComponent {
     const { errors, count } = this.state
 
     return (
-      <div className="editor" id="RSVP-section">
-        <div className="rsvp-form">
-          <h2 className="title">RSVP</h2>
+      <div className="rsvpeditor" id="RSVP-section">
+        <div className="rsvpform">
+          <h2 className="titlersvp">RSVP</h2>
           <input
             type="text"
             ref="firstname"

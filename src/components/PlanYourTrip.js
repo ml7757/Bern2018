@@ -7,7 +7,7 @@ export class PlanYourTrip extends PureComponent {
   render() {
     return (
       <div className="accomodation-section" id="trip-planning">
-        <h2 className="title">Plan Your Trip</h2>
+        <h2 className="titleplan">Plan Your Trip</h2>
         <div className="block">
           <div className="accomodation">
             <div>

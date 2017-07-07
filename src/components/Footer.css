@@ -1,11 +1,12 @@
 .footer {
-  background-color: #294B2D;
+  background-color: #526A52;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 70px; }
   .footer .couple {
-    margin-top: 5px; }
+    margin-top: 10px; }
     .footer .couple .footer-shield {
       height: 50px;
       width: auto;
@@ -15,7 +16,8 @@
     .footer .couple .newlyweds {
       display: inline-block;
       font-weight: bold;
-      color: white; }
+      color: white;
+      font-size: 25px; }
   .footer .email-contact {
     margin-bottom: 20px; }
     .footer .email-contact .footer-mail {
@@ -24,11 +26,15 @@
       display: inline-block;
       margin: 5px; }
     .footer .email-contact .email-link {
-      color: white; }
+      color: white;
+      font-size: 20px;
+      margin-left: 5px; }
   .footer .footer-made {
-    font-size: 1rem;
+    font-size: 15px;
     font-style: italic;
-    color: white; }
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 10px; }
     .footer .footer-made .footer-heart {
       height: 17px;
       width: auto;
@@ -37,6 +43,6 @@
     display: inline-block; }
     .footer a .footer-codaisseur {
       display: inline-block;
-      height: 18px;
+      height: 25px;
       width: auto;
       margin-left: 5px; }
