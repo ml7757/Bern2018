@@ -1,25 +1,35 @@
-Nav.fixed {
-  position: fixed;
-  top: 0; }
-
-Nav.navbar-default {
+nav.navbar-default {
   background-color: #526A52;
   border-radius: 0;
   border: none;
   color: white; }
-  Nav.navbar-default .container .navbar-collapse {
-    text-align: center; }
-    Nav.navbar-default .container .navbar-collapse ul {
-      float: none;
-      align-items: center; }
-      @media screen and (min-width: 767px) {
-        Nav.navbar-default .container .navbar-collapse ul {
-          display: flex;
-          justify-content: space-between; } }
-      Nav.navbar-default .container .navbar-collapse ul.navbar-nav {
+  nav.navbar-default .container {
+    width: 100vw; }
+    nav.navbar-default .container .navbar-header {
+      background-color: transparent; }
+    nav.navbar-default .container .navbar-collapse {
+      text-align: center; }
+      nav.navbar-default .container .navbar-collapse ul {
+        float: none;
         align-items: center; }
-      Nav.navbar-default .container .navbar-collapse ul li a {
-        color: white;
-        font-weight: bold;
-        font-size: 19px;
-        padding: 30px; }
+        @media screen and (min-width: 767px) {
+          nav.navbar-default .container .navbar-collapse ul {
+            display: flex;
+            justify-content: space-between; } }
+        nav.navbar-default .container .navbar-collapse ul.navbar-nav {
+          align-items: center; }
+        nav.navbar-default .container .navbar-collapse ul li a {
+          color: white;
+          font-weight: bold;
+          font-size: 19px;
+          padding: 30px; }
+      nav.navbar-default .container .navbar-collapse.in {
+        background-color: #526A52; }
+
+nav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 500; }
+  @media screen and (max-width: 766px) {
+    nav.fixed {
+      background-color: transparent; } }

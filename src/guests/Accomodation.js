@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
-import Banner from "../components/Banner";
-import Navigation from "../components/Navigation";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./Accomodation.css";
 
@@ -8,8 +7,7 @@ export class Accomodation extends PureComponent {
   render() {
     return (
       <div>
-        <Banner />
-        <Navigation />
+        <Header />
         <div className="accomodation-container">
           <h2 className="title">Accomodation</h2>
           <p>
