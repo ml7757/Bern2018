@@ -43,6 +43,7 @@ export class Map extends PureComponent {
   }
 
   loadMap() {
+
     const {google} = this.props
     const maps = google.maps
     const {points} = this.props
@@ -57,6 +58,8 @@ export class Map extends PureComponent {
     const mapConfig = Object.assign({}, {
       center: center,
       disableDefaultUI: true,
+      scrollwheel: false,
+      zoomControl: true,
       zoom: zoom,
       styles: [
         {
@@ -69,8 +72,6 @@ export class Map extends PureComponent {
           ]
         }
       ]
-
-      })
 
      this.map = new maps.Map(node, mapConfig)
 

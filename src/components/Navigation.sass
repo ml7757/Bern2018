@@ -1,4 +1,7 @@
 Nav
+  &.fixed
+    position: fixed
+    top: 0
   &.navbar-default
     background-color: #526A52
     border-radius: 0
@@ -6,14 +9,15 @@ Nav
     color: white
     .container
       .navbar-collapse
-        display: flex
-        align-items: center
+        // display: flex
+        // align-items: center
         text-align: center
         ul
           float: none
-          display: flex
-          justify-content: space-between
           align-items: center
+          @media screen and (min-width: 767px) 
+            display: flex
+            justify-content: space-between
           &.navbar-nav
             align-items: center
           li
