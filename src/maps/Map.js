@@ -72,6 +72,8 @@ export class Map extends PureComponent {
           ]
         }
       ]
+    }
+  )
 
      this.map = new maps.Map(node, mapConfig)
 
@@ -89,8 +91,6 @@ export class Map extends PureComponent {
           map: this.map,
           icon: icon
       })
-
-     this.renderChildren()
   }
 
   renderChildren() {

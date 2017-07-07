@@ -2,7 +2,6 @@
 import React, { PureComponent } from 'react'
 import GoogleApiComponent from '../GoogleApiComponent'
 import Map from '../maps/Map'
-import Marker from '../maps/Marker'
 import PoiInfo from '../maps/PoiInfo'
 import './MapContainer.css'
 
