@@ -93,6 +93,7 @@ export class Map extends PureComponent {
           ]
         }
       ]
+
     })
 
   this.map = new maps.Map(node, mapConfig)
