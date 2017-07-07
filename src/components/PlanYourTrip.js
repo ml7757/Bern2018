@@ -16,7 +16,7 @@ export class PlanYourTrip extends PureComponent {
             <div className="text-info">
               <h5>Accomodation</h5>
               <p>{"We have negotiated rates and have reserved a number of rooms at the Hotel Allegro Kursaal Bern. This hotel was selected based on it's location, standard of rooms and competitive pricing. To find out more, please click on the button below. "}</p>
-              <a href="#" className="learn-more button">Learn more</a>
+              <a href="/accomodation" className="learn-more button">Learn more</a>
             </div>
           </div>
           <div className="flights">

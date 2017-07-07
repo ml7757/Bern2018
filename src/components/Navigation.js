@@ -14,7 +14,7 @@ export class Navigation extends PureComponent {
             <NavItem eventKey={1} href="#story">Our Story</NavItem>
             <NavItem eventKey={2} href="#when-and-where">When & Where</NavItem>
             <NavItem eventKey={3} href="#RSVP-section">RSVP</NavItem>
-            <NavItem eventKey={4} href="#">Plan Your Trip</NavItem>
+            <NavItem eventKey={4} href="#trip-planning">Plan Your Trip</NavItem>
             <NavItem eventKey={5} href="#gifts">Gifts</NavItem>
             <NavItem eventKey={6} href="#brideGuide">{"Bride's Guide"}</NavItem>
           </Nav>
