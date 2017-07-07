@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
+h2 {
+  font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
+  color: #ddbea1;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 40px; }
+
 .map-container {
   display: flex;
   align-items: center;

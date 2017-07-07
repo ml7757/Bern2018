@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchPois from '../actions/points/fetch-pois'
-import icon from '../assets/imgs/green-circle-md.png'
+import icon from '../assets/imgs/circletiny.png'
 
 export class Map extends PureComponent {
   static propTypes = {
@@ -33,20 +33,41 @@ export class Map extends PureComponent {
       }
     }
   }
-
   componentWillMount() {
-    this.props.fetchPois()
+    fetchPois()
+  }
+
+  componentDidUpdate() {
+
+    const { points } = this.props
+
+    const { google } = this.props
+
+    points.map((p, i) => {
+       return new google.maps.Marker({
+          position: {lat: p.latitude, lng: p.longitude},
+          map: this.map,
+          icon: icon,
+          label: {
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: 'x-large',
+            fontFamily: 'Raleway,sans-serif',
+            text: `${i+1}`,
+          }
+        })
+      })
+
   }
 
   componentDidMount() {
     this.loadMap()
   }
 
-  loadMap() {
+  loadMap = () => {
 
     const {google} = this.props
     const maps = google.maps
-    const {points} = this.props
 
     const mapRef = this.refs.map
     const node = ReactDOM.findDOMNode(mapRef)
@@ -72,39 +93,10 @@ export class Map extends PureComponent {
           ]
         }
       ]
+    })
 
-     this.map = new maps.Map(node, mapConfig)
+  this.map = new maps.Map(node, mapConfig)
 
-     const pos = {lat: 46.953261, lng: 7.435668}
-
-     points.map((p) => {
-       new google.maps.Marker({
-            position: {lat: p.latitude, lng: p.longitude},
-            map: this.map
-        })
-      })
-
-     let marker = new google.maps.Marker({
-          position: pos,
-          map: this.map,
-          icon: icon
-      })
-
-     this.renderChildren()
-  }
-
-  renderChildren() {
-    const {children} = this.props
-
-    if (!children) return null
-
-    return React.Children.map(children, c =>
-      React.cloneElement(c, {
-        map: this.map,
-        google: this.props.google,
-        mapCenter: this.state.currentLocation
-      })
-    )
   }
 
   render() {
@@ -116,7 +108,6 @@ export class Map extends PureComponent {
     return (
       <div ref='map' style={style}>
         Loading map...
-        {this.renderChildren()}
       </div>
     )
   }
@@ -125,4 +116,4 @@ export class Map extends PureComponent {
 const mapStateToProps = ({ points }) => ({
 points })
 
-export default connect(mapStateToProps, { fetchPois })(Map)
+export default connect(mapStateToProps)(Map)
