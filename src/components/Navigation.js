@@ -1,11 +1,16 @@
 import React, { PureComponent } from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import PropTypes from "prop-types";
 import "./Navigation.css";
 
 export class Navigation extends PureComponent {
+  static propTypes = {
+    sticky: PropTypes.bool.isRequired
+  };
+
   render() {
     return (
-      <Navbar id="navbar-scroll">
+      <Navbar className={this.props.sticky ? "fixed" : ""} id="navbar-scroll">
         <Navbar.Header>
           <Navbar.Toggle />
         </Navbar.Header>

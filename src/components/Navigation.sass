@@ -1,13 +1,13 @@
-Nav
-  &.fixed
-    position: fixed
-    top: 0
+nav
   &.navbar-default
     background-color: #526A52
     border-radius: 0
     border: none
     color: white
     .container
+      width: 100vw
+      .navbar-header
+        background-color: transparent
       .navbar-collapse
         // display: flex
         // align-items: center
@@ -26,3 +26,11 @@ Nav
               font-weight: bold
               font-size: 19px
               padding: 30px
+        &.in
+          background-color: #526A52
+  &.fixed
+    position: fixed
+    top: 0
+    z-index: 500
+    @media screen and (max-width: 766px)
+      background-color: transparent
