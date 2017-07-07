@@ -12,24 +12,15 @@ class MapContainer extends PureComponent {
     if (!this.props.loaded) {
       return <div>Loading...</div>
     }
-    debugger
-
-    // const pos = {lat: 37.759703, lng: -122.428093}
-    const pos = {lat: 46.953261, lng: 7.435668}
 
     return (
       <div>
-        <Map google={this.props.google}>
-          <Marker />
-          <Marker position={{lat: 46.953261, lng: 7.435668}}/>
-        </Map>
+        <Map google={this.props.google} />
       </div>
     )
   }
 }
 
-export default
-// new
-GoogleApiComponent({
+export default GoogleApiComponent({
   apiKey: GOOGLE_API_KEY
 })(MapContainer)

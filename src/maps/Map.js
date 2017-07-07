@@ -1,12 +1,31 @@
 import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import fetchPois from '../actions/points/fetch-pois'
+import icon from '../assets/imgs/green-circle-md.png'
 
 export class Map extends PureComponent {
+  static propTypes = {
+    google: PropTypes.object,
+    zoom: PropTypes.number,
+    initialCenter: PropTypes.object,
+    onMove: React.PropTypes.func,
+  }
+
+  static defaultProps = {
+    onMove: function() {},
+    zoom: 14,
+    initialCenter: {
+      lat: 46.947999,
+      lng: 7.448148
+    }
+  }
+
   constructor(props) {
     super(props);
 
-    const {lat, lng} = this.props.initialCenter;
+    const {lat, lng} = this.props.initialCenter
     this.state = {
       currentLocation: {
         lat: lat,
@@ -15,85 +34,76 @@ export class Map extends PureComponent {
     }
   }
 
-  static propTypes = {
-    google: PropTypes.object,
-    zoom: PropTypes.number,
-    initialCenter: PropTypes.object,
-  }
-  static defaultProps = {
-    zoom: 14,
-    // Bern, by default
-    initialCenter: {
-      lat: 46.947999,
-      lng: 7.448148
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.google !== this.props.google) {
-    }
-    if (prevState.currentLocation !== this.state.currentLocation) {
-      this.recenterMap();
-    }
-    this.loadMap();
+  componentWillMount() {
+    this.props.fetchPois()
   }
 
   componentDidMount() {
-    this.loadMap();
-    this.renderChildren()
+    this.loadMap()
   }
 
   loadMap() {
-    if (this.props && this.props.google) {
-      // google is available
-      const {google} = this.props;
-      const maps = google.maps;
+    const {google} = this.props
+    const maps = google.maps
+    const {points} = this.props
 
-      const mapRef = this.refs.map;
-      const node = ReactDOM.findDOMNode(mapRef);
+    const mapRef = this.refs.map
+    const node = ReactDOM.findDOMNode(mapRef)
 
-      const {lat, lng} = this.state.currentLocation;
+    const {lat, lng} = this.state.currentLocation
 
-      let {initialCenter, zoom} = this.props;
-      const center = new maps.LatLng(lat, lng);
-      const mapConfig = Object.assign({}, {
-        center: center,
-        // disableDefaultUI: true,
-        zoom: zoom
-        // ,
-        // styles: [
-        //   {
-        //     "featureType": "all",
-        //     "elementType": "all",
-        //     "stylers": [
-        //       {
-        //         "saturation": "-100"
-        //       }
-        //     ]
-        //   }
-        // ]
+    let {initialCenter, zoom} = this.props
+    const center = new maps.LatLng(lat, lng)
+    const mapConfig = Object.assign({}, {
+      center: center,
+      disableDefaultUI: true,
+      zoom: zoom,
+      styles: [
+        {
+          "featureType": "all",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": "-100"
+            }
+          ]
+        }
+      ]
 
       })
 
-     this.map = new maps.Map(node, mapConfig);
-    }
-    // this.renderChildren()
-// debugger
+     this.map = new maps.Map(node, mapConfig)
+
+     const pos = {lat: 46.953261, lng: 7.435668}
+
+     points.map((p) => {
+       new google.maps.Marker({
+            position: {lat: p.latitude, lng: p.longitude},
+            map: this.map
+        })
+      })
+
+     let marker = new google.maps.Marker({
+          position: pos,
+          map: this.map,
+          icon: icon
+      })
+
+     this.renderChildren()
   }
 
   renderChildren() {
-    const {children} = this.props;
+    const {children} = this.props
 
-    if (!children) return;
+    if (!children) return null
 
-    return React.Children.map(children, c => {
-      return React.cloneElement(c, {
+    return React.Children.map(children, c =>
+      React.cloneElement(c, {
         map: this.map,
         google: this.props.google,
         mapCenter: this.state.currentLocation
-        // position: this.props.position
-      });
-    })
+      })
+    )
   }
 
   render() {
@@ -101,15 +111,17 @@ export class Map extends PureComponent {
       height: '500px',
       width: '850px'
     }
-    debugger
 
     return (
-      <div ref='map' className="map-style" style={style}>
+      <div ref='map' style={style}>
         Loading map...
-        {/* {this.renderChildren()} */}
+        {this.renderChildren()}
       </div>
     )
   }
 }
 
-export default Map
+const mapStateToProps = ({ points }) => ({
+points })
+
+export default connect(mapStateToProps, { fetchPois })(Map)
