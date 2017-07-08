@@ -8,7 +8,7 @@ import store, { history } from './store'
 import { Provider } from 'react-redux'
 import SignIn from './users/SignIn'
 import AdminPage from './users/AdminPage'
-// import GuestPage from './guests/GuestPage'
+import GuestItem from './guests/GuestItem'
 import Home from './containers/Home'
 import Accomodation from './guests/Accomodation'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +25,7 @@ ReactDOM.render(
         <Route path="/accomodation" component={Accomodation} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/admin" component={AdminPage} />
-        {/* <Route path="/guests/:guestId" component={GuestPage} /> */}
+        <Route path="/guests/:guestId" component={GuestItem} />
       </Route>
     </Router>
   </Provider>,

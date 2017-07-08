@@ -1,5 +1,3 @@
-// src/reducers/guests.js
-
 import { FETCHED_GUESTS } from '../actions/guests/fetch'
 import { GUEST_CREATED } from '../actions/guests/create-guest'
 import { GUEST_UPDATED } from '../actions/guests/edit-guest'
@@ -14,15 +12,10 @@ export default (state = [], { type, payload } = {}) => {
       return [].concat(payload)
 
     case GUEST_UPDATED :
-      return state.map((guest) => {
-        if (guest._id === payload._id) {
-          return { ...payload }
-        }
-        return guest
-      })
+      return [].concat(payload)
 
     case GUEST_REMOVED :
-        return state.filter((guest) => (guest._id !== payload._id))
+        return [].concat(payload)
 
     default :
       return state

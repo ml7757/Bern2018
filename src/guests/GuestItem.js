@@ -1,81 +1,66 @@
-// src/containers/BatchItem.js
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { push } from 'react-router-redux'
 import IconButton from 'material-ui/IconButton'
+import DeleteIcon from 'material-ui/svg-icons/action/delete'
+import RaisedButton from 'material-ui/RaisedButton'
 import FaEdit from 'react-icons/lib/fa/edit'
 import FaClose from 'react-icons/lib/fa/close'
-// import DeleteIcon from 'react-icons/md/highlight-remove'
 import editGuest from '../actions/guests/edit-guest'
+import fetchGuests from '../actions/guests/fetch'
 import removeGuest from '../actions/guests/remove-guest'
 import { showError } from '../actions/loading'
 
 class GuestItem extends PureComponent {
 
+  componentWillMount() {
+    this.props.fetchGuests()
+    const {guests} = this.props
+  }
+
+  renderPlusOnes(plusone, index) {
+    return (
+      <div key={index} className="plusone">
+        <p>Full name: {plusone.fullName}</p>
+        <p>Child?: {plusone.child.toString()}</p>
+      </div>
+    )
+  }
+
+  byeGuest() {
+    this.props.removeGuest(this.props.params.guestId)
+  }
+
+
   render() {
-    const {
-      _id,
-      firstName,
-      lastName,
-      email,
-      attending,
-      event1,
-      event2,
-      event3,
-      transport,
-      diet,
-      songs,
-      fullName,
-      child,
-    } = this.props
+
+    const guest = this.props.guests.find((guest) => (guest._id === this.props.params.guestId))
 
     return (
       <div>
-        
-        "firstName": {firstName},
-        "lastName": {lastName}
-        {/* <Link to={`/guests/${_id}`}>{ firstName + " " + lastName }<FaEdit /><FaClose /></Link> */}
+        <p>First name: {guest.firstName}</p>
+        <p>Last name: {guest.lastName}</p>
+        <p>Email: {guest.email}</p>
+        <p>Attending: {guest.attending.toString()}</p>
+        <p>Attending Meet & Greet: {guest.event1.toString()}</p>
+        <p>Attending Wedding Ceremony: {guest.event2.toString()}</p>
+        <p>Attending Farewell Get Together: {guest.event3.toString()}</p>
+        <p>Transport needed: {guest.transport.toString()}</p>
+        <p>Dietary requirements: {guest.diet}</p>
+        <p>Song recommendation(s): {guest.songs}</p>
+        <p>Plus ones: {guest.plusOnes.map(this.renderPlusOnes.bind(this))}</p>
+
+        <RaisedButton primary={true} onClick={ this.byeGuest.bind(this) } icon={<DeleteIcon/>} />
 
       </div>
-      //
-      // <article className="guest">
-      //   <IconButton
-      //     iconClassName="material-icons"
-      //     tooltip="Delete Guest"
-      //     {/* #FIXME  */}
-      //     onTouchTap={() => {if(confirm('Delete guest?')) {this.props.removeGuest(this.props._id, remove: true)}}}>
-      //     <DeleteIcon />
-      //   </IconButton>
-      //   <Link to={`/guests/${_id}`}>
-      //     <p>{ firstName } { lastName }</p>
-      //   </Link>
-      //   <div>
-      //     <Link
-      //       to={{pathname: `/create-guest`,
-      //         state: {
-      //           firstName: this.props.firstName,
-      //           lastName: this.props.lastName,
-      //         }
-      //       }}>
-      //       <IconButton
-      //         iconClassName="material-icons"
-      //         tooltip="Edit Guest"
-      //       >
-      //         <EditIcon />
-      //       </IconButton>
-      //     </Link>
-      //   </div>
-      //
-      // </article>
+
     )
   }
 }
 
 
+const mapStateToProps = ({ guests }) => ({ guests })
 
-const mapStateToProps = ({ guests }) => ({
-guests })
 
-export default connect(mapStateToProps//, { editGuest, removeGuest, showError, push }
-)(GuestItem)
+export default connect(mapStateToProps, {fetchGuests, removeGuest})(GuestItem)

@@ -257,7 +257,7 @@ class RSVP extends PureComponent {
             </label>
           })}<br /><br />
 
-          <input
+          <textarea
             type="text"
             ref="diet"
             className="diet"
