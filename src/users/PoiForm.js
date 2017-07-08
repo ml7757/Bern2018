@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
 import createPoi from '../actions/points/create-poi'
 import { showError } from '../actions/loading'
-import 'medium-editor/dist/css/medium-editor.css'
-import 'medium-editor/dist/css/themes/default.css'
+import './poiform.css'
 
 
 class PoiEditor extends PureComponent {
@@ -106,15 +105,19 @@ class PoiEditor extends PureComponent {
     const { errors } = this.state
 
     return (
-      <div className="editor">
+
+      <div className="poieditor">
+      <br />
+      <br />
+      <h3> Add a point of interest to the Brides Guide to Bern</h3>
         <input
           type="text"
           ref="title"
-          className="title"
-          placeholder="Title"
+          className="poititle"
+          placeholder="Title of the point of interest"
           defaultValue={this.state.title}
           onChange={this.updateTitle.bind(this)}
-          onKeyDown={this.updateTitle.bind(this)} />
+          onKeyDown={this.updateTitle.bind(this)} /><br />
 
         { errors.title && <p className="error">{ errors.title }</p> }
 
@@ -136,18 +139,18 @@ class PoiEditor extends PureComponent {
           placeholder="Longitude"
           defaultValue={this.state.longitude}
           onChange={this.updateLongitude.bind(this)}
-          onKeyDown={this.updateLongitude.bind(this)} />
+          onKeyDown={this.updateLongitude.bind(this)} /><br />
 
         { errors.longitude && <p className="error">{ errors.longitude }</p> }
 
-        <input
+        <textarea
           type="text"
           ref="description"
           className="description"
-          placeholder="Description"
+          placeholder="Description of the point of interest"
           defaultValue={this.state.description}
           onChange={this.updateDescription.bind(this)}
-          onKeyDown={this.updateDescription.bind(this)} />
+          onKeyDown={this.updateDescription.bind(this)} /><br />
 
         { errors.description && <p className="error">{ errors.description }</p> }
 
@@ -155,16 +158,16 @@ class PoiEditor extends PureComponent {
           type="text"
           ref="link"
           className="link"
-          placeholder="Link"
+          placeholder="Link to more information"
           defaultValue={this.state.link}
           onChange={this.updateLink.bind(this)}
-          onKeyDown={this.updateLink.bind(this)} />
+          onKeyDown={this.updateLink.bind(this)} /><br />
 
         { errors.link && <p className="error">{ errors.link }</p> }
 
-        <div className="actions">
+        <div className="actions"><br />
           <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
-        </div>
+        </div><br />
       </div>
     )
   }

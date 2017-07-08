@@ -25,29 +25,36 @@
 
 .rsvpform .firstname {
   border-color: #294b2d;
+  border-width: 1px;
   width: 45%;
   margin-right: 10%; }
 
 .rsvpform .lastname {
   border-color: #294b2d;
+  border-width: 1px;
   width: 45%; }
 
 .rsvpform .fullname {
   border-color: #294b2d;
+  border-width: 1px;
   width: 45%;
   margin-right: 5%;
   padding-bottom: 5px; }
 
 .rsvpform .email {
   border-color: #294b2d;
+  border-width: 1px;
   width: 100%; }
 
 .rsvpform .diet {
   border-color: #294b2d;
-  width: 100%; }
+  border-width: 1px;
+  width: 100%;
+  height: 100px; }
 
 .rsvpform .songs {
   border-color: #294b2d;
+  border-width: 1px;
   width: 100%; }
 
 .attend {
