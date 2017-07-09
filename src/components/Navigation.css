@@ -4,7 +4,8 @@ nav.navbar-default {
   border: none;
   color: white; }
   nav.navbar-default .container {
-    width: 100vw; }
+    overflow: hidden;
+    padding: 0; }
     nav.navbar-default .container .navbar-header {
       background-color: transparent; }
     nav.navbar-default .container .navbar-collapse {
@@ -28,6 +29,7 @@ nav.navbar-default {
 
 nav.fixed {
   position: fixed;
+  width: 100%;
   top: 0;
   z-index: 500; }
   @media screen and (max-width: 766px) {

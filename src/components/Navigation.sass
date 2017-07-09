@@ -5,7 +5,8 @@ nav
     border: none
     color: white
     .container
-      width: 100vw
+      overflow: hidden
+      padding: 0
       .navbar-header
         background-color: transparent
       .navbar-collapse
@@ -30,6 +31,7 @@ nav
           background-color: #526A52
   &.fixed
     position: fixed
+    width: 100%
     top: 0
     z-index: 500
     @media screen and (max-width: 766px)
