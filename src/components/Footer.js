@@ -16,8 +16,8 @@ export class Footer extends PureComponent {
         </div>
         <div className="email-contact">
           <img className="footer-mail" src={mail} />
-          <a className="email-link" href="mailto:julesandmatt2018@gmail.com">
-            julesandmatt2018@gmail.com
+          <a className="contact-link" href="/contact">
+            Contact Us
           </a>
         </div>
         <div>

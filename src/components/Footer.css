@@ -19,13 +19,16 @@
       color: white;
       font-size: 25px; }
   .footer .email-contact {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; }
     .footer .email-contact .footer-mail {
       height: 35px;
       width: auto;
       display: inline-block;
       margin: 5px; }
-    .footer .email-contact .email-link {
+    .footer .email-contact .contact-link {
+      font-weight: bold;
       color: white;
       font-size: 20px;
       margin-left: 5px; }
