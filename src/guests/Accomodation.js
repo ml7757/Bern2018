@@ -15,8 +15,7 @@ export class Accomodation extends PureComponent {
             season, it will become very apparent that
             Switzerland is darn expensive. In order to minimise cost as much as
             possible, we have negotiated competitive fixed rates (reflected in
-            the table below) for a number of room categories at the
-            Hotel Allegro Kursaal Bern. Of course this is only a suggestion and
+            the table below) for a number of room categories at the <a href="http://www.kursaal-bern.ch/Hotel">Hotel Allegro Kursaal Bern</a>. Of course this is only a suggestion and
             not matter what the situation,
             you should always book early to avoid disappointment…but please do
             bare in mind that:
@@ -60,7 +59,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row">
             <div>
-              <p className="table-cell">Economy Room</p>
+              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Economy-Room">Economy Room</a></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 170 per night</p>
@@ -71,7 +70,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row dark">
             <div>
-              <p className="table-cell">Comfort Double Room with balcony</p>
+              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony">Comfort Double Room with balcony</a></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 190 per night</p>
@@ -82,7 +81,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row">
             <div>
-              <p className="table-cell">Panorama Double Room with view</p>
+              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view">Panorama Double Room with view</a></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 220 per night</p>
