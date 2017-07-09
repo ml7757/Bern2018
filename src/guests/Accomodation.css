@@ -5,6 +5,8 @@
   text-align: center;
   padding: 100px;
   padding-top: 30px; }
+  .accomodation-container p a {
+    color: #294B2D; }
   .accomodation-container ul {
     text-align: left; }
     .accomodation-container ul p {
@@ -19,6 +21,8 @@
   margin-bottom: -20px; }
   .hotel-rooms p {
     margin: 0; }
+    .hotel-rooms p a {
+      color: #294B2D; }
   .hotel-rooms .table-header {
     font-weight: bold;
     display: flex;
