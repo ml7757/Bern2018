@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
+@import url("https://fonts.googleapis.com/css?family=Raleway:500");
+.title-contact {
+  font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
+  color: #ddbea1;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 80px; }
+
+.contact-section .intro {
+  text-align: center;
+  margin: 10px 60px; }
+  .contact-section .intro span {
+    font-weight: bold; }
+
+.contact-section .contacts, .contact-section .newly-weds {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .contact-section .contacts ul, .contact-section .newly-weds ul {
+    text-align: left; }
+
+.contact-section .contact-person {
+  text-align: center; }
+  .contact-section .contact-person ul {
+    width: auto; }
+  .contact-section .contact-person span {
+    font-weight: bold; }
+  .contact-section .contact-person img {
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin: 20px 0; }
