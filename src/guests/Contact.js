@@ -1,6 +1,11 @@
 import React, { PureComponent } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import isabelle from "../assets/imgs/isabelle.jpg";
+import rafael from "../assets/imgs/rafael.jpg";
+import maple from "../assets/imgs/maple.png";
+import cross from "../assets/imgs/cross.gif";
+import couple from "../assets/imgs/story.jpg";
 import "./Contact.css";
 
 export class Contact extends PureComponent {
@@ -10,7 +15,7 @@ export class Contact extends PureComponent {
         <Header />
         <div className="contact-section">
           <div className="intro">
-            <h2>Rules of Engagement</h2>
+            <h2 className="title-contact">Rules of Engagement</h2>
             <p>
               We’ve created this website in the hope that it will answer most,
               if not all of your questons. Having said that, we realise and
@@ -32,7 +37,7 @@ export class Contact extends PureComponent {
             <div className="contact-person">
               <img src={isabelle} alt="contact for Swiss guests" />
               <p><span>Isabelle Schorer</span></p>
-              <p><span>Email:</span>isabelleschorer@hotmail.com</p>
+              <p><span>Email: </span><a href="mailto:isabelleschorer@hotmail.com">isabelleschorer@hotmail.com</a></p>
               <p>Can help with:</p>
               <ul>
                 <li><p>Questions from guests on the{" bride's "}side</p></li>
@@ -42,7 +47,7 @@ export class Contact extends PureComponent {
             <div className="contact-person">
               <img src={rafael} alt="contact for Canadian guests" />
               <p><span>Rafael Reis</span></p>
-              <p><span>Email:</span>rafael@changedirection.io</p>
+              <p><span>Email: </span><a href="mailto:rafael@changedirection.io">rafael@changedirection.io</a></p>
               <p>Can help with:</p>
               <ul>
                 <li><p>Questions from guests on the{" groom's "}side</p></li>
@@ -54,7 +59,7 @@ export class Contact extends PureComponent {
             <div className="contact-person">
               <img src={couple} alt="contact for RSVP enquiries" />
               <p><span>Bride/Groom</span></p>
-              <p><span>Email:</span>julesandmatt2018@gmail.com</p>
+              <p><span>Email: </span><a href="mailto:julesandmatt2018@gmail.com">julesandmatt2018@gmail.com</a></p>
               <p><span>Only for:</span></p>
               <ul>
                 <li><p>RSVP enquiries/changes</p></li>
