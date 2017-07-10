@@ -5,11 +5,6 @@
   text-align: center;
   margin-bottom: 30px; }
 
-.tabletext {
-  text-align: center;
-  width: 900px;
-  margin-left: 14%; }
-
 .accomodation-container {
   display: flex;
   flex-direction: column;
@@ -17,6 +12,9 @@
   text-align: center;
   padding: 100px;
   padding-top: 30px; }
+  .accomodation-container p.tabletext {
+    margin: auto;
+    width: 900px; }
   .accomodation-container p a {
     color: #294B2D; }
   .accomodation-container ul {
