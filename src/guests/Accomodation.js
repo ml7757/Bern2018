@@ -9,7 +9,7 @@ export class Accomodation extends PureComponent {
       <div>
         <Header />
         <div className="accomodation-container">
-          <h2 className="title">Accomodation</h2>
+          <h2 className="titleacc">Accomodation</h2>
           <p>
             There is no denying it and given the fact that it will also be hight
             season, it will become very apparent that
@@ -93,7 +93,7 @@ export class Accomodation extends PureComponent {
         </div>
         <div className="accomodation-container">
           <div>
-            <p>
+            <p className="tabletext">
               These prices above include free admission to the in-house casino,
               the fitness center and most
               importantly, a Bern Mobility Ticket, covering all travel by public

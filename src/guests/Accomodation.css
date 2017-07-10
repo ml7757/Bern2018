@@ -1,3 +1,15 @@
+.titleacc {
+  font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
+  color: #ddbea1;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.tabletext {
+  text-align: center;
+  width: 900px;
+  margin-left: 14%; }
+
 .accomodation-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +46,7 @@
       align-items: center;
       justify-content: center; }
   .hotel-rooms .table-cell {
-    width: 200px;
+    width: 300px;
     height: 75px;
     font-size: 1.4rem;
     border: 1px solid #294B2D;
