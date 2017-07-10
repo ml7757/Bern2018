@@ -306,9 +306,10 @@ class RSVP extends PureComponent {
                 onChange={this.updatefullName.bind(this)} />
 
             <SelectField
+                key={i}
                 id="type-field-form"
-                value="value"
-                onChange={this.handleChange.bind(this)}
+                value={this.state.plusOnes[i]}
+                onChange={this.handleChange.bind(this, i)}
                 floatingLabelText="Guest Type"
                 autoWidth={false}
                 id="dropdown"
@@ -321,6 +322,8 @@ class RSVP extends PureComponent {
                 <MenuItem value={0} primaryText="Adult" />
                 <MenuItem value={1} primaryText="Child" />
             </SelectField>
+
+             <p className="tiny-text">Type selected: {this.state.plusOnes[i]? (this.state.plusOnes[i].child) : "" }</p>
           </div>
         )
 
