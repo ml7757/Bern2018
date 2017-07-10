@@ -32,6 +32,10 @@ class GuestItem extends PureComponent {
     this.props.removeGuest(this.props.params.guestId)
   }
 
+  changeGuest() {
+    this.props.editGuest(this.props.params.guestId)
+  }
+
 
   render() {
 
@@ -53,6 +57,8 @@ class GuestItem extends PureComponent {
 
         <RaisedButton primary={true} onClick={ this.byeGuest.bind(this) } icon={<DeleteIcon/>} />
 
+        <RaisedButton primary={true} onClick={ this.changeGuest.bind(this) } icon={<FaEdit/>} />
+
       </div>
 
     )
@@ -63,4 +69,4 @@ class GuestItem extends PureComponent {
 const mapStateToProps = ({ guests }) => ({ guests })
 
 
-export default connect(mapStateToProps, {fetchGuests, removeGuest})(GuestItem)
+export default connect(mapStateToProps, {fetchGuests, removeGuest, editGuest})(GuestItem)
