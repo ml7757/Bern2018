@@ -322,7 +322,7 @@ class RSVP extends PureComponent {
             <SelectField
                 key={i}
                 id="type-field-form"
-                value={this.state.plusOnes[i]}
+                value={this.state.plusOnes[i]? (this.state.plusOnes[i].child) : null }
                 onChange={this.handleChange.bind(this, i)}
                 floatingLabelText="Guest Type"
                 autoWidth={false}
