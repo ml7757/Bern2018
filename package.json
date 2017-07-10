@@ -9,7 +9,7 @@
     "feathers": "^2.1.4",
     "feathers-authentication-client": "^0.3.2",
     "feathers-hooks": "^2.0.1",
-    "feathers-rest": "^1.7.3",
+    "feathers-rest": "^1.8.0",
     "google-maps-react": "^1.0.19",
     "jest-enzyme": "^3.4.0",
     "material-ui": "^0.17.0",

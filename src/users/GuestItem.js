@@ -18,6 +18,7 @@ import editGuest from '../actions/guests/edit-guest'
 import fetchGuests from '../actions/guests/fetch'
 import removeGuest from '../actions/guests/remove-guest'
 import { showError } from '../actions/loading'
+import AdminNavigation from './AdminNavigation'
 
 
 const ATTENDING = [
@@ -29,6 +30,8 @@ const TRANSPORT = [
   "Yes",
   "No, travelling by car"
 ]
+
+
 
 class GuestItem extends PureComponent {
   constructor(props) {
@@ -47,7 +50,7 @@ class GuestItem extends PureComponent {
       transport,
       diet,
       songs,
-      plusOnes: [],
+      plusOnes,
       fullName,
       child,
       value,
@@ -145,10 +148,8 @@ class GuestItem extends PureComponent {
     this.setState({plusOnes: plusOnes.concat(tempOne)})
   }
 
-  remove(i) {
-    this.setState({count: this.state.count.filter((c) => {
-      if (c !== i) return c
-    })})
+  remove = (i) => {
+    this.setState({count: this.state.count.filter(c => c !== i)})
   }
 
   validate(guest) {
@@ -166,7 +167,7 @@ class GuestItem extends PureComponent {
     return Object.keys(errors).length === 0
   }
 
-  saveGuest() {
+  editGuest() {
     const {
       firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count
     } = this.state
@@ -187,9 +188,9 @@ class GuestItem extends PureComponent {
       child
     }
 
-    if (this.validate(guest)) {
-      this.props.editGuest(guest)
-    }
+
+    this.props.editGuest(this.props.params.guestId, guest)
+
   }
 
   componentWillMount() {
@@ -218,6 +219,7 @@ class GuestItem extends PureComponent {
 
       return (
         <div className="editguest" id="RSVP-section">
+        <AdminNavigation />
           <div className="editguestform">
             <h2>Edit guest</h2>
             <input
@@ -342,7 +344,7 @@ class GuestItem extends PureComponent {
           </div><br /><br />
 
           <div className="actions">
-            <RaisedButton label="Edit Guest" className="EditGuestbutton" primary={true} onClick={this.saveGuest.bind(this)} />
+            <RaisedButton label="Edit Guest" className="EditGuestbutton" primary={true} onClick={this.editGuest.bind(this)} />
           </div>
           </div>
           <div>
@@ -371,4 +373,4 @@ class GuestItem extends PureComponent {
 const mapStateToProps = ({ guests }) => ({ guests })
 
 
-export default connect(mapStateToProps, {fetchGuests, removeGuest})(GuestItem)
+export default connect(mapStateToProps, {fetchGuests, editGuest, removeGuest})(GuestItem)

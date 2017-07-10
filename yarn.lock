@@ -2618,9 +2618,9 @@ feathers-hooks@^2.0.1:
     feathers-commons "^0.8.6"
     uberproto "^1.2.0"
 
-feathers-rest@^1.7.3:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/feathers-rest/-/feathers-rest-1.7.4.tgz#efe997c0f671c1f4d758df6273f5ba309e51375b"
+feathers-rest@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/feathers-rest/-/feathers-rest-1.8.0.tgz#3c03f1ea56adec940a8f9823d87a3aafeb9742a9"
   dependencies:
     debug "^2.2.0"
     feathers-commons "^0.8.0"
