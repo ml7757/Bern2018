@@ -149,9 +149,7 @@ class RSVP extends PureComponent {
   }
 
   remove(i) {
-    this.setState({count: this.state.count.filter((c) => {
-      if (c !== i) return c
-    })})
+    this.setState({count: this.state.count.filter(c => c !== i)})
   }
 
   validate(guest) {
