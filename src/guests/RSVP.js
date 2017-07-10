@@ -214,7 +214,7 @@ class RSVP extends PureComponent {
             type="text"
             ref="firstname"
             className="firstname"
-            placeholder="First Name"
+            placeholder=" First Name"
             onChange={this.updateFirstName.bind(this)} />
 
           { errors.firstName && <p className="error">{ errors.firstName }</p> }
@@ -223,7 +223,7 @@ class RSVP extends PureComponent {
             type="text"
             ref="lastname"
             className="lastname"
-            placeholder="Last Name"
+            placeholder=" Last Name"
             onChange={this.updateLastName.bind(this)} /><br /><br />
 
           { errors.lastName && <p className="error">{ errors.lastName }</p> }
@@ -232,13 +232,13 @@ class RSVP extends PureComponent {
             type="text"
             ref="email"
             className="email"
-            placeholder="Email"
+            placeholder=" Email"
             onChange={this.updateEmail.bind(this)} /><br /><br />
 
           <p className="attend">Will you attend?</p>
           {ATTENDING.map((att) => {
             return <label key={att} htmlFor={att}>
-              <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
+              <input id={att} type="radio" name="attending" className="attend-radio-button" value={att} onChange={this.setAttending.bind(this)} />
               {att}
             </label>
           })}<br /><br />
@@ -248,14 +248,20 @@ class RSVP extends PureComponent {
             className="event1"
             label="Casual Meet & Greet (Apero)"
             onCheck={this.setEvent1.bind(this)}
+            labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
+            iconStyle={{'fill': '#5c5c5c'}}
           />
           <Checkbox
             label="Wedding Celebration"
             onCheck={this.setEvent2.bind(this)}
+            labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
+            iconStyle={{'fill': '#5c5c5c'}}
           />
           <Checkbox
             label="Farewell Get Together"
             onCheck={this.setEvent3.bind(this)}
+            labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
+            iconStyle={{'fill': '#5c5c5c'}}
           /><br />
 
           <p className="transport">Do you require transport to and from each event?</p>
@@ -271,14 +277,14 @@ class RSVP extends PureComponent {
             type="text"
             ref="diet"
             className="diet"
-            placeholder="Dietary requirements or needs"
+            placeholder=" Dietary requirements or needs"
             onChange={this.updateDiet.bind(this)} /><br /><br />
 
         <input
             type="text"
             ref="songs"
             className="songs"
-            placeholder="Song recommendation(s)"
+            placeholder=" Song recommendation(s)"
             onChange={this.updateSongs.bind(this)} /><br /><br />
 
         <p className="plus">Plus ones</p>
@@ -296,7 +302,7 @@ class RSVP extends PureComponent {
                 type="text"
                 ref="fullname"
                 className="fullname"
-                placeholder="Full Name"
+                placeholder=" Full Name"
                 onChange={this.updatefullName.bind(this)} />
 
             <SelectField
@@ -306,7 +312,7 @@ class RSVP extends PureComponent {
                 floatingLabelText="Guest Type"
                 autoWidth={false}
                 id="dropdown"
-                iconStyle={{top: '-8px'}}
+                iconStyle={{top: '-8px', fill: 'white'}}
                 floatingLabelStyle={{color: 'white', top: '35px', 'margin-left': '10px', 'font-family': 'Raleway' }}
                 underlineStyle={{ borderColor: '#526A52', width: '120px' }}
                 style={styles.customWidth, styles.customheight}
