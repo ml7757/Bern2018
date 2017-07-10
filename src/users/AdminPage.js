@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import AdminNavigation from './AdminNavigation'
 import AdminTable from './AdminTable'
 import PoiForm from './PoiForm'
-import GuestItem from '../guests/GuestItem'
+import GuestItem from './GuestItem'
 import fetchGuests from '../actions/guests/fetch'
 // If JS webpack
 // import 'react-table/react-table.css'

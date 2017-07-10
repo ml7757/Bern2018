@@ -11,7 +11,7 @@ export const GUEST_UPDATED = "GUEST_UPDATED"
 
 const api = new API()
 
-export default (guestId) => {
+export default (id, guest) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
 
@@ -20,7 +20,7 @@ export default (guestId) => {
     api.app.authenticate()
       .then(() => {
 
-        backend.patch(guestId)
+        backend.patch(id, guest)
           .then((result) => {
             dispatch({ type: APP_DONE_LOADING })
             dispatch({ type: LOAD_SUCCESS })
@@ -30,7 +30,7 @@ export default (guestId) => {
               payload: result
             })
 
-            history.replace(`/admin`)
+            history.replace(`/guest/${id}`)
 
           })
           .catch((error) => {
