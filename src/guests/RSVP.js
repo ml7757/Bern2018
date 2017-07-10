@@ -311,7 +311,7 @@ class RSVP extends PureComponent {
             <FloatingActionButton mini={true} className="minus" onClick={this.remove.bind(this, i)}>
               <ContentMinus />
             </FloatingActionButton>
-                   
+
            <input
                 type="text"
                 ref="fullname"
@@ -335,14 +335,14 @@ class RSVP extends PureComponent {
                 <MenuItem value={0} primaryText="Adult" />
                 <MenuItem value={1} primaryText="Child" />
             </SelectField>
-)
+            </div>
+          )
+      })}<br />
 
-})}<br />
-  <div className="addone">
-    <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
-      <ContentAdd />
-      </FloatingActionButton>
-                   
+        <div className="addone">
+          <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
+            <ContentAdd />
+            </FloatingActionButton>
          <p className="add">Add plus one</p>
           </div><br /><br />
 
@@ -351,19 +351,21 @@ class RSVP extends PureComponent {
             <RaisedButton label="RSVP" className="RSVPbutton" primary={true} onClick={this.saveGuest.bind(this)} />
             <RaisedButton className="cancelbutton" label="Cancel" onClick={this.cancelForm.bind(this)} />
           </div>
-      )
-    } else {
-      return (
-        <div className="rsvpeditor" id="RSVP-section">
-          <form className="rsvpform" id="rsvp-form">
-            <h2 className="titlersvp">RSVP</h2>
-            <h3 className="titleafter">Gopfriedstutz!</h3>
-            <p className="textafter">Looks like you missed last call...</p>
-            <img className="imggop" src={gopfried} />
-            <p className="textafter"><span clasName="textafterbold">Problems?</span> Email the bride and groom at:</p>
-            <p className="textafter"><span clasName="textafterbold">julesandmatt2018@gmail.com</span></p>
           </form>
         </div>
+      )
+    } else {
+        return (
+          <div className="rsvpeditor" id="RSVP-section">
+            <form className="rsvpform" id="rsvp-form">
+              <h2 className="titlersvp">RSVP</h2>
+              <h3 className="titleafter">Gopfriedstutz!</h3>
+              <p className="textafter">Looks like you missed last call...</p>
+              <img className="imggop" src={gopfried} />
+              <p className="textafter"><span clasName="textafterbold">Problems?</span> Email the bride and groom at:</p>
+              <p className="textafter"><span clasName="textafterbold">julesandmatt2018@gmail.com</span></p>
+            </form>
+          </div>
       )
     }
   }
