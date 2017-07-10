@@ -25,6 +25,16 @@ const TRANSPORT = [
   "No, travelling by car"
 ]
 
+
+  const styles = {
+  customWidth: {
+    width: 120,
+  },
+  customheight: {
+    height: 30,
+  }
+};
+
 class RSVP extends PureComponent {
   constructor(props) {
     super()
@@ -290,12 +300,17 @@ class RSVP extends PureComponent {
                 onChange={this.updatefullName.bind(this)} />
 
             <SelectField
+                id="type-field-form"
                 value="value"
                 onChange={this.handleChange.bind(this)}
                 floatingLabelText="Guest Type"
                 autoWidth={false}
                 id="dropdown"
-                floatingLabelStyle={{color: 'darkGreen'}}
+                iconStyle={{top: '-8px'}}
+                floatingLabelStyle={{color: 'white', top: '35px', 'margin-left': '10px', 'font-family': 'Raleway' }}
+                underlineStyle={{ borderColor: '#526A52', width: '120px' }}
+                style={styles.customWidth, styles.customheight}
+                dropDownMenuProps= {{style:{'background-color':'#526A52', 'width': '120px', 'margin-top': '6px', 'border-radius':'3px'}}}
             >
                 <MenuItem value={0} primaryText="Adult" />
                 <MenuItem value={1} primaryText="Child" />

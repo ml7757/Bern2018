@@ -57,6 +57,14 @@
   border-width: 1px;
   width: 100%; }
 
+.rsvpform #type-field-form {
+  float: left; }
+
+.rsvpform .plusones {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px; }
+
 .attend {
   font-weight: 600; }
 
