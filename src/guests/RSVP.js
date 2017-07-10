@@ -11,8 +11,8 @@ import addGuest from '../actions/guests/create-guest'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import { showError } from '../actions/loading'
-import 'medium-editor/dist/css/medium-editor.css'
-import 'medium-editor/dist/css/themes/default.css'
+import gopfried from '../assets/imgs/gopfriedstutz.png'
+import updown from '../assets/imgs/updown.png'
 import './RSVP.css'
 
 const ATTENDING = [
@@ -26,6 +26,10 @@ const TRANSPORT = [
 ]
 
 
+const RSVPDate = new Date("January 31, 2018 23:59:59");
+const rightNow = new Date();
+
+
   const styles = {
   customWidth: {
     width: 120,
@@ -34,6 +38,7 @@ const TRANSPORT = [
     height: 30,
   }
 };
+
 
 class RSVP extends PureComponent {
   constructor(props) {
@@ -199,47 +204,58 @@ class RSVP extends PureComponent {
     if (this.validate(guest)) {
       this.props.addGuest(guest)
     }
+    var form = document.getElementById("rsvp-form");
+    form.reset();
   }
+
+  cancelForm() {
+    var form = document.getElementById("rsvp-form");
+    form.reset();
+  }
+
 
   render() {
     const { errors, count } = this.state
 
-    return (
-      <div className="rsvpeditor" id="RSVP-section">
-        <div className="rsvpform">
-          <h2 className="titlersvp">RSVP</h2>
-          <input
-            type="text"
-            ref="firstname"
-            className="firstname"
-            placeholder=" First Name"
-            onChange={this.updateFirstName.bind(this)} />
 
-          { errors.firstName && <p className="error">{ errors.firstName }</p> }
+    if (rightNow < RSVPDate) {
 
-          <input
-            type="text"
-            ref="lastname"
-            className="lastname"
-            placeholder=" Last Name"
-            onChange={this.updateLastName.bind(this)} /><br /><br />
+      return (
+        <div className="rsvpeditor" id="RSVP-section">
+          <form className="rsvpform" id="rsvp-form">
+            <h2 className="titlersvp">RSVP</h2>
+            <input
+              type="text"
+              ref="firstname"
+              className="firstname"
+              placeholder="First Name"
+              onChange={this.updateFirstName.bind(this)} />
 
-          { errors.lastName && <p className="error">{ errors.lastName }</p> }
+            { errors.firstName && <p className="error">{ errors.firstName }</p> }
 
-          <input
-            type="text"
-            ref="email"
-            className="email"
-            placeholder=" Email"
-            onChange={this.updateEmail.bind(this)} /><br /><br />
+            <input
+              type="text"
+              ref="lastname"
+              className="lastname"
+              placeholder="Last Name"
+              onChange={this.updateLastName.bind(this)} /><br /><br />
 
-          <p className="attend">Will you attend?</p>
-          {ATTENDING.map((att) => {
-            return <label key={att} htmlFor={att}>
-              <input id={att} type="radio" name="attending" className="attend-radio-button" value={att} onChange={this.setAttending.bind(this)} />
-              {att}
-            </label>
-          })}<br /><br />
+            { errors.lastName && <p className="error">{ errors.lastName }</p> }
+
+            <input
+              type="text"
+              ref="email"
+              className="email"
+              placeholder="Email"
+              onChange={this.updateEmail.bind(this)} /><br /><br />
+
+            <p className="attend">Will you attend?</p>
+            {ATTENDING.map((att) => {
+              return <label key={att} htmlFor={att}>
+                <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
+                {att}
+              </label>
+            })}<br /><br />
 
           <p className="eventsattending">What events will you be attending?</p>
           <Checkbox
@@ -295,8 +311,8 @@ class RSVP extends PureComponent {
             <FloatingActionButton mini={true} className="minus" onClick={this.remove.bind(this, i)}>
               <ContentMinus />
             </FloatingActionButton>
-
-            <input
+                   
+           <input
                 type="text"
                 ref="fullname"
                 className="fullname"
@@ -319,24 +335,37 @@ class RSVP extends PureComponent {
                 <MenuItem value={0} primaryText="Adult" />
                 <MenuItem value={1} primaryText="Child" />
             </SelectField>
+)
+
+})}<br />
+  <div className="addone">
+    <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
+      <ContentAdd />
+      </FloatingActionButton>
+                   
+         <p className="add">Add plus one</p>
+          </div><br /><br />
+
+
+          <div className="actions">
+            <RaisedButton label="RSVP" className="RSVPbutton" primary={true} onClick={this.saveGuest.bind(this)} />
+            <RaisedButton className="cancelbutton" label="Cancel" onClick={this.cancelForm.bind(this)} />
           </div>
-        )
-
-      })}<br />
-        <div className="addone">
-          <FloatingActionButton mini={true} onClick={this.add.bind(this)}>
-            <ContentAdd />
-          </FloatingActionButton>
-          <p className="add">Add plus one</p>
-        </div><br /><br />
-
-        <div className="actions">
-          <RaisedButton label="RSVP" className="RSVPbutton" primary={true} onClick={this.saveGuest.bind(this)} />
-          <RaisedButton className="cancelbutton" label="Cancel" />
+      )
+    } else {
+      return (
+        <div className="rsvpeditor" id="RSVP-section">
+          <form className="rsvpform" id="rsvp-form">
+            <h2 className="titlersvp">RSVP</h2>
+            <h3 className="titleafter">Gopfriedstutz!</h3>
+            <p className="textafter">Looks like you missed last call...</p>
+            <img className="imggop" src={gopfried} />
+            <p className="textafter"><span clasName="textafterbold">Problems?</span> Email the bride and groom at:</p>
+            <p className="textafter"><span clasName="textafterbold">julesandmatt2018@gmail.com</span></p>
+          </form>
         </div>
-        </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
