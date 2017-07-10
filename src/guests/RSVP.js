@@ -314,7 +314,7 @@ class RSVP extends PureComponent {
                 id="dropdown"
                 iconStyle={{top: '-8px', fill: 'white'}}
                 floatingLabelStyle={{color: 'white', top: '35px', 'margin-left': '10px', 'font-family': 'Raleway' }}
-                underlineStyle={{ borderColor: '#526A52', width: '120px' }}
+                underlineStyle={{ borderColor: '#526A52', width: '1px' }}
                 style={styles.customWidth, styles.customheight}
                 dropDownMenuProps= {{style:{'background-color':'#526A52', 'width': '120px', 'margin-top': '6px', 'border-radius':'3px'}}}
             >
