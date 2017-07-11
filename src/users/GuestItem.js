@@ -6,8 +6,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
 import editGuest from '../actions/guests/edit-guest'
 import fetchGuests from '../actions/guests/fetch'
 import removeGuest from '../actions/guests/remove-guest'
@@ -30,7 +28,7 @@ class GuestItem extends PureComponent {
   constructor(props) {
     super()
     const guest = props.guest
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, fnarray, child, carray, value, count } = guest
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value } = guest
 
     this.state = {
       firstName,
@@ -166,7 +164,7 @@ class GuestItem extends PureComponent {
 
   editGuest() {
     const {
-      firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count
+      firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child
     } = this.state
 
     const guest = {
@@ -192,7 +190,6 @@ class GuestItem extends PureComponent {
 
   componentWillMount() {
     this.props.fetchGuests()
-    const {guests} = this.props
   }
 
   renderPlusOnes(plusone, index) {

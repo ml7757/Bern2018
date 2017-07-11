@@ -11,7 +11,7 @@ export class WhenWhere extends PureComponent {
         <h2 className="titlewhen">When & Where</h2>
         <div className="columns">
           <div className="column1">
-            <img src={ pic1 } className="pic1" data-pin-nopin="true" />
+            <img src={ pic1 } className="pic1" data-pin-nopin="true" alt="bridge in bern" />
             <div className="date1"><p>Fri 20-Jul-2018</p></div>
             <div className="textbox1">
               <p className="eventtitle">Meet & Greet</p>
@@ -21,7 +21,7 @@ export class WhenWhere extends PureComponent {
             </div>
           </div>
           <div className="column2">
-            <img src={ pic2 } className="pic2" data-pin-nopin="true" />
+            <img src={ pic2 } className="pic2" data-pin-nopin="true" alt="wedding rings"/>
             <div className="textbox2">
               <div className="date2"><p>Sat 21-Jul-2018</p></div>
               <p className="eventtitle">Wedding Celebration</p>
@@ -31,7 +31,7 @@ export class WhenWhere extends PureComponent {
             </div>
           </div>
           <div className="column3">
-            <img src={ pic3 } className="pic3" data-pin-nopin="true" />
+            <img src={ pic3 } className="pic3" data-pin-nopin="true" alt="hotel in bern"/>
             <div className="date3"><p>Sun 22-Jul-2018</p></div>
             <div className="textbox3">
               <p className="eventtitle">Farewell Get Together</p>

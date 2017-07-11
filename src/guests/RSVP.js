@@ -1,18 +1,12 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { replace } from 'react-router-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import RaisedButton from 'material-ui/RaisedButton'
-import RadioButton from 'material-ui/RadioButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
-import { showError } from '../actions/loading'
 import gopfried from '../assets/imgs/gopfriedstutz.png'
-import updown from '../assets/imgs/updown.png'
 import './RSVP.css'
 
 const ATTENDING = [
@@ -34,7 +28,7 @@ class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, fnarray, child, carray, value, count } = props
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, fullName, child, value } = props
 
     this.state = {
       firstName,
@@ -367,7 +361,7 @@ class RSVP extends PureComponent {
               <div className="afterform">
                 <h3 className="titleafter">Gopfriedstutz!</h3>
                 <p className="textafter">Looks like you missed last call...</p>
-                <img className="imggop" src={gopfried} />
+                <img className="imggop" src={gopfried} alt="oops" />
                 <p className="textafterbold">Not what you expected?</p>
                 <a href="/contact" className="contact-button">Contact Us</a>
               </div>

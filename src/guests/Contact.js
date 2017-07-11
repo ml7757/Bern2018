@@ -35,8 +35,8 @@ export class Contact extends PureComponent {
           </div>
           <div className="contacts">
             <div className="contact-person">
-              <img src={isabelle} alt="contact for Swiss guests" className="contact-person-img" />
-              <img src={cross} alt="swiss cross" className="background cross"/>
+              <img src={isabelle} alt="contact for Swiss guests" className="contact-person-img" data-pin-nopin="true"/>
+              <img src={cross} alt="swiss cross" className="background cross" data-pin-nopin="true"/>
               <p><span>Isabelle Schorer</span></p>
               <p><span>Email: </span><a href="mailto:isabelleschorer@hotmail.com">isabelleschorer@hotmail.com</a></p>
               <p>Can help with:</p>
@@ -46,8 +46,8 @@ export class Contact extends PureComponent {
               </ul>
             </div>
             <div className="contact-person">
-              <img src={rafael} alt="contact for Canadian guests" className="contact-person-img" />
-              <img src={maple} alt="canadian maple leaf" className="background maple"/>
+              <img src={rafael} alt="contact for Canadian guests" className="contact-person-img" data-pin-nopin="true"/>
+              <img src={maple} alt="canadian maple leaf" className="background maple" data-pin-nopin="true"/>
               <p><span>Rafael Reis</span></p>
               <p><span>Email: </span><a href="mailto:rafael@changedirection.io">rafael@changedirection.io</a></p>
               <p>Can help with:</p>
@@ -59,7 +59,7 @@ export class Contact extends PureComponent {
           </div>
           <div className="newly-weds">
             <div className="contact-person">
-              <img src={couple} alt="contact for RSVP enquiries" className="contact-person-img" />
+              <img src={couple} alt="contact for RSVP enquiries" className="contact-person-img" data-pin-nopin="true"/>
               <p><span>Bride/Groom</span></p>
               <p><span>Email: </span><a href="mailto:julesandmatt2018@gmail.com">julesandmatt2018@gmail.com</a></p>
               <p><span>Only for:</span></p>
