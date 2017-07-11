@@ -8,13 +8,22 @@
   margin-bottom: 50px;
   padding-top: 80px;
   padding-bottom: 100px; }
+  .rsvpeditor .rsvpform {
+    background-color: #f4f4f6;
+    width: 60%;
+    height: 50%;
+    margin-left: 20%;
+    padding: 60px; }
 
-.rsvpform {
-  background-color: #f4f4f6;
-  width: 60%;
-  height: 50%;
-  margin-left: 20%;
-  padding: 60px; }
+.attendradio {
+  display: flex;
+  flex-direction: column; }
+
+label {
+  margin-right: 10px; }
+
+label input[type="radio"] {
+  margin-right: 3px; }
 
 .guesttype {
   color: white;
@@ -48,10 +57,6 @@
 
 .visiblediv {
   display: block; }
-
-.attendradio {
-  display: flex;
-  flex-direction: column; }
 
 .updown {
   color: white;
