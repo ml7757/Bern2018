@@ -14,15 +14,22 @@
   padding-top: 30px; }
   .accomodation-container p.tabletext {
     margin: auto;
-    width: 900px; }
+    width: 90%; }
   .accomodation-container p a {
-    color: #294B2D; }
+    color: #294B2D;
+    text-decoration: none; }
   .accomodation-container ul {
     text-align: left; }
     .accomodation-container ul li {
       margin-left: 12%; }
+      @media screen and (max-width: 500px) {
+        .accomodation-container ul li {
+          margin-left: 0; } }
     .accomodation-container ul p {
       margin: 30px 20px 10px 20px; }
+      @media screen and (max-width: 500px) {
+        .accomodation-container ul p {
+          margin: 10px 5px 5px 5px; } }
   .accomodation-container h5 {
     font-size: 2rem;
     font-weight: bold;
@@ -34,7 +41,8 @@
   .hotel-rooms p {
     margin: 0; }
     .hotel-rooms p a {
-      color: #294B2D; }
+      color: #294B2D;
+      text-decoration: none; }
   .hotel-rooms .table-header {
     font-weight: bold;
     font-size: 30px;
@@ -60,6 +68,12 @@
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media screen and (max-width: 990px) {
+      .hotel-rooms .table-cell {
+        width: 200px; } }
+    @media screen and (max-width: 635px) {
+      .hotel-rooms .table-cell {
+        width: 150px; } }
     .hotel-rooms .table-cell.no-left {
       border-left: none; }
   .hotel-rooms .table-row {

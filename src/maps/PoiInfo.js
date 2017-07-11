@@ -1,6 +1,4 @@
 import React, { PureComponent } from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchPois from '../actions/points/fetch-pois'
 import './PoiInfo.css'

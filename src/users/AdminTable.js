@@ -2,12 +2,8 @@ import React, { PureComponent } from 'react'
 import ReactTable from 'react-table'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import { push } from 'react-router-redux'
 import FaEdit from 'react-icons/lib/fa/edit'
-import FaClose from 'react-icons/lib/fa/close'
 import fetchGuests from '../actions/guests/fetch'
-import deleteGuest from '../actions/guests/remove-guest'
-import GuestItem from './GuestItem'
 import 'react-table/react-table.css'
 
 export class AdminTable extends PureComponent {

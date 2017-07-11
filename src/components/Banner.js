@@ -13,9 +13,9 @@ export class Banner extends PureComponent {
   render() {
     return (
       <div className="photo-header" ref="header">
-        <div><img src={banner} className="banner" data-pin-nopin="true" /></div>
+        <div><img src={banner} className="banner" data-pin-nopin="true" alt="Bern"/></div>
         <div>
-          <img src={bannerLogo} className="banner-logo" data-pin-nopin="true" />
+          <img src={bannerLogo} className="banner-logo" data-pin-nopin="true" alt="logo for wedding"/>
         </div>
       </div>
     );

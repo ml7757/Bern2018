@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 
 import { ScriptCache } from './lib/ScriptCache'
 import GoogleApi from './lib/GoogleApi'
