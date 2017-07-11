@@ -16,13 +16,13 @@ import updown from '../assets/imgs/updown.png'
 import './RSVP.css'
 
 const ATTENDING = [
-  "Yes, I will be there",
-  "Sorry, I cannot make it"
+  "  Yes, I will be there",
+  "  Sorry, I cannot make it"
 ]
 
 const TRANSPORT = [
-  "Yes",
-  "No, travelling by car"
+  "  Yes",
+  "  No, travelling by car"
 ]
 
 
@@ -30,21 +30,11 @@ const RSVPDate = new Date("January 31, 2018 23:59:59");
 const rightNow = new Date();
 
 
-  const styles = {
-  customWidth: {
-    width: 120,
-  },
-  customheight: {
-    height: 30,
-  }
-};
-
-
 class RSVP extends PureComponent {
   constructor(props) {
     super()
 
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count } = props
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, fnarray, child, carray, value, count } = props
 
     this.state = {
       firstName,
@@ -59,7 +49,9 @@ class RSVP extends PureComponent {
       songs,
       plusOnes: [],
       fullName,
+      fnarray: [],
       child,
+      carray: [],
       value,
       errors: {},
       count: [0]
@@ -127,13 +119,15 @@ class RSVP extends PureComponent {
     })
   }
 
-  updatefullName(event) {
-    this.setState({ fullName: this.refs.fullname.value})
+  updatefullName(i) {
+    const {fnarray} = this.state
+    let fn = `fullname${i.toString()}`
+    fnarray[i] = this.refs[fn].value
   }
 
-  handleChange = (event, index, value) =>  {
-    this.setState({value})
-    this.setState({child: value})
+  handleChange(i, e) {
+    const {carray} = this.state
+    carray[i] = e.target.value
   }
 
   add() {
@@ -141,7 +135,6 @@ class RSVP extends PureComponent {
     this.setState({count: this.state.count.concat(newInput)},function(){
             return;
         })
-    this.addPlusOneToArray()
   }
 
   addPlusOneToArray() {
@@ -184,7 +177,9 @@ class RSVP extends PureComponent {
       transport,
       diet,
       songs,
-      plusOnes
+      plusOnes,
+      fnarray,
+      carray,
     } = this.state
 
     const guest = {
@@ -199,6 +194,8 @@ class RSVP extends PureComponent {
       diet,
       songs,
       plusOnes,
+      fnarray,
+      carray,
     }
 
     if (this.validate(guest)) {
@@ -249,13 +246,13 @@ class RSVP extends PureComponent {
               placeholder="Email"
               onChange={this.updateEmail.bind(this)} /><br /><br />
 
-            <p className="attend">Will you attend?</p>
+            <div className="attendradio"><p className="attend">Will you attend?</p>
             {ATTENDING.map((att) => {
               return <label key={att} htmlFor={att}>
                 <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
                 {att}
               </label>
-            })}<br /><br />
+            })}<br /></div>
 
           <p className="eventsattending">What events will you be attending?</p>
           <Checkbox
@@ -282,7 +279,7 @@ class RSVP extends PureComponent {
           <p className="sub">Transport will be picking up from and dropping guests off at the Hotel Allegro in Bern</p>
           {TRANSPORT.map((trnsprt) => {
             return <label key={trnsprt} htmlFor={trnsprt}>
-              <input id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
+              <input className="trans" id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
               {trnsprt}
             </label>
           })}<br /><br />
@@ -314,27 +311,18 @@ class RSVP extends PureComponent {
 
            <input
                 type="text"
-                ref="fullname"
+                ref={`fullname${i.toString()}`}
                 className="fullname"
                 placeholder=" Full Name"
-                onChange={this.updatefullName.bind(this)} />
+                onChange={() => this.updatefullName(i)} />
 
-            <SelectField
-                id="type-field-form"
-                value="value"
-                onChange={this.handleChange.bind(this)}
-                floatingLabelText="Guest Type"
-                autoWidth={false}
-                id="dropdown"
-                iconStyle={{top: '-8px', fill: 'white'}}
-                floatingLabelStyle={{color: 'white', top: '35px', 'margin-left': '10px', 'font-family': 'Raleway' }}
-                underlineStyle={{ borderColor: '#526A52', width: '1px' }}
-                style={styles.customWidth, styles.customheight}
-                dropDownMenuProps= {{style:{'background-color':'#526A52', 'width': '120px', 'margin-top': '6px', 'border-radius':'3px'}}}
-            >
-                <MenuItem value={0} primaryText="Adult" />
-                <MenuItem value={1} primaryText="Child" />
-            </SelectField>
+            <select defaultValue="1" onChange={this.handleChange.bind(this, i)}>
+              <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
+              <option value="false">Adult</option>
+              <option value="true">Child</option>
+            </select>
+
+
             </div>
           )
       })}<br />
