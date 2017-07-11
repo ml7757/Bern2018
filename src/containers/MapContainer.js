@@ -22,7 +22,9 @@ class MapContainer extends PureComponent {
     return (
       <div id="brideGuide" className="map-container">
         <h2 className="titleguide">{"Bride's Guide to Bern"}</h2>
+        <div className="map-box">
         <Map google={this.props.google} />
+        </div>
         <PoiInfo />
       </div>
     )

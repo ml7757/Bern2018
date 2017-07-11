@@ -103,7 +103,7 @@ export class Map extends PureComponent {
   render() {
     const style = {
       height: '800px',
-      width: '1200px'
+      width: '100%'
     }
 
     return (
