@@ -267,6 +267,7 @@ class RSVP extends PureComponent {
 
           <p className="eventsattending">What events will you be attending?</p>
           <Checkbox
+            disabled={this.state.attending === "Sorry, I cannot make it"}
             className="event1"
             label="Casual Meet & Greet (Apero)"
             onCheck={this.setEvent1.bind(this)}
@@ -274,12 +275,14 @@ class RSVP extends PureComponent {
             iconStyle={{'fill': '#5c5c5c'}}
           />
           <Checkbox
+            disabled={this.state.attending === "Sorry, I cannot make it"}
             label="Wedding Celebration"
             onCheck={this.setEvent2.bind(this)}
             labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
             iconStyle={{'fill': '#5c5c5c'}}
           />
           <Checkbox
+            disabled={this.state.attending === "Sorry, I cannot make it"}
             label="Farewell Get Together"
             onCheck={this.setEvent3.bind(this)}
             labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
@@ -290,12 +293,13 @@ class RSVP extends PureComponent {
           <p className="sub">Transport will be picking up from and dropping guests off at the Hotel Allegro in Bern</p>
           {TRANSPORT.map((trnsprt) => {
             return <label key={trnsprt} htmlFor={trnsprt}>
-              <input className="trans" id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
+              <input disabled={this.state.attending === "Sorry, I cannot make it"} className="trans" id={trnsprt} type="radio" name="transport" value={trnsprt} onChange={this.setTransport.bind(this)} />
               {trnsprt}
             </label>
           })}<br /><br />
 
           <textarea
+            disabled={this.state.attending === "Sorry, I cannot make it"}
             type="text"
             ref="diet"
             className="diet"
@@ -303,6 +307,7 @@ class RSVP extends PureComponent {
             onChange={this.updateDiet.bind(this)} /><br /><br />
 
         <input
+            disabled={this.state.attending === "Sorry, I cannot make it"}
             type="text"
             ref="songs"
             className="songs"
@@ -321,13 +326,14 @@ class RSVP extends PureComponent {
             </FloatingActionButton>
 
            <input
+                disabled={this.state.attending === "Sorry, I cannot make it"}
                 type="text"
                 ref={`fullname${i.toString()}`}
                 className="fullname"
                 placeholder=" Full Name"
                 onChange={() => this.updatefullName(i)} />
 
-            <select className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
+            <select disabled={this.state.attending === "Sorry, I cannot make it"} className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
               <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
               <option value="false">Adult</option>
               <option value="true">Child</option>
