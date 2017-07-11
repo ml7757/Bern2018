@@ -16,20 +16,35 @@
     span
       font-weight: bold
   .contacts, .newly-weds
+    position: relative
+    margin-top: 50px
     display: flex
     flex-direction: row
     justify-content: space-around
+    p
+      a
+        color: #5c5c5c
+        z-index: 500
     ul
       text-align: left
   .contact-person
     text-align: center
     ul
       width: auto
+      margin-left: 10px
     span
       font-weight: bold
     img
-      object-fit: cover
-      height: 250px
-      width: 250px
-      border-radius: 50%
-      margin: 20px 0
+      &.contact-person-img
+        object-fit: cover
+        height: 250px
+        width: 250px
+        border-radius: 50%
+        margin: 20px 0
+      &.background
+        height: 180px
+        opacity: 0.15
+        position: absolute
+        top: 235px
+        margin-left: -120px
+        z-index: -1
