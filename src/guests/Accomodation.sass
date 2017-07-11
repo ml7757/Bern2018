@@ -16,15 +16,20 @@
   p
     &.tabletext
       margin: auto
-      width: 900px
+      width: 90%
     a
       color: #294B2D
+      text-decoration: none
   ul
     text-align: left
     li
       margin-left: 12%
+      @media screen and (max-width: 500px)
+        margin-left: 0
     p
       margin: 30px 20px 10px 20px
+      @media screen and (max-width: 500px)
+        margin: 10px 5px 5px 5px
   h5
     font-size: 2rem
     font-weight: bold
@@ -36,6 +41,7 @@
     margin: 0
     a
       color: #294B2D
+      text-decoration: none
   .table-header
     font-weight: bold
     font-size: 30px
@@ -51,6 +57,10 @@
       justify-content: center
   .table-cell
     width: 300px
+    @media screen and (max-width: 990px)
+      width: 200px
+    @media screen and (max-width: 635px)
+      width: 150px
     height: 75px
     font-size: 1.4rem
     border: 1px solid #294B2D

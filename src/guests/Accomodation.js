@@ -116,7 +116,7 @@ export class Accomodation extends PureComponent {
             </p>
           </div>
           <div className="booking-process">
-            <p><span>Email:</span> reservation@kursaal-bern.ch</p>
+            <p><span>Email:</span><a href="mailto:reservation@kursaal-bern.ch"> reservation@kursaal-bern.ch</a></p>
             <p><span>Phone number:</span> +41 31 339 55 00</p>
           </div>
         </div>
