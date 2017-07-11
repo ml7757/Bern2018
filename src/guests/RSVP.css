@@ -102,17 +102,25 @@ label input[type="radio"] {
 .rsvpform .firstname {
   border-color: #294b2d;
   border-width: 1px;
-  width: 45%;
   padding: 10px;
-  margin-right: 10%;
-  border-radius: 3px; }
+  border-radius: 3px;
+  width: 100%; }
 
 .rsvpform .lastname {
   border-color: #294b2d;
   border-width: 1px;
-  width: 45%;
   padding: 10px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  width: 100%; }
+
+.rsvpform .block {
+  width: 45%;
+  float: left;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start; }
+  .rsvpform .block.right {
+    float: right; }
 
 .rsvpform .fullname {
   border-color: #294b2d;
@@ -122,12 +130,14 @@ label input[type="radio"] {
   padding: 10px;
   border-radius: 3px; }
 
-.rsvpform .email {
-  border-color: #294b2d;
-  border-width: 1px;
-  width: 100%;
-  padding: 10px;
-  border-radius: 3px; }
+.rsvpform .email-block {
+  margin-bottom: 30px; }
+  .rsvpform .email-block .email {
+    border-color: #294b2d;
+    border-width: 1px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px; }
 
 .rsvpform .diet {
   border-color: #294b2d;
@@ -192,3 +202,8 @@ label input[type="radio"] {
 .cancelbutton {
   width: 20%;
   color: grey; }
+
+.error {
+  font-size: 13px;
+  color: #294B2D;
+  font-weight: bold; }
