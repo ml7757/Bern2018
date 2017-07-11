@@ -8,24 +8,22 @@
   margin-bottom: 50px;
   padding-top: 80px;
   padding-bottom: 100px; }
+  .rsvpeditor .rsvpform {
+    background-color: #f4f4f6;
+    width: 60%;
+    height: 50%;
+    margin-left: 20%;
+    padding: 60px; }
 
-.rsvpform {
-  background-color: #f4f4f6;
-  width: 60%;
-  height: 50%;
-  margin-left: 20%;
-  padding: 60px; }
+.attendradio {
+  display: flex;
+  flex-direction: column; }
 
-.guesttype {
-  color: white;
-  font-size: 17px;
-  background-color: #526A52;
-  padding: 8px 0px 6px 15px;
-  border-radius: 2px;
-  width: 172px;
-  margin-top: 40px; }
-  .guesttype:hover {
-    text-decoration: none; }
+label {
+  margin-right: 10px; }
+
+label input[type="radio"] {
+  margin-right: 3px; }
 
 #adult {
   color: #526152;
@@ -48,10 +46,6 @@
 
 .visiblediv {
   display: block; }
-
-.attendradio {
-  display: flex;
-  flex-direction: column; }
 
 .updown {
   color: white;
@@ -104,7 +98,7 @@
   border-width: 1px;
   width: 45%;
   margin-right: 5%;
-  padding-bottom: 5px;
+  padding: 10px;
   border-radius: 3px; }
 
 .rsvpform .email {
@@ -135,7 +129,16 @@
 .rsvpform .plusones {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-top: 20px; }
+
+.rsvpform button.guest-type, .rsvpform select.guest-type {
+  background-color: #526A52;
+  border-color: #294b2d;
+  padding: 8px 20px 6px 10px;
+  border-radius: 2px;
+  font-size: 16px;
+  color: white; }
 
 .rsvpform .attend-radio-button {
   margin-right: 5px;
@@ -144,18 +147,6 @@
 .rsvpform .addone {
   display: flex;
   height: 40px; }
-
-.attend {
-  font-weight: 600; }
-
-.eventsattending {
-  font-weight: 600; }
-
-.transport {
-  font-weight: 600; }
-
-.plus {
-  font-weight: 600; }
 
 .sub {
   font-size: 16px;
@@ -168,7 +159,9 @@
 
 .minus {
   background-color: black;
-  margin-right: 8%; }
+  margin-right: 8%;
+  display: flex;
+  height: 40px; }
 
 .RSVPbutton {
   margin-left: 30%;

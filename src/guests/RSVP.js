@@ -16,13 +16,13 @@ import updown from '../assets/imgs/updown.png'
 import './RSVP.css'
 
 const ATTENDING = [
-  "  Yes, I will be there",
-  "  Sorry, I cannot make it"
+  "Yes, I will be there",
+  "Sorry, I cannot make it"
 ]
 
 const TRANSPORT = [
-  "  Yes",
-  "  No, travelling by car"
+  "Yes",
+  "No, travelling by car"
 ]
 
 
@@ -248,7 +248,7 @@ class RSVP extends PureComponent {
 
             <div className="attendradio"><p className="attend">Will you attend?</p>
             {ATTENDING.map((att) => {
-              return <label key={att} htmlFor={att}>
+              return <label className="labelradio" key={att} htmlFor={att}>
                 <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
                 {att}
               </label>
@@ -316,7 +316,7 @@ class RSVP extends PureComponent {
                 placeholder=" Full Name"
                 onChange={() => this.updatefullName(i)} />
 
-            <select defaultValue="1" onChange={this.handleChange.bind(this, i)}>
+            <select className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
               <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
               <option value="false">Adult</option>
               <option value="true">Child</option>

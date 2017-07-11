@@ -11,7 +11,6 @@ import AdminPage from './users/AdminPage'
 import GuestItem from './users/GuestItem'
 import Home from './containers/Home'
 import Accomodation from './guests/Accomodation'
-import GuestEditor from './guests/GuestEditor'
 import Contact from './guests/Contact'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
@@ -28,7 +27,6 @@ ReactDOM.render(
         <Route path="/contact" component={Contact} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/admin" component={AdminPage} />
-        <Route path="/guests/:guestId/edit" component={GuestEditor} />
         <Route path="/guests/:guestId" component={GuestItem} />
       </Route>
     </Router>
