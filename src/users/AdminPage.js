@@ -2,13 +2,14 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { history } from '../store'
+import { replace } from 'react-router-redux'
 import AdminNavigation from './AdminNavigation'
 import AdminTable from './AdminTable'
 import PoiForm from './PoiForm'
 import GuestItem from './GuestItem'
 import fetchGuests from '../actions/guests/fetch'
-// If JS webpack
-// import 'react-table/react-table.css'
+import signInForm from './SignIn'
 
 export class AdminPage extends PureComponent {
   static propTypes = {
@@ -25,21 +26,25 @@ export class AdminPage extends PureComponent {
   }
 
   render() {
-      return(
+    const { replace, signedIn } = this.props
+      if (signedIn === false) {
+        return null
+      } else {
+        return (
+          <div className="guests wrapper">
+            <AdminNavigation />
+            <AdminTable />
 
-        <div className="guests wrapper">
-          <AdminNavigation />
-          <AdminTable />
 
-
-          <main>
-            <PoiForm />
-          </main>
-        </div>
-      )
+            <main>
+              <PoiForm />
+            </main>
+          </div>
+        )
+      }
     }
   }
 
-  const mapStateToProps = ({ guests }) => ({ guests })
+  const mapStateToProps = ({ guests, currentUser }) => ({ signedIn: !!currentUser && !!currentUser._id, guests })
 
-  export default connect(mapStateToProps, { fetchGuests })(AdminPage)
+  export default connect(mapStateToProps, { fetchGuests, replace })(AdminPage)

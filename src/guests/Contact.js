@@ -21,7 +21,7 @@ export class Contact extends PureComponent {
               if not all of your questons. Having said that, we realise and
               understand that there will be questions from time-to-time. Should
               you have a question regarding the wedding, we politely ask that
-              you to contact one of the respective person(s) listed below based
+              you contact one of the respective person(s) listed below based
               on their area of responsibility.
             </p>
             <p>
