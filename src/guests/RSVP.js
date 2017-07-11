@@ -347,11 +347,13 @@ class RSVP extends PureComponent {
           <div className="rsvpeditor" id="RSVP-section">
             <form className="rsvpform" id="rsvp-form">
               <h2 className="titlersvp">RSVP</h2>
-              <h3 className="titleafter">Gopfriedstutz!</h3>
-              <p className="textafter">Looks like you missed last call...</p>
-              <img className="imggop" src={gopfried} />
-              <p className="textafter"><span clasName="textafterbold">Problems?</span> Email the bride and groom at:</p>
-              <p className="textafter"><span clasName="textafterbold">julesandmatt2018@gmail.com</span></p>
+              <div className="afterform">
+                <h3 className="titleafter">Gopfriedstutz!</h3>
+                <p className="textafter">Looks like you missed last call...</p>
+                <img className="imggop" src={gopfried} />
+                <p className="textafterbold">Not what you expected?</p>
+                <a href="/contact" className="contact-button">Contact Us</a>
+              </div>
             </form>
           </div>
       )

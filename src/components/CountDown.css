@@ -7,6 +7,10 @@
   color: white;
   display: flex;
   justify-content: center; }
+  .countdownSection .countDownFinished h2 {
+    font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
+    font-size: 100px;
+    margin-top: 36px; }
   .countdownSection .count-down {
     max-width: 800px;
     display: flex;

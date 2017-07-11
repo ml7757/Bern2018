@@ -19,8 +19,10 @@
     color: #294B2D; }
   .accomodation-container ul {
     text-align: left; }
+    .accomodation-container ul li {
+      margin-left: 12%; }
     .accomodation-container ul p {
-      margin: 20px 30px; }
+      margin: 30px 20px 10px 20px; }
   .accomodation-container h5 {
     font-size: 2rem;
     font-weight: bold;
@@ -35,10 +37,13 @@
       color: #294B2D; }
   .hotel-rooms .table-header {
     font-weight: bold;
+    font-size: 30px;
     display: flex;
     justify-content: center; }
     .hotel-rooms .table-header .table-cell {
       border-top: 1px solid #294B2D;
+      font-size: 18px;
+      font-weight: bold;
       background-color: #F4F4F6;
       display: flex;
       align-items: center;
@@ -63,6 +68,10 @@
     margin: 0; }
     .hotel-rooms .table-row.dark .table-cell {
       background-color: #C9CFC7; }
+
+.booking-process h5 {
+  font-size: 30px;
+  font-weight: bold; }
 
 .booking-process p span {
   font-weight: bold; }

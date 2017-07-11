@@ -28,7 +28,6 @@ ReactDOM.render(
         <Route path="/contact" component={Contact} />
         <Route path="/sign-in" component={SignIn} />
         <Route path="/admin" component={AdminPage} />
-        <Route path="/guests/:guestId/edit" component={GuestEditor} />
         <Route path="/guests/:guestId" component={GuestItem} />
       </Route>
     </Router>
