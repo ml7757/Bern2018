@@ -36,8 +36,8 @@ const TRANSPORT = [
 class GuestItem extends PureComponent {
   constructor(props) {
     super()
-
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count } = props
+    const guest = props.guest
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count } = guest
 
     this.state = {
       firstName,
@@ -215,7 +215,7 @@ class GuestItem extends PureComponent {
   render() {
 
     const { errors, count } = this.state
-    const guest = this.props.guests.find((guest) => (guest._id === this.props.params.guestId))
+    const guest = this.props.guest
 
       return (
         <div className="editguest" id="RSVP-section">
@@ -370,7 +370,11 @@ class GuestItem extends PureComponent {
 }
 
 
-const mapStateToProps = ({ guests }) => ({ guests })
+const mapStateToProps = function(state, props) {
+   return {guest: state.guests.find(function(guest){
+     return guest._id === props.params.guestId
+   })}
+ }
 
 
 export default connect(mapStateToProps, {fetchGuests, editGuest, removeGuest})(GuestItem)
