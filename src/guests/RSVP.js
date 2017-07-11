@@ -151,12 +151,14 @@ class RSVP extends PureComponent {
   }
 
   validate(guest) {
-    const { firstName, lastName } = guest
+    const { firstName, lastName, email, attending } = guest
 
     let errors = {}
 
     if (!firstName || firstName === '') errors.firstName = "Please add your first name"
     if (!lastName || lastName === '') errors.lastName = 'Please add your last name'
+    if (!email || email === '') errors.email = 'Please add your email address'
+    if (!attending || attending === '') errors.attending = 'Please select whether you will attend the wedding'
 
     this.setState({
       errors,
@@ -221,30 +223,37 @@ class RSVP extends PureComponent {
         <div className="rsvpeditor" id="RSVP-section">
           <form className="rsvpform" id="rsvp-form">
             <h2 className="titlersvp">RSVP</h2>
-            <input
-              type="text"
-              ref="firstname"
-              className="firstname"
-              placeholder="First Name"
-              onChange={this.updateFirstName.bind(this)} />
+            <div className="block">
+              <input
+                type="text"
+                ref="firstname"
+                className="firstname"
+                placeholder="First Name"
+                onChange={this.updateFirstName.bind(this)} />
 
-            { errors.firstName && <p className="error">{ errors.firstName }</p> }
+              { errors.firstName && <p className="error">{ errors.firstName }</p> }
+            </div>
 
-            <input
-              type="text"
-              ref="lastname"
-              className="lastname"
-              placeholder="Last Name"
-              onChange={this.updateLastName.bind(this)} /><br /><br />
+            <div className="block right">
+              <input
+                type="text"
+                ref="lastname"
+                className="lastname"
+                placeholder="Last Name"
+                onChange={this.updateLastName.bind(this)} />
 
-            { errors.lastName && <p className="error">{ errors.lastName }</p> }
+              { errors.lastName && <p className="error">{ errors.lastName }</p> }
+            </div>
+            <div className="email-block">
+              <input
+                type="text"
+                ref="email"
+                className="email"
+                placeholder="Email"
+                onChange={this.updateEmail.bind(this)} />
 
-            <input
-              type="text"
-              ref="email"
-              className="email"
-              placeholder="Email"
-              onChange={this.updateEmail.bind(this)} /><br /><br />
+              { errors.email && <p className="error">{ errors.email }</p> }
+            </div>
 
             <div className="attendradio"><p className="attend">Will you attend?</p>
             {ATTENDING.map((att) => {
@@ -252,7 +261,9 @@ class RSVP extends PureComponent {
                 <input id={att} type="radio" name="attending" value={att} onChange={this.setAttending.bind(this)} />
                 {att}
               </label>
-            })}<br /></div>
+            })}
+
+            { errors.attending && <p className="error">{ errors.attending }</p> }<br /></div>
 
           <p className="eventsattending">What events will you be attending?</p>
           <Checkbox

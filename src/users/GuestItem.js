@@ -1,23 +1,16 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
-import { push } from 'react-router-redux'
-import IconButton from 'material-ui/IconButton'
 import DeleteIcon from 'material-ui/svg-icons/action/delete'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import RaisedButton from 'material-ui/RaisedButton'
-import RadioButton from 'material-ui/RadioButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
-import FaEdit from 'react-icons/lib/fa/edit'
-import FaClose from 'react-icons/lib/fa/close'
 import editGuest from '../actions/guests/edit-guest'
 import fetchGuests from '../actions/guests/fetch'
 import removeGuest from '../actions/guests/remove-guest'
-import { showError } from '../actions/loading'
 import AdminNavigation from './AdminNavigation'
 
 
@@ -37,7 +30,7 @@ class GuestItem extends PureComponent {
   constructor(props) {
     super()
     const guest = props.guest
-    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child, value, count } = guest
+    const { firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, fnarray, child, carray, value, count } = guest
 
     this.state = {
       firstName,
@@ -52,7 +45,9 @@ class GuestItem extends PureComponent {
       songs,
       plusOnes,
       fullName,
+      fnarray: [],
       child,
+      carray: [],
       value,
       errors: {},
       count: []
@@ -122,13 +117,15 @@ class GuestItem extends PureComponent {
     })
   }
 
-  updatefullName(event) {
-    this.setState({ fullName: this.refs.fullname.value})
+  updatefullName(i) {
+    const {fnarray} = this.state
+    let fn = `fullname${i.toString()}`
+    fnarray[i] = this.refs[fn].value
   }
 
-  handleChange = (event, index, value) =>  {
-    this.setState({value})
-    this.setState({child: value})
+  handleChange(i, e) {
+    const {carray} = this.state
+    carray[i] = e.target.value
   }
 
   add() {
@@ -315,23 +312,17 @@ class GuestItem extends PureComponent {
               </FloatingActionButton>
 
               <input
-                  type="text"
-                  ref="fullname"
-                  className="fullname"
-                  placeholder="Full Name"
-                  onChange={this.updatefullName.bind(this)} />
+                   type="text"
+                   ref={`fullname${i.toString()}`}
+                   className="fullname"
+                   placeholder=" Full Name"
+                   onChange={() => this.updatefullName(i)} />
 
-              <SelectField
-                  value="value"
-                  onChange={this.handleChange.bind(this)}
-                  floatingLabelText="Guest Type"
-                  autoWidth={false}
-                  id="dropdown"
-                  floatingLabelStyle={{color: 'darkGreen'}}
-              >
-                  <MenuItem value={0} primaryText="Adult" />
-                  <MenuItem value={1} primaryText="Child" />
-              </SelectField>
+               <select className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
+                 <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
+                 <option value="false">Adult</option>
+                 <option value="true">Child</option>
+               </select>
             </div>
           )
 
