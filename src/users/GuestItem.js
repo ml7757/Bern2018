@@ -116,9 +116,15 @@ class GuestItem extends PureComponent {
   }
 
   updatefullName(i) {
-    const {fnarray} = this.state
+    const {plusOnes} = this.state
     let fn = `fullname${i.toString()}`
-    fnarray[i] = this.refs[fn].value
+    plusOnes[i].fullName = this.refs[fn].value
+  }
+
+  updateExtrafullName(i) {
+    const {fnarray} = this.state
+    let efn = `extrafullname${i.toString()}`
+    fnarray[i] = this.refs[efn].value
   }
 
   handleChange(i, e) {
@@ -131,16 +137,6 @@ class GuestItem extends PureComponent {
     this.setState({count: this.state.count.concat(newInput)},function(){
             return;
         })
-    this.addPlusOneToArray()
-  }
-
-  addPlusOneToArray() {
-    const { plusOnes, fullName, child } = this.state
-    let tempOne = {
-      fullName,
-      child
-    }
-    this.setState({plusOnes: plusOnes.concat(tempOne)})
   }
 
   remove = (i) => {
@@ -164,7 +160,7 @@ class GuestItem extends PureComponent {
 
   editGuest() {
     const {
-      firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fullName, child
+      firstName, lastName, email, attending, event1, event2, event3, transport, diet, songs, plusOnes, fnarray, carray, fullName, child,
     } = this.state
 
     const guest = {
@@ -178,6 +174,8 @@ class GuestItem extends PureComponent {
       transport,
       diet,
       songs,
+      fnarray,
+      carray,
       plusOnes,
       fullName,
       child
@@ -292,10 +290,10 @@ class GuestItem extends PureComponent {
               <div key={i} className="plusones">
               <input
                   type="text"
-                  ref="fullname"
+                  ref={`fullname${i.toString()}`}
                   className="fullname"
                   placeholder={p.fullName}
-                  onChange={this.updatefullName.bind(this)} />
+                  onChange={() => this.updatefullName(i)} />
               </div>
             )
           })}
@@ -310,10 +308,10 @@ class GuestItem extends PureComponent {
 
               <input
                    type="text"
-                   ref={`fullname${i.toString()}`}
-                   className="fullname"
+                   ref={`extrafullname${i.toString()}`}
+                   className="extrafullname"
                    placeholder=" Full Name"
-                   onChange={() => this.updatefullName(i)} />
+                   onChange={() => this.updateExtrafullName(i)} />
 
                <select className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
                  <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
