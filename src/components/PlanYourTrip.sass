@@ -24,16 +24,28 @@
     align-items: center
     padding: 18px 40px
     background-color: #F4F4F6
+    @media screen and (max-width: 1110px)
+      max-width: 480px
+    @media screen and (max-width: 815px)
+      max-width: 350
     h5
       font-size: 30px
       font-weight: bold
       color: #526A52
       margin-bottom: 25px
+      @media screen and (max-width: 1110px)
+        font-size: 22px
+      @media screen and (max-width: 815px)
+        font-size: 15px
     p
       font-size: 20px
       text-align: center
       margin-bottom: 5px
       color: #5C5C5C
+      @media screen and (max-width: 1110px)
+        font-size: 14px
+      @media screen and (max-width: 815px)
+        font-size: 12px
       span
         font-weight: bold
         &.italic
@@ -49,11 +61,20 @@
       border-radius: 8px
       font-style: normal
       margin-top: 40px
+      @media screen and (max-width: 815px)
+        margin-top: 20px
+        padding: 8px 25px
       &:hover
         text-decoration: none
+      @media screen and (max-width: 1110px)
+        font-size: 13px
   .tripPhoto
     width: 600px
     height: auto
+    @media screen and (max-width: 1110px)
+      width: 480px
+    @media screen and (max-width: 815px)
+      width: 400px
   .flights
     display: flex
     flex-direction: row-reverse

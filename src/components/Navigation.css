@@ -24,6 +24,9 @@ nav.navbar-default {
           font-weight: bold;
           font-size: 19px;
           padding: 30px; }
+          @media screen and (max-width: 991px) {
+            nav.navbar-default .container .navbar-collapse ul li a {
+              padding: 15px; } }
       nav.navbar-default .container .navbar-collapse.in {
         background-color: #526A52; }
 
