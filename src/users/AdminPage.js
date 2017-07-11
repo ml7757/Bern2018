@@ -1,15 +1,12 @@
-// src/users/AdminPage.js
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { history } from '../store'
 import { replace } from 'react-router-redux'
 import AdminNavigation from './AdminNavigation'
 import AdminTable from './AdminTable'
 import PoiForm from './PoiForm'
 import GuestItem from './GuestItem'
 import fetchGuests from '../actions/guests/fetch'
-import signInForm from './SignIn'
 
 export class AdminPage extends PureComponent {
   static propTypes = {
@@ -26,7 +23,7 @@ export class AdminPage extends PureComponent {
   }
 
   render() {
-    const { replace, signedIn } = this.props
+    const { signedIn } = this.props
       if (signedIn === false) {
         return null
       } else {

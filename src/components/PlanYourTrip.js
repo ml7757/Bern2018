@@ -11,7 +11,7 @@ export class PlanYourTrip extends PureComponent {
         <div className="block">
           <div className="accomodation">
             <div>
-              <img src= {accomodation} className="tripPhoto" data-pin-nopin="true" alt="picture of hotel" />
+              <img src= {accomodation} className="tripPhoto" data-pin-nopin="true" alt="the hotel" />
             </div>
             <div className="text-info">
               <h5>Accomodation</h5>
@@ -21,7 +21,7 @@ export class PlanYourTrip extends PureComponent {
           </div>
           <div className="flights">
             <div>
-              <img src= {flight} className="tripPhoto" data-pin-nopin="true" alt="picture of airport" />
+              <img src= {flight} className="tripPhoto" data-pin-nopin="true" alt="inside of an airport" />
             </div>
             <div className="text-info">
                 <h5>Flights</h5>
