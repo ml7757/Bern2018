@@ -316,7 +316,7 @@ class RSVP extends PureComponent {
                 placeholder=" Full Name"
                 onChange={() => this.updatefullName(i)} />
 
-            <select defaultValue="1" onChange={this.handleChange.bind(this, i)}>
+            <select className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
               <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
               <option value="false">Adult</option>
               <option value="true">Child</option>

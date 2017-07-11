@@ -24,17 +24,6 @@ label
 label input[type="radio"]
   margin-right: 3px
 
-.guesttype
-  color: white
-  font-size: 17px
-  background-color: #526A52
-  padding: 8px 0px 6px 15px
-  border-radius: 2px
-  width: 172px
-  margin-top: 40px
-  &:hover
-    text-decoration: none
-
 #adult
   color: #526152
   background-color: white
@@ -106,7 +95,7 @@ label input[type="radio"]
     border-width: 1px
     width: 45%
     margin-right: 5%
-    padding-bottom: 5px
+    padding: 10px
     border-radius: 3px
 
   .email
@@ -138,6 +127,17 @@ label input[type="radio"]
     display: flex
     flex-direction: row
     margin-bottom: 10px
+    margin-top: 20px
+  button, select
+      &.guest-type
+        background-color: #526A52
+        border-color: #294b2d
+        padding: 8px 20px 6px 10px
+        border-radius: 2px
+        font-size: 16px
+        color: white
+
+
 
   .attend-radio-button
     margin-right: 5px
@@ -146,15 +146,6 @@ label input[type="radio"]
   .addone
     display: flex
     height: 40px
-
-.attend
-  font-weight: 600
-.eventsattending
-  font-weight: 600
-.transport
-  font-weight: 600
-.plus
-  font-weight: 600
 
 .sub
   font-size: 16px
@@ -167,6 +158,8 @@ label input[type="radio"]
 .minus
   background-color: black
   margin-right: 8%
+  display: flex
+  height: 40px
 
 .RSVPbutton
   margin-left: 30%
