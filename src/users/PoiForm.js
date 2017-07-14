@@ -35,13 +35,14 @@ class PoiEditor extends PureComponent {
   }
 
   componentWillMount() {
-    fetchPois()
+    this.props.fetchPois()
   }
 
   renderPoints(p, i) {
     const byePoi = () => {
       this.props.deletePoi(p._id)
     }
+
     return (
         <div className="renderpoi" key={i}>
           <p>{p.title}</p> <DeleteIcon onClick={byePoi} />
@@ -122,75 +123,75 @@ class PoiEditor extends PureComponent {
   render() {
     const { errors } = this.state
     const { points } = this.props
-    console.log(this.props)
 
     return (
-
       <div className="poieditor">
       <br />
-      <br />
-      <h3> Add a point of interest to the Brides Guide to Bern</h3>
-        <input
-          type="text"
-          ref="title"
-          className="poititle"
-          placeholder="Title of the point of interest"
-          defaultValue={this.state.title}
-          onChange={this.updateTitle.bind(this)}
-          onKeyDown={this.updateTitle.bind(this)} /><br />
+        <h2> Add a point of interest to the Brides Guide to Bern</h2><br />
+        <form className="poi-form">
+          <input
+            type="text"
+            ref="title"
+            className="poititle"
+            placeholder="Title of the point of interest"
+            defaultValue={this.state.title}
+            onChange={this.updateTitle.bind(this)}
+            onKeyDown={this.updateTitle.bind(this)} /><br />
 
-        { errors.title && <p className="error">{ errors.title }</p> }
+          { errors.title && <p className="error">{ errors.title }</p> }
 
-        <input
-          type="text"
-          ref="latitude"
-          className="latitude"
-          placeholder="Latitude"
-          defaultValue={this.state.latitude}
-          onChange={this.updateLatitude.bind(this)}
-          onKeyDown={this.updateLatitude.bind(this)} />
+          <input
+            type="text"
+            ref="latitude"
+            className="latitude"
+            placeholder="Latitude"
+            defaultValue={this.state.latitude}
+            onChange={this.updateLatitude.bind(this)}
+            onKeyDown={this.updateLatitude.bind(this)} />
 
-        { errors.latitude && <p className="error">{ errors.latitude }</p> }
+          { errors.latitude && <p className="error">{ errors.latitude }</p> }
 
-        <input
-          type="text"
-          ref="longitude"
-          className="longitude"
-          placeholder="Longitude"
-          defaultValue={this.state.longitude}
-          onChange={this.updateLongitude.bind(this)}
-          onKeyDown={this.updateLongitude.bind(this)} /><br />
+          <input
+            type="text"
+            ref="longitude"
+            className="longitude"
+            placeholder="Longitude"
+            defaultValue={this.state.longitude}
+            onChange={this.updateLongitude.bind(this)}
+            onKeyDown={this.updateLongitude.bind(this)} /><br />
 
-        { errors.longitude && <p className="error">{ errors.longitude }</p> }
+          { errors.longitude && <p className="error">{ errors.longitude }</p> }
 
-        <textarea
-          type="text"
-          ref="description"
-          className="description"
-          placeholder="Description of the point of interest"
-          defaultValue={this.state.description}
-          onChange={this.updateDescription.bind(this)}
-          onKeyDown={this.updateDescription.bind(this)} /><br />
+          <textarea
+            type="text"
+            ref="description"
+            className="description"
+            placeholder="Description of the point of interest"
+            defaultValue={this.state.description}
+            onChange={this.updateDescription.bind(this)}
+            onKeyDown={this.updateDescription.bind(this)} /><br />
 
-        { errors.description && <p className="error">{ errors.description }</p> }
+          { errors.description && <p className="error">{ errors.description }</p> }
 
-        <input
-          type="text"
-          ref="link"
-          className="link"
-          placeholder="Link to more information"
-          defaultValue={this.state.link}
-          onChange={this.updateLink.bind(this)}
-          onKeyDown={this.updateLink.bind(this)} /><br />
+          <input
+            type="text"
+            ref="link"
+            className="link"
+            placeholder="Link to more information"
+            defaultValue={this.state.link}
+            onChange={this.updateLink.bind(this)}
+            onKeyDown={this.updateLink.bind(this)} /><br />
 
-        { errors.link && <p className="error">{ errors.link }</p> }
+          { errors.link && <p className="error">{ errors.link }</p> }
 
-        <div className="actions"><br />
-          <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
-        </div><br />
-        <div>
-          {points.map(this.renderPoints.bind(this))}
-        </div>
+          <div className="actions"><br />
+            <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
+          </div><br />
+          <div className="pois">
+            <h3> Points of interest </h3>
+            {points.map(this.renderPoints.bind(this))}
+          </div>
+        </form>
       </div>
     )
   }
@@ -200,4 +201,4 @@ const mapStateToProps = ({ currentUser, points }) => ({
   signedIn: !!currentUser && !!currentUser._id,
   points
 })
-export default connect(mapStateToProps, { createPoi, replace, showError, deletePoi })(PoiEditor)
+export default connect(mapStateToProps, { createPoi, replace, showError, deletePoi, fetchPois })(PoiEditor)
