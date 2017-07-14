@@ -30,7 +30,7 @@ export default (poi) => {
               payload: result
             })
 
-            history.replace('/admin')
+            window.location.reload()
 
           })
           .catch((error) => {

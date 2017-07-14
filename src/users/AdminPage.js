@@ -15,10 +15,6 @@ export class AdminPage extends PureComponent {
     fetchGuests: PropTypes.func.isRequired,
   }
 
-  componentWillMount() {
-    this.props.fetchGuests()
-    this.props.fetchPois()
-  }
 
   render() {
     const { signedIn } = this.props

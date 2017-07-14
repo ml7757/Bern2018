@@ -37,7 +37,7 @@ export class AdminTable extends PureComponent {
     if (!this.props.guests) return null
 
     const columns = [{
-      Header: 'Wedding Guests',
+      Header: <h2>Wedding Guests</h2>,
       columns: [
       {
         Header: 'First Name',
