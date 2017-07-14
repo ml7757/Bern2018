@@ -8,21 +8,16 @@ import { POI_REMOVED } from '../actions/points/remove-poi'
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
     case FETCHED_POIS :
-      return [ ...payload ]
+      return [].concat(payload)
 
     case POI_CREATED :
       return [].concat(payload)
 
     case POI_UPDATED :
-      return state.map((poi) => {
-        if (poi._id === payload._id) {
-          return { ...payload }
-        }
-        return poi
-      })
+      return [].concat(payload)
 
     case POI_REMOVED :
-        return state.filter((poi) => (poi._id !== payload._id))
+        return [].concat(payload)
 
     default :
       return state

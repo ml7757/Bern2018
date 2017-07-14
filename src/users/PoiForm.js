@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { replace } from 'react-router-redux'
+import DeleteIcon from 'material-ui/svg-icons/action/delete'
+import RaisedButton from 'material-ui/RaisedButton'
 import createPoi from '../actions/points/create-poi'
+import fetchPois from '../actions/points/fetch-pois'
+import deletePoi from '../actions/points/remove-poi'
 import { showError } from '../actions/loading'
 import './poiform.css'
 
@@ -28,6 +32,21 @@ class PoiEditor extends PureComponent {
       showError('You need to be signed up to create points of interest!')
       replace('/sign-in')
     }
+  }
+
+  componentWillMount() {
+    fetchPois()
+  }
+
+  renderPoints(p, i) {
+    const byePoi = () => {
+      this.props.deletePoi(p._id)
+    }
+    return (
+        <div className="renderpoi" key={i}>
+          <p>{p.title}</p> <DeleteIcon onClick={byePoi} />
+        </div>
+     )
   }
 
   updateTitle(event) {
@@ -102,6 +121,8 @@ class PoiEditor extends PureComponent {
 
   render() {
     const { errors } = this.state
+    const { points } = this.props
+    console.log(this.props)
 
     return (
 
@@ -167,12 +188,16 @@ class PoiEditor extends PureComponent {
         <div className="actions"><br />
           <button className="primary" onClick={this.savePoi.bind(this)}>Save</button>
         </div><br />
+        <div>
+          {points.map(this.renderPoints.bind(this))}
+        </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({
+const mapStateToProps = ({ currentUser, points }) => ({
   signedIn: !!currentUser && !!currentUser._id,
+  points
 })
-export default connect(mapStateToProps, { createPoi, replace, showError })(PoiEditor)
+export default connect(mapStateToProps, { createPoi, replace, showError, deletePoi })(PoiEditor)
