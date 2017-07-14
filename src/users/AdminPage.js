@@ -31,11 +31,7 @@ export class AdminPage extends PureComponent {
           <div className="guests wrapper">
             <AdminNavigation />
             <AdminTable />
-
-
-            <main>
-              <PoiForm />
-            </main>
+            <PoiForm />
           </div>
         )
       }

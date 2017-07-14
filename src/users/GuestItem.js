@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import DeleteIcon from 'material-ui/svg-icons/action/delete'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import RaisedButton from 'material-ui/RaisedButton'
@@ -194,7 +195,7 @@ class GuestItem extends PureComponent {
     return (
       <div key={index} className="plusone">
         <p>Full name: {plusone.fullName}</p>
-        <p>Child?: {plusone.child.toString()}</p>
+        <p>Child: {plusone.child.toString()}</p>
       </div>
     )
   }
@@ -210,8 +211,9 @@ class GuestItem extends PureComponent {
     const guest = this.props.guest
 
       return (
-        <div className="editguest" id="RSVP-section">
+        <div className="editguest">
         <AdminNavigation />
+        <Link to={'/admin'}><p>Go back to the admin page</p></Link>
           <div className="editguestform">
             <h2>Edit guest</h2>
             <input
