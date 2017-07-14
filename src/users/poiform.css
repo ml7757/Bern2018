@@ -21,3 +21,7 @@
 
 .poieditor {
   margin-left: 20%; }
+
+.renderpoi {
+  display: flex;
+  flex-direction: row; }

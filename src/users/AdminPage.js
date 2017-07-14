@@ -7,6 +7,7 @@ import AdminTable from './AdminTable'
 import PoiForm from './PoiForm'
 import GuestItem from './GuestItem'
 import fetchGuests from '../actions/guests/fetch'
+import fetchPois from '../actions/points/fetch-pois'
 
 export class AdminPage extends PureComponent {
   static propTypes = {
@@ -16,10 +17,7 @@ export class AdminPage extends PureComponent {
 
   componentWillMount() {
     this.props.fetchGuests()
-  }
-
-  renderGuest(guest, index) {
-    return <GuestItem key={index} { ...guest }  />
+    this.props.fetchPois()
   }
 
   render() {
@@ -40,4 +38,4 @@ export class AdminPage extends PureComponent {
 
   const mapStateToProps = ({ guests, currentUser }) => ({ signedIn: !!currentUser && !!currentUser._id, guests })
 
-  export default connect(mapStateToProps, { fetchGuests, replace })(AdminPage)
+  export default connect(mapStateToProps, { fetchGuests, replace, fetchPois })(AdminPage)
