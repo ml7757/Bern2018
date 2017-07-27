@@ -341,7 +341,7 @@ class RSVP extends PureComponent {
                 type="text"
                 ref={`fullname${i.toString()}`}
                 className="fullname"
-                placeholder=" Full Name"
+                placeholder="Full Name"
                 onChange={() => this.updatefullName(i)} />
 
             <select disabled={this.state.attending === "Sorry, I cannot make it"} className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>

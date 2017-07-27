@@ -10,10 +10,10 @@
   padding-bottom: 100px; }
   .rsvpeditor .rsvpform {
     background-color: #f4f4f6;
-    width: 60%;
+    width: 70%;
     height: 50%;
-    margin-left: 20%;
-    padding: 60px; }
+    margin-left: 15%;
+    padding: 5%; }
 
 .attendradio {
   display: flex;
@@ -46,6 +46,18 @@ label input[type="radio"] {
 
 .visiblediv {
   display: block; }
+
+@media screen and (max-width: 500px) {
+  form {
+    font-size: 12px; } }
+
+@media screen and (max-width: 500px) {
+  p {
+    font-size: 15px; } }
+
+@media screen and (max-width: 500px) {
+  input::placeholder {
+    font-size: 12px; } }
 
 .updown {
   color: white;
@@ -193,9 +205,6 @@ label input[type="radio"] {
   font-size: 16px;
   margin-left: 4%;
   margin-top: 10px; }
-  @media screen and (max-width: 500px) {
-    .add {
-      font-size: 12px; } }
 
 .minus {
   background-color: black;
@@ -209,6 +218,7 @@ label input[type="radio"] {
   width: 20%; }
   @media screen and (max-width: 500px) {
     .RSVPbutton {
+      margin-left: 20%;
       width: 10%; } }
 
 .cancelbutton {
