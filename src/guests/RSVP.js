@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import RaisedButton from 'material-ui/RaisedButton'
+import Dialog from 'material-ui/Dialog'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
 import gopfried from '../assets/imgs/gopfriedstutz.png'
+import heart from "../assets/imgs/heart.png"
 import './RSVP.css'
 
 const ATTENDING = [
@@ -48,8 +50,18 @@ class RSVP extends PureComponent {
       carray: [],
       value,
       errors: {},
-      count: [0]
+      count: [0],
+      open: false
     }
+  }
+
+
+  handleOpen = () => {
+   this.setState({open: true})
+  }
+
+  handleClose = () => {
+   this.setState({open: false})
   }
 
   updateFirstName(event) {
@@ -206,10 +218,15 @@ class RSVP extends PureComponent {
     form.reset();
   }
 
-
   render() {
     const { errors, count } = this.state
-
+    const actions = [
+     <RaisedButton
+       label="Close"
+       primary={true}
+       onTouchTap={this.handleClose}
+     />
+   ]
 
     if (rightNow < RSVPDate) {
 
@@ -347,8 +364,17 @@ class RSVP extends PureComponent {
 
 
           <div className="actions">
-            <RaisedButton label="RSVP" className="RSVPbutton" primary={true} onClick={this.saveGuest.bind(this)} />
+            <RaisedButton label="RSVP" className="RSVPbutton" onTouchTap={this.handleOpen} primary={true} onClick={this.saveGuest.bind(this)} />
             <RaisedButton className="cancelbutton" label="Cancel" onClick={this.cancelForm.bind(this)} />
+          </div>
+          <div>
+            <Dialog
+              actions={actions}
+              modal={true}
+              open={this.state.open}
+            >
+              Thank you for RSVPing!
+            </Dialog>
           </div>
           </form>
         </div>
