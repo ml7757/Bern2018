@@ -6,6 +6,9 @@
   text-align: center;
   margin-top: 100px;
   margin-bottom: 40px; }
+  @media screen and (max-width: 500px) {
+    .titlegifts {
+      font-size: 50px; } }
 
 .gift-text {
   background-color: #526A52;

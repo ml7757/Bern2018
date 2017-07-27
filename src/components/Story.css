@@ -23,6 +23,9 @@
   color: #ddbea1;
   font-size: 60px;
   margin-top: 40px; }
+  @media screen and (max-width: 500px) {
+    .titlestory {
+      font-size: 50px; } }
 
 p {
   font-size: 19px; }

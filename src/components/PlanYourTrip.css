@@ -6,6 +6,9 @@
   text-align: center;
   margin-top: 90px;
   margin-bottom: 40px; }
+  @media screen and (max-width: 500px) {
+    .titleplan {
+      font-size: 50px; } }
 
 .block {
   display: flex;
