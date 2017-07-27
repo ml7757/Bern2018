@@ -7,6 +7,9 @@
   text-align: center;
   margin-bottom: 40px;
   margin-top: 80px; }
+  @media screen and (max-width: 500px) {
+    .titlewhen {
+      font-size: 50px; } }
 
 .whenwhere {
   margin-top: 60px;

@@ -33,6 +33,9 @@
           font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
           font-style: normal;
           line-height: 80px; }
+          @media screen and (max-width: 500px) {
+            .countdownSection .count-down .count-down-timer p span {
+              font-size: 60px; } }
 
 .datem {
   padding-right: 170px; }
