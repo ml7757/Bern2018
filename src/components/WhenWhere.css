@@ -29,7 +29,7 @@
   position: relative; }
 
 .pic {
-  height: 250px;
+  height: 300px;
   width: 85%; }
 
 .textbox {
@@ -49,6 +49,7 @@
   background-color: #526a52;
   align-self: center;
   height: 30px;
+  margin-top: 50px;
   margin-left: 10%;
   color: #f4f4f6;
   border-radius: 3%;
