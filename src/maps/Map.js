@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchPois from '../actions/points/fetch-pois'
-import icon from '../assets/imgs/circletiny.png'
+import mapDot from '../assets/imgs/map_dot.png'
 
 export class Map extends PureComponent {
   static propTypes = {
@@ -47,11 +47,11 @@ export class Map extends PureComponent {
        return new google.maps.Marker({
           position: {lat: p.latitude, lng: p.longitude},
           map: this.map,
-          icon: icon,
+          icon: mapDot,
           label: {
             color: 'white',
             fontWeight: 'bold',
-            fontSize: 'x-large',
+            fontSize: 'large',
             fontFamily: 'Raleway,sans-serif',
             text: `${i+1}`,
           }
