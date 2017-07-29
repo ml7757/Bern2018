@@ -8,12 +8,13 @@
   margin-bottom: 50px;
   padding-top: 80px;
   padding-bottom: 100px; }
-  .rsvpeditor .rsvpform {
-    background-color: #f4f4f6;
-    width: 70%;
-    height: 50%;
-    margin-left: 15%;
-    padding: 5%; }
+
+.rsvpeditor .rsvpform {
+  background-color: #f4f4f6;
+  width: 60%;
+  height: 50%;
+  margin-left: 20%;
+  padding: 60px; }
 
 .attendradio {
   display: flex;
@@ -235,3 +236,10 @@ label input[type="radio"] {
   font-size: 13px;
   color: #294B2D;
   font-weight: bold; }
+
+@media (max-width: 991px) {
+  .rsvpeditor .rsvpform {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
