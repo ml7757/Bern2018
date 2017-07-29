@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import shield from "../assets/imgs/shield.png";
+import logoHorizontal from "../assets/imgs/logo_horizontal.png";
 import mail from "../assets/imgs/mail.png";
 import heart from "../assets/imgs/heart.png";
 import codaisseur from "../assets/imgs/codaisseur.png";
@@ -10,9 +10,7 @@ export class Footer extends PureComponent {
     return (
       <div className="footer">
         <div className="couple">
-          <p className="newlyweds">Julia Wieser</p>
-          <img className="footer-shield" src={shield} data-pin-nopin="true" alt="shield of Bern logo" />
-          <p className="newlyweds">Matthew LaPorte</p>
+          <img className="footer-logo" src={logoHorizontal} data-pin-nopin="true" alt="wedding logo for Julia and Matt" />
         </div>
         <div className="email-contact">
           <img className="footer-mail" src={mail} data-pin-nopin="true" alt="e-mail icon"/>

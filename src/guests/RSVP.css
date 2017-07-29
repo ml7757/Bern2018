@@ -11,9 +11,9 @@
 
 .rsvpeditor .rsvpform {
   background-color: #f4f4f6;
-  width: 60%;
+  width: 80%;
   height: 50%;
-  margin-left: 20%;
+  margin-left: 10%;
   padding: 60px; }
 
 .attendradio {
@@ -236,10 +236,3 @@ label input[type="radio"] {
   font-size: 13px;
   color: #294B2D;
   font-weight: bold; }
-
-@media (max-width: 991px) {
-  .rsvpeditor .rsvpform {
-    width: 80%;
-    margin-left: 10%;
-  }
-}

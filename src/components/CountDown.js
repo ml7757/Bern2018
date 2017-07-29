@@ -48,7 +48,7 @@ export class CountDown extends PureComponent {
       difMonths += difYears * 12;
     }
     return (
-      <div className="count-down-timer">
+      <div className="count-down-timer" id="when-and-where">
         <p className="datem"> <span>{this.addPrettyZero(difMonths)}</span> Months </p>
         <p className="dated"> <span>{this.addPrettyZero(difDays)}</span> Days </p>
         <p className="dateh"> <span>{this.addPrettyZero(difHours)}</span> Hours </p>
