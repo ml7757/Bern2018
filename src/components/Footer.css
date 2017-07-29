@@ -5,47 +5,57 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 70px; }
-  .footer .couple {
-    margin-top: 10px; }
-    .footer .couple .footer-shield {
-      height: 50px;
-      width: auto;
-      display: inline-block;
-      margin: 5px;
-      margin-left: 8px; }
-    .footer .couple .newlyweds {
-      display: inline-block;
-      font-weight: bold;
-      color: white;
-      font-size: 25px; }
-  .footer .email-contact {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center; }
-    .footer .email-contact .footer-mail {
-      height: 35px;
-      width: auto;
-      display: inline-block;
-      margin: 5px; }
-    .footer .email-contact .contact-link {
-      font-weight: bold;
-      color: white;
-      font-size: 20px;
-      margin-left: 5px; }
-  .footer .footer-made {
-    font-size: 15px;
-    font-style: italic;
-    color: white;
-    margin-bottom: 20px;
-    margin-top: 10px; }
-    .footer .footer-made .footer-heart {
-      height: 17px;
-      width: auto;
-      margin: 0 5px; }
-  .footer a {
-    display: inline-block; }
-    .footer a .footer-codaisseur {
-      display: inline-block;
-      height: 25px;
-      width: auto;
-      margin-left: 5px; }
+
+.footer .couple {
+  margin-top: 10px; }
+
+.footer .couple .footer-logo {
+  height: 150px;
+  width: auto;
+  display: inline-block;
+  margin: 5px;
+  margin-left: 8px; }
+
+.footer .couple .newlyweds {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  font-size: 25px; }
+
+.footer .email-contact {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center; }
+
+.footer .email-contact .footer-mail {
+  height: 35px;
+  width: auto;
+  display: inline-block;
+  margin: 5px; }
+
+.footer .email-contact .contact-link {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  margin-left: 5px; }
+
+.footer .footer-made {
+  font-size: 15px;
+  font-style: italic;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 10px; }
+
+.footer .footer-made .footer-heart {
+  height: 17px;
+  width: auto;
+  margin: 0 5px; }
+
+.footer a {
+  display: inline-block; }
+
+.footer a .footer-codaisseur {
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin-left: 5px; }
