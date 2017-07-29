@@ -1,37 +1,62 @@
 .poi-info-container {
   margin-bottom: 40px;
   width: 80%; }
-  .poi-info-container .point-of-interest {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 60px; }
+
+.poi-info-container .point-of-interest {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px; }
+
+.poi-info-container .point-of-interest .number-of-point {
+  height: 100px;
+  width: 100px;
+  background-color: #526A52;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.poi-info-container .point-of-interest .number-of-point span {
+  font-family: "Raleway";
+  font-size: 6rem;
+  color: white;
+  font-weight: 800; }
+
+.poi-info-container .point-of-interest .poi-text {
+  display: flex;
+  flex-direction: column;
+  width: 70%; }
+
+.poi-info-container .point-of-interest .poi-text .poi-description {
+  font-size: 1.7rem; }
+
+.poi-info-container .point-of-interest .more-button {
+  background-color: #526A52;
+  border-radius: 5px;
+  border-color: #294B2D;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 40px; }
+
+  @media (max-width: 991px) {
+    .poi-info-container {
+      width: 90%;
+    }
+
     .poi-info-container .point-of-interest .number-of-point {
-      height: 100px;
-      width: 100px;
-      background-color: #526A52;
-      border-radius: 50%;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .poi-info-container .point-of-interest .number-of-point span {
-        font-family: "Raleway";
-        font-size: 6rem;
-        color: white;
-        font-weight: 800; }
+      height: 70px;
+      width: 70px;
+    }
+
+    .poi-info-container .point-of-interest .number-of-point span {
+      font-size: 4rem;
+    }
+
     .poi-info-container .point-of-interest .poi-text {
-      display: flex;
-      flex-direction: column;
-      width: 70%; }
-      .poi-info-container .point-of-interest .poi-text .poi-description {
-        font-size: 1.7rem; }
-    .poi-info-container .point-of-interest .more-button {
-      background-color: #526A52;
-      border-radius: 5px;
-      border-color: #294B2D;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      padding: 8px 40px; }
+      width: 65%;
+    }
+  }
