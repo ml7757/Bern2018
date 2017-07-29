@@ -365,7 +365,7 @@ class RSVP extends PureComponent {
 
           <div className="actions">
             <RaisedButton label="RSVP" className="RSVPbutton" onTouchTap={this.handleOpen} primary={true} onClick={this.saveGuest.bind(this)} />
-            <RaisedButton className="cancelbutton" label="Cancel" onClick={this.cancelForm.bind(this)} />
+            <RaisedButton className="cancelbutton" label="Cancel" onClick={this.cancelForm.bind(this)} id="trip-planning" />
           </div>
           <div>
             <Dialog

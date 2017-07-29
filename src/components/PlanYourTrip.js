@@ -6,7 +6,7 @@ import "./PlanYourTrip.css";
 export class PlanYourTrip extends PureComponent {
   render() {
     return (
-      <div className="accomodation-section" id="trip-planning">
+      <div className="accomodation-section">
         <h2 className="titleplan">Plan Your Trip</h2>
         <div className="block">
           <div className="accomodation">
@@ -23,7 +23,7 @@ export class PlanYourTrip extends PureComponent {
             <div>
               <img src= {flight} className="tripPhoto" data-pin-nopin="true" alt="inside of an airport" />
             </div>
-            <div className="text-info">
+            <div className="text-info" id="gifts">
                 <h5>Flights</h5>
                 <p>If you know that you will be attending, book your flight as soon as possible. It will be high season and deals are few and far between.</p>
                 <p>Although Bern has an international airport, it is quite expensive to fly to. Guests are advised to fly into these airports if travelling by air.</p>

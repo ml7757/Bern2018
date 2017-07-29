@@ -4,7 +4,7 @@ import "./Gifts.css";
 export class Gifts extends PureComponent {
   render() {
     return (
-      <div className="giftsSection" id="gifts">
+      <div className="giftsSection">
         <h2 className="titlegifts">Gifts</h2>
         <div className="gift-text">
           <p>We do not expect any gifts. <span>Seriously</span>! Your presence at our wedding is a wonderful gift in itself.</p>
