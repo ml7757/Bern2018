@@ -92,3 +92,12 @@
 
 .booking-process p span {
   font-weight: bold; }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .accomodation-container {
+    padding: 30px 50px 30px 50px; }
+
+  .hotel-rooms {
+    margin-top: -10px;
+  }
+}
