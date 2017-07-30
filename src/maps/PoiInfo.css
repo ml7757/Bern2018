@@ -60,3 +60,22 @@
       width: 65%;
     }
   }
+
+  @media (min-width: 576px) and (max-width: 767px) {
+    .poi-info-container {
+      width: 90%;
+    }
+
+    .poi-info-container .point-of-interest .number-of-point {
+      height: 50px;
+      width: 50px;
+    }
+
+    .poi-info-container .point-of-interest .number-of-point span {
+      font-size: 3rem;
+    }
+
+    .poi-info-container .point-of-interest .poi-text {
+      width: 60%;
+    }
+  }
