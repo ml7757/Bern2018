@@ -40,6 +40,9 @@ p {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+  .storySection {
+    padding: 0 50px 0 50px; }
+
   .storySection .storyPhoto {
     height: 200px;
     width: 200px;

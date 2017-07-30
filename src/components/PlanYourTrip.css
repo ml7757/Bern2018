@@ -100,10 +100,14 @@
   }
 
   .plan-your-trip .block p {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .plan-your-trip .block h5 {
     font-size: 25px;
+  }
+
+  .block .text-info .learn-more {
+    font-size: 18px;
   }
 }
