@@ -16,7 +16,7 @@
   width: 100%;
   margin-bottom: 60px; }
 
-.column1 {
+.column-margin {
   width: 33%;
   margin-left: 50px;
   position: relative; }
@@ -24,57 +24,32 @@
 .columns {
   display: flex; }
 
-.column2 {
+.column-rest {
   width: 33%;
   position: relative; }
 
-.column3 {
-  width: 33%;
-  position: relative; }
-
-.pic1 {
-  height: 250px;
+.pic {
+  height: 300px;
   width: 85%; }
 
-.pic2 {
-  height: 250px;
-  width: 85%; }
-
-.textbox1 {
+.textbox {
   width: 85%;
   height: 270px;
   background-color: #f4f4f6;
   text-align: center;
   padding-top: 40px; }
-
-.textbox2 {
-  width: 85%;
-  height: 270px;
-  background-color: #f4f4f6;
-  text-align: center;
-  padding-top: 40px; }
-
-.textbox3 {
-  width: 85%;
-  height: 270px;
-  background-color: #f4f4f6;
-  text-align: center;
-  padding-top: 40px; }
-
-.pic3 {
-  height: 250px;
-  width: 85%; }
 
 .eventtitle {
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 14px; }
 
-.date1 {
+.date {
   width: 65%;
   background-color: #526a52;
   align-self: center;
   height: 30px;
+  margin-top: 50px;
   margin-left: 10%;
   color: #f4f4f6;
   border-radius: 3%;
@@ -82,29 +57,57 @@
   position: absolute;
   top: 235px; }
 
-.date2 {
-  width: 65%;
-  background-color: #526a52;
-  align-self: center;
-  height: 30px;
-  color: #f4f4f6;
-  border-radius: 3%;
-  margin-left: 10%;
-  text-align: center;
-  position: absolute;
-  top: 235px; }
+.column-margin .date-for-phones {
+  display: none; }
 
-.date3 {
-  width: 65%;
-  background-color: #526a52;
-  align-self: center;
-  height: 30px;
-  color: #f4f4f6;
-  margin-left: 10%;
-  border-radius: 3%;
-  text-align: center;
-  position: absolute;
-  top: 235px; }
+.column-rest .date-for-phones {
+  display: none; }
 
 .bold {
   font-weight: bold; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .pic {
+    height: 150px;
+  }
+
+  .column-margin .date-for-phones {
+    display: none; }
+
+  .column-rest .date-for-phones {
+    display: none; }
+
+  .date {
+    position: absolute;
+    margin-top: -40%;
+  }
+
+  .textbox p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .pic, .date {
+    display: none; }
+
+  .column-margin .date-for-phones {
+    display: block; }
+
+  .column-rest .date-for-phones {
+    display: block; }
+
+  .columns {
+    display: block; }
+
+  .column-margin {
+    width: 100%; }
+
+  .column-rest {
+    width: 100%;
+    margin-left: 50px;
+  }
+
+  .textbox {
+    margin-bottom: 20px; }
+}
