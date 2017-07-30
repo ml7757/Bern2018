@@ -32,9 +32,21 @@
 p {
   font-size: 19px; }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .storySection .storyPhoto {
     height: 250px;
     width: 250px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .storySection {
+    padding: 0 50px 0 50px;
+    text-align: justify;
+  }
+
+  .storySection .storyPhoto {
+    height: 200px;
+    width: 200px;
   }
 }

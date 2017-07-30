@@ -15,6 +15,7 @@ export class WhenWhere extends PureComponent {
             <div className="textbox">
               <div className="date"><p>Fri 20-Jul-2018</p></div>
               <p className="eventtitle">Meet & Greet</p>
+              <p className="date-for-phones"><span className="bold">Date:</span> Fri 20-Jul-2018</p>
               <p><span className="bold">Time:</span> 16:00 - 19:00</p>
               <p><span className="bold">Location:</span> Restaurant Schwellenmätteli</p>
               <p><span className="bold">Dress:</span> Casual</p>
@@ -25,6 +26,7 @@ export class WhenWhere extends PureComponent {
             <div className="textbox">
               <div className="date"><p>Sat 21-Jul-2018</p></div>
               <p className="eventtitle">Wedding Celebration</p>
+              <p className="date-for-phones"><span className="bold">Date:</span> Sat 21-Jul-2018</p>
               <p><span className="bold">Time:</span> 16:00 - Late</p>
               <p><span className="bold">Location:</span> Ostermundigen, Switzerland</p>
               <p><span className="bold">Dress:</span> Semi-formal (tie optinal)</p>
@@ -35,6 +37,7 @@ export class WhenWhere extends PureComponent {
             <div className="textbox">
               <div className="date"><p>Sun 22-Jul-2018</p></div>
               <p className="eventtitle">Farewell Get Together</p>
+              <p className="date-for-phones"><span className="bold">Date:</span> Sun 22-Jul-2018</p>
               <p><span className="bold">Time:</span> 13:00 - 17:00</p>
               <p><span className="bold">Location:</span> Rümligen, Switzerland</p>
               <p><span className="bold">Dress:</span> Casual</p>

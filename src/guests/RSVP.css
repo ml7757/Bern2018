@@ -236,3 +236,16 @@ label input[type="radio"] {
   font-size: 13px;
   color: #294B2D;
   font-weight: bold; }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .rsvpeditor{
+    background-image: none;
+    background-color: #526A52;
+    padding: 30px 0 30px 0;
+  }
+
+  .rsvpeditor .rsvpform{
+    width: 90%;
+    margin-left: 6%;
+  }
+}

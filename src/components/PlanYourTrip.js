@@ -6,7 +6,7 @@ import "./PlanYourTrip.css";
 export class PlanYourTrip extends PureComponent {
   render() {
     return (
-      <div className="accomodation-section">
+      <div className="plan-your-trip">
         <h2 className="titleplan">Plan Your Trip</h2>
         <div className="block">
           <div className="accomodation">

@@ -90,3 +90,24 @@
   .block .flights {
     display: flex;
     flex-direction: row-reverse; }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .plan-your-trip img{
+    display: none; }
+
+  .plan-your-trip .accomodation .text-info {
+    margin-bottom: 20px;
+  }
+
+  .plan-your-trip .block p {
+    font-size: 18px;
+  }
+
+  .plan-your-trip .block h5 {
+    font-size: 25px;
+  }
+
+  .block .text-info .learn-more {
+    font-size: 18px;
+  }
+}

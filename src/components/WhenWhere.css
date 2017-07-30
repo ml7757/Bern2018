@@ -57,23 +57,57 @@
   position: absolute;
   top: 235px; }
 
+.column-margin .date-for-phones {
+  display: none; }
+
+.column-rest .date-for-phones {
+  display: none; }
+
 .bold {
   font-weight: bold; }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .pic {
     height: 150px;
   }
+
+  .column-margin .date-for-phones {
+    display: none; }
+
+  .column-rest .date-for-phones {
+    display: none; }
 
   .date {
     position: absolute;
     margin-top: -40%;
   }
 
-  .textbox {
-  }
-
   .textbox p {
     font-size: 18px;
   }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .pic, .date {
+    display: none; }
+
+  .column-margin .date-for-phones {
+    display: block; }
+
+  .column-rest .date-for-phones {
+    display: block; }
+
+  .columns {
+    display: block; }
+
+  .column-margin {
+    width: 100%; }
+
+  .column-rest {
+    width: 100%;
+    margin-left: 50px;
+  }
+
+  .textbox {
+    margin-bottom: 20px; }
 }
