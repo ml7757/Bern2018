@@ -38,3 +38,10 @@ p {
     width: 250px;
   }
 }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .storySection .storyPhoto {
+    height: 200px;
+    width: 200px;
+  }
+}
