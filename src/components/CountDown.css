@@ -42,3 +42,21 @@
 
 .dated {
   padding-right: 170px; }
+
+@media (max-width: 575px) {
+  .countdownSection .count-down h3 {
+    font-size: 18px; }
+
+  .datem {
+    padding-right: 60px;
+  }
+
+  .dated {
+    padding-right: 20px;
+  }
+
+  .datem span, .dateh span {
+    padding-left: 10px;
+  }
+
+}
