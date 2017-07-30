@@ -59,7 +59,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row">
             <div>
-              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Economy-Room">Economy Room</a></p>
+              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Economy-Room">Economy Room</a></span></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 170 per night</p>
@@ -70,7 +70,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row dark">
             <div>
-              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony">Comfort Double Room with balcony</a></p>
+              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony">Comfort Double Room with balcony</a></span></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 190 per night</p>
@@ -81,7 +81,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="table-row">
             <div>
-              <p className="table-cell"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view">Panorama Double Room with view</a></p>
+              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view">Panorama Double Room with view</a></span></p>
             </div>
             <div>
               <p className="table-cell no-left">CHF 220 per night</p>
@@ -116,7 +116,7 @@ export class Accomodation extends PureComponent {
             </p>
           </div>
           <div className="booking-process">
-            <p><span>Email:</span><a href="mailto:reservation@kursaal-bern.ch"> reservation@kursaal-bern.ch</a></p>
+            <p><span>Email: </span><a href="mailto:reservation@kursaal-bern.ch">reservation@kursaal-bern.ch</a></p>
             <p><span>Phone number:</span> +41 31 339 55 00</p>
           </div>
         </div>
