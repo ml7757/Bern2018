@@ -32,7 +32,7 @@
 p {
   font-size: 19px; }
 
-@media (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .storySection .storyPhoto {
     height: 250px;
     width: 250px;
