@@ -79,3 +79,26 @@
       width: 60%;
     }
   }
+
+  @media (max-width: 575px) {
+    .poi-info-container .point-of-interest .number-of-point {
+      display: none;
+    }
+
+    .poi-info-container .point-of-interest .number-of-point span {
+      display: none;
+    }
+
+    .poi-info-container {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .poi-info-container .point-of-interest {
+      margin-top: 0;
+    }
+
+    .poi-info-container .point-of-interest .more-button {
+      padding: 8px 20px;
+    }
+  }

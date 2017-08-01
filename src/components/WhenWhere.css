@@ -111,3 +111,34 @@
   .textbox {
     margin-bottom: 20px; }
 }
+
+@media (max-width: 575px) {
+  .pic, .date {
+    display: none; }
+
+  .column-margin .date-for-phones {
+    display: block; }
+
+  .column-rest .date-for-phones {
+    display: block; }
+
+  .columns {
+    display: block; }
+
+  .column-margin {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .column-rest {
+    width: 100%; }
+
+  .textbox {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 250px;
+    padding-top: 20px;
+    background-color: #5C5C5C;
+    color: #FFFFFF;
+  }
+}

@@ -345,7 +345,7 @@ class RSVP extends PureComponent {
                 onChange={() => this.updatefullName(i)} />
 
             <select disabled={this.state.attending === "Sorry, I cannot make it"} className="guest-type" defaultValue="1" onChange={this.handleChange.bind(this, i)}>
-              <option disabled="disabled" value="1" hidden="hidden">Guest Type</option>
+              <option disabled="disabled" value="1" hidden="hidden">Type</option>
               <option value="false">Adult</option>
               <option value="true">Child</option>
             </select>

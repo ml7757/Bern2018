@@ -26,7 +26,19 @@
     width: 70%;
     height: auto;
     margin-left: -35%;
-    padding-top: 5%;
     bottom: 9%
+  }
+}
+
+@media (max-width: 575px) {
+  .photo-header {
+    box-sizing: border-box;
+  }
+
+  .photo-header .banner-logo {
+    width: 80%;
+    height: auto;
+    margin-left: -40%;
+    bottom: 2%;
   }
 }

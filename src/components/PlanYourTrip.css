@@ -111,3 +111,35 @@
     font-size: 18px;
   }
 }
+
+@media (max-width: 575px) {
+  .plan-your-trip img {
+    display: none;
+  }
+
+  .accomodation .text-info {
+    margin-bottom: 20px;
+    background-color: #526A52;
+  }
+
+  .flights .text-info {
+    background-color: #526A52;
+  }
+
+  .accomodation .text-info p, .flights .text-info p {
+    text-align: justify;
+    font-size: 15px;
+    color: #FFFFFF;
+  }
+
+  .accomodation .text-info .learn-more {
+    background-color: #f4f4f6;
+    color: #526A52;
+  }
+
+  .plan-your-trip .accomodation .text-info h5, .plan-your-trip .block h5 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+}

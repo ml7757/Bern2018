@@ -6,9 +6,6 @@
   text-align: center;
   margin-top: 100px;
   margin-bottom: 40px; }
-  @media screen and (max-width: 500px) {
-    .titlegifts {
-      font-size: 50px; } }
 
 .gift-text {
   background-color: #526A52;
@@ -16,18 +13,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  .gift-text p {
-    text-align: center;
-    font-size: 24px;
-    padding: 60px 0;
-    color: white;
-    max-width: 90%;
-    margin-left: 5%; }
-    @media screen and (max-width: 990px) {
-      .gift-text p {
-        font-size: 18px; } }
-    @media screen and (max-width: 490px) {
-      .gift-text p {
-        font-size: 14px; } }
+
+.gift-text p {
+  text-align: center;
+  font-size: 24px;
+  padding: 60px 0;
+  color: white;
+  max-width: 90%;
+  margin-left: 5%; }
+  @media screen and (max-width: 990px) {
+    .gift-text p {
+      font-size: 18px; } }
+  @media screen and (max-width: 490px) {
+    .gift-text p {
+      font-size: 14px; } }
     .gift-text p span {
       font-weight: bold; }
+
+@media (max-width: 575px) {
+  .titlegifts {
+    margin-top: 90px; }
+
+  .gift-text {
+    background-color: #5C5C5C;
+  }
+
+  .gift-text p {
+    font-size: 18px;
+    padding: 0;
+  }
+}

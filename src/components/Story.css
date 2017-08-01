@@ -50,3 +50,19 @@ p {
     width: 200px;
   }
 }
+
+@media (max-width: 575px) {
+  .storySection {
+    padding: 0 30px 0 30px;
+    text-align: justify;
+  }
+
+  .storySection .storyPhoto {
+    height: 200px;
+    width: 200px;
+  }
+
+  .storySection .quote {
+    font-size: 30px;
+  }
+}
