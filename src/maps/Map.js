@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import fetchPois from '../actions/points/fetch-pois'
-import './Map.css'
 import mapDot from '../assets/imgs/map_dot.png'
 
 export class Map extends PureComponent {

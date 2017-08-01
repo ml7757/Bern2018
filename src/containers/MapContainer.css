@@ -17,3 +17,11 @@
       .map-container .map-box {
         width: 90%;
         max-height: 80%; } }
+
+@media (max-width: 575px) {
+  .titleguide {
+    text-align: center; }
+
+  .map-box {
+    display: none; }
+}
