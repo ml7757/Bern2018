@@ -235,6 +235,7 @@ label input[type="radio"] {
   .rsvpeditor {
     background-image: none;
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .rsvpeditor .rsvpform {
