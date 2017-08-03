@@ -4,7 +4,7 @@ import hooks from 'feathers-hooks'
 import auth from 'feathers-authentication-client'
 import superagent from 'superagent'
 
-const host = 'https://jules-and-matt-api.herokuapp.com'
+const host = process.env.API_HOST || 'https://jules-and-matt-api.herokuapp.com'
 export const FEATHERS_TOKEN_KEY = 'MattLovesJules'
 
 const feathersClient = feathers()
