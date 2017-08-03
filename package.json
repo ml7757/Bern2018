@@ -7,7 +7,7 @@
     "chai-enzyme": "^0.8.0",
     "enzyme": "^2.9.1",
     "feathers": "^2.1.4",
-    "feathers-authentication-client": "^0.3.2",
+    "feathers-authentication-client": "^0.3.3",
     "feathers-hooks": "^2.0.1",
     "feathers-rest": "^1.8.0",
     "google-maps-react": "^1.0.19",
