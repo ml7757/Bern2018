@@ -16,6 +16,14 @@
   margin-left: 10%;
   padding: 60px; }
 
+.rsvp-by {
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: -25px;
+  margin-bottom: 25px;
+}
+
 .attendradio {
   display: flex;
   flex-direction: column; }
