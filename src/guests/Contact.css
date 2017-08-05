@@ -26,8 +26,10 @@
   justify-content: space-around; }
 
 .contact-section .contacts p a, .contact-section .newly-weds p a {
-  color: #5c5c5c;
-  z-index: 500; }
+  font-weight: bolder;
+  text-decoration: underline;
+  color: #294B2D;
+}
 
 .contact-section .contacts ul, .contact-section .newly-weds ul {
   text-align: left; }
