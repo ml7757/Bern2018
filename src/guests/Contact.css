@@ -89,3 +89,34 @@
     margin-top: 0;
   }
 }
+
+@media (max-width: 575px) {
+  .contact-section .intro {
+    margin: 10px 30px;
+  }
+
+  .contact-section .contact-person img.contact-person-img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .contact-section .contacts {
+    display: block;
+  }
+
+  .contact-section .contact-person img.background-cross {
+    top: 140px;
+    height: 100px;
+    margin-left: -55px;
+  }
+
+  .contact-section .contact-person img.background-maple {
+    margin-top: 360px;
+    height: 100px;
+    margin-left: -55px;
+  }
+
+  .contact-section .newly-weds {
+    margin-top: 0;
+  }
+}
