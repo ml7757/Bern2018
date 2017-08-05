@@ -36,10 +36,10 @@ export class Contact extends PureComponent {
           <div className="contacts">
             <div className="contact-person">
               <img src={isabelle} alt="contact for Swiss guests" className="contact-person-img" data-pin-nopin="true"/>
-              <img src={cross} alt="swiss cross" className="background cross" data-pin-nopin="true"/>
+              <img src={cross} alt="swiss cross" className="background-cross" data-pin-nopin="true"/>
               <p><span>Isabelle Schorer</span></p>
               <p><span>Email: </span><a href="mailto:isabelleschorer@hotmail.com">isabelleschorer@hotmail.com</a></p>
-              <p>Can help with:</p>
+              <p><span>Can help with:</span></p>
               <ul>
                 <li><p>Questions from guests on the{" bride's "}side</p></li>
                 <li><p>Questions from guests regarding Bern</p></li>
@@ -47,10 +47,10 @@ export class Contact extends PureComponent {
             </div>
             <div className="contact-person">
               <img src={rafael} alt="contact for Canadian guests" className="contact-person-img" data-pin-nopin="true"/>
-              <img src={maple} alt="canadian maple leaf" className="background maple" data-pin-nopin="true"/>
+              <img src={maple} alt="canadian maple leaf" className="background-maple" data-pin-nopin="true"/>
               <p><span>Rafael Reis</span></p>
               <p><span>Email: </span><a href="mailto:rafael@changedirection.io">rafael@changedirection.io</a></p>
-              <p>Can help with:</p>
+              <p><span>Can help with:</span></p>
               <ul>
                 <li><p>Questions from guests on the{" groom's "}side</p></li>
                 <li><p>Masterclasses on making sandwiches</p></li>

@@ -12,10 +12,11 @@
       font-size: 50px; } }
 
 .contact-section .intro {
-  text-align: center;
+  text-align: justify;
   margin: 10px 60px; }
-  .contact-section .intro span {
-    font-weight: bold; }
+
+.contact-section .intro span {
+  font-weight: bold; }
 
 .contact-section .contacts, .contact-section .newly-weds {
   position: relative;
@@ -23,29 +24,99 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
-  .contact-section .contacts p a, .contact-section .newly-weds p a {
-    color: #5c5c5c;
-    z-index: 500; }
-  .contact-section .contacts ul, .contact-section .newly-weds ul {
-    text-align: left; }
+
+.contact-section .contacts p a, .contact-section .newly-weds p a {
+  font-weight: bolder;
+  text-decoration: underline;
+  color: #294B2D;
+}
+
+.contact-section .contacts ul, .contact-section .newly-weds ul {
+  text-align: left; }
 
 .contact-section .contact-person {
   text-align: center; }
-  .contact-section .contact-person ul {
-    width: auto;
-    margin-left: 10px; }
-  .contact-section .contact-person span {
-    font-weight: bold; }
+
+.contact-section .contact-person ul {
+  width: auto;
+  margin-left: 10px; }
+
+.contact-section .contact-person span {
+  font-weight: bold; }
+
+.contact-section .contact-person img.contact-person-img {
+  object-fit: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: 20px 0; }
+
+.contact-section .contact-person img.background-cross, .contact-section .contact-person img.background-maple {
+  height: 180px;
+  opacity: 0.08;
+  position: absolute;
+  top: 235px;
+  margin-left: -120px;
+  z-index: -1; }
+
+@media (min-width: 576px) and (max-width: 767px) {
   .contact-section .contact-person img.contact-person-img {
-    object-fit: cover;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    margin: 20px 0; }
-  .contact-section .contact-person img.background {
-    height: 180px;
-    opacity: 0.08;
-    position: absolute;
-    top: 235px;
-    margin-left: -120px;
-    z-index: -1; }
+    height: 200px;
+    width: 200px;
+  }
+
+  .contact-section .contacts {
+    display: block;
+  }
+
+  .contact-section .contact-person img.background-cross {
+    top: 180px;
+    height: 150px;
+    margin-left: -80px;
+  }
+
+  .contact-section .contact-person img.background-maple {
+    margin-top: 375px;
+    height: 150px;
+    margin-left: -80px;
+  }
+
+  .contact-section .contact-person ul {
+    padding-left: 20%;
+  }
+
+  .contact-section .newly-weds {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact-section .intro {
+    margin: 10px 30px;
+  }
+
+  .contact-section .contact-person img.contact-person-img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .contact-section .contacts {
+    display: block;
+  }
+
+  .contact-section .contact-person img.background-cross {
+    top: 140px;
+    height: 100px;
+    margin-left: -55px;
+  }
+
+  .contact-section .contact-person img.background-maple {
+    margin-top: 360px;
+    height: 100px;
+    margin-left: -55px;
+  }
+
+  .contact-section .newly-weds {
+    margin-top: 0;
+  }
+}
