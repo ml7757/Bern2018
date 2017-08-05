@@ -39,13 +39,20 @@ export class Map extends PureComponent {
 
   componentDidUpdate() {
 
-    const { points } = this.props
+    const points = [
+      [46.948197, 7.443694, 1],
+      [46.947236, 7.451318, 2],
+      [46.952021, 7.460419, 3],
+      [46.942411, 7.445291, 4],
+      [46.949048, 7.445432, 5],
+      [46.947865, 7.448763, 6]
+    ]
 
     const { google } = this.props
 
-    points.map((p, i) => {
+    points.map((p) => {
        return new google.maps.Marker({
-          position: {lat: p.latitude, lng: p.longitude},
+          position: {lat: p[0], lng: p[1]},
           map: this.map,
           icon: mapDot,
           label: {
@@ -53,7 +60,7 @@ export class Map extends PureComponent {
             fontWeight: 'bold',
             fontSize: 'large',
             fontFamily: 'Raleway,sans-serif',
-            text: `${i+1}`,
+            text: `${p[2]}`,
           }
         })
       })
