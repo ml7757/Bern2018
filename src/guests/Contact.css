@@ -49,7 +49,7 @@
   border-radius: 50%;
   margin: 20px 0; }
 
-.contact-section .contact-person img.background {
+.contact-section .contact-person img.background-cross, .contact-section .contact-person img.background-maple {
   height: 180px;
   opacity: 0.08;
   position: absolute;
@@ -57,6 +57,33 @@
   margin-left: -120px;
   z-index: -1; }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 767px) {
+  .contact-section .contact-person img.contact-person-img {
+    height: 200px;
+    width: 200px;
+  }
 
+  .contact-section .contacts {
+    display: block;
+  }
+
+  .contact-section .contact-person img.background-cross {
+    top: 180px;
+    height: 150px;
+    margin-left: -80px;
+  }
+
+  .contact-section .contact-person img.background-maple {
+    margin-top: 375px;
+    height: 150px;
+    margin-left: -80px;
+  }
+
+  .contact-section .contact-person ul {
+    padding-left: 20%;
+  }
+
+  .contact-section .newly-weds {
+    margin-top: 0;
+  }
 }
