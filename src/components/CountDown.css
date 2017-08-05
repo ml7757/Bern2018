@@ -46,20 +46,33 @@
 .dated {
   padding-right: 170px; }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .countdownSection .countDownFinished h2 {
+    font-size: 75px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .countdownSection .countDownFinished h2 {
+    font-size: 55px;
+    margin-top: 65px;
+  }
+}
+
 @media (max-width: 575px) {
   .countdownSection .count-down h3 {
     font-size: 18px; }
 
   .datem {
-    padding-right: 60px;
-  }
+    padding-right: 60px; }
 
   .dated {
-    padding-right: 20px;
-  }
+    padding-right: 20px; }
 
   .datem span, .dateh span {
-    padding-left: 10px;
-  }
+    padding-left: 10px; }
 
+  .countdownSection .countDownFinished h2 {
+    font-size: 55px; }
 }

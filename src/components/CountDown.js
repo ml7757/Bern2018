@@ -17,7 +17,7 @@ export class CountDown extends PureComponent {
     if (this.married()) {
       return (
         <div className="countDownFinished">
-          <h2>Married happily ever after</h2>
+          <h2>Married happily ever after!!!</h2>
         </div>
       );
     } else {

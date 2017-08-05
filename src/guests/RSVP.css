@@ -214,6 +214,17 @@ label input[type="radio"] {
   color: #294B2D;
   font-weight: bold; }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .titleafter{
+    font-size: 75px; }
+
+  .textafter {
+    font-size: 35px; }
+
+  .textafterbold {
+    font-size: 35px; }
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
   .rsvpeditor{
     background-image: none;
@@ -229,6 +240,15 @@ label input[type="radio"] {
   .rsvpform select.guest-type {
     padding-right: 0;
   }
+
+  .titleafter{
+    font-size: 70px; }
+
+  .textafter {
+    font-size: 30px; }
+
+  .textafterbold {
+    font-size: 30px; }
 }
 
 @media (max-width: 575px) {
@@ -251,4 +271,16 @@ label input[type="radio"] {
   .RSVPbutton {
     margin-left: 15%;
   }
+  .titleafter{
+    font-size: 40px; }
+
+  .textafter {
+    font-size: 25px; }
+
+  img.imggop {
+    height: 300px;
+  }
+
+  .textafterbold {
+    font-size: 25px; }
 }
