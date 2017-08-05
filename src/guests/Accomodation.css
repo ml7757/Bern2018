@@ -114,7 +114,22 @@
 .booking-process p span {
   font-weight: bold; }
 
+@media (min-width: 992px) {
+  .table-less {
+    display: none; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .table-less {
+    display: none;
+  }
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
+  .table-less {
+    display: none;
+  }
+
   .accomodation-container {
     padding: 30px 50px 30px 50px; }
 
@@ -124,5 +139,28 @@
 
   .tabletext {
     width: 90%;
+  }
+}
+
+@media (max-width: 575px) {
+  .hotel-rooms {
+    display: none; }
+
+  .room-card {
+    width: 100%;
+    background-color: #f4f4f6;
+    height: 250px;
+    margin-bottom: 25px;
+  }
+
+  .room-text {
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  p a.room-title {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #294B2D;
   }
 }

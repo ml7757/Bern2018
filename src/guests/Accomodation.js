@@ -91,6 +91,35 @@ export class Accomodation extends PureComponent {
             </div>
           </div>
         </div>
+        <div className="table-less">
+          <div className="room-card">
+            <div className="room-text">
+              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Economy-Room" className="room-title">Economy Room</a></p>
+              <p className="bold">Daily rate incl. breakfast</p>
+              <p>CHF 170</p>
+              <p className="bold">Daily rate excl. breakfast</p>
+              <p>CHF 130</p>
+            </div>
+          </div>
+          <div className="room-card">
+            <div className="room-text">
+              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony" className="room-title">Comfort Double with Balcony</a></p>
+              <p className="bold">Daily rate incl. breakfast</p>
+              <p>CHF 190</p>
+              <p className="bold">Daily rate excl. breakfast</p>
+              <p>CHF 150</p>
+            </div>
+          </div>
+          <div className="room-card">
+            <div className="room-text">
+              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view" className="room-title">Panoram Double with View</a></p>
+              <p className="bold">Daily rate incl. breakfast</p>
+              <p>CHF 170</p>
+              <p className="bold">Daily rate excl. breakfast</p>
+              <p>CHF 130</p>
+            </div>
+          </div>
+        </div>
         <div className="accomodation-container">
           <div>
             <p className="tabletext">
