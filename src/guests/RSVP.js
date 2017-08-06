@@ -8,7 +8,6 @@ import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
 import gopfried from '../assets/imgs/gopfriedstutz.png'
-import heart from "../assets/imgs/heart.png"
 import './RSVP.css'
 
 const ATTENDING = [
@@ -234,6 +233,7 @@ class RSVP extends PureComponent {
         <div className="rsvpeditor" id="RSVP-section">
           <form className="rsvpform" id="rsvp-form">
             <h2 className="titlersvp">RSVP</h2>
+            <div className="rsvp-by">Please RSVP by 31 Jan 2018</div>
             <div className="block">
               <input
                 type="text"
@@ -280,7 +280,7 @@ class RSVP extends PureComponent {
           <Checkbox
             disabled={this.state.attending === "Sorry, I cannot make it"}
             className="event1"
-            label="Casual Meet & Greet (Apero)"
+            label="Meet & Greet"
             onCheck={this.setEvent1.bind(this)}
             labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
             iconStyle={{'fill': '#5c5c5c'}}

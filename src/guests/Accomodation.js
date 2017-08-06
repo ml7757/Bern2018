@@ -9,16 +9,16 @@ export class Accomodation extends PureComponent {
       <div>
         <Header />
         <div className="accomodation-container">
-          <h2 className="titleacc">Accomodation</h2>
+          <h2 className="titleacc">Accommodation</h2>
           <p>
-            There is no denying it and given the fact that it will also be hight
+            There is no denying it and given the fact that it will also be high
             season, it will become very apparent that
             Switzerland is darn expensive. In order to minimise cost as much as
             possible, we have negotiated competitive fixed rates (reflected in
-            the table below) for a number of room categories at the <a href="http://www.kursaal-bern.ch/Hotel">Hotel Allegro Kursaal Bern</a>. Of course this is only a suggestion and
-            not matter what the situation,
-            you should always book early to avoid disappointment…but please do
-            bare in mind that:
+            the table below) for a number of room categories at the <a href="http://www.kursaal-bern.ch/Hotel-en">Hotel Allegro Kursaal Bern</a>.
+            Of course this is only a suggestion but no matter where you decide to
+            stay, you should consider booking early to avoid disappointment. When
+            it comes to the Hotel Allegro Bern, please bare in mind that:
           </p>
           <ul>
             <li>
@@ -28,15 +28,13 @@ export class Accomodation extends PureComponent {
               </p>
             </li>
             <li>
-              <p>The bride and groom will also be staying a the hotel</p>
+              <p>The bride and groom will also be staying at the hotel</p>
             </li>
             <li>
               <p>
                 There is a chance that the Gurten Music Festival will be held on
-                the same weekend in
-                2018. This means that cheaper accommodation options, such as
-                Airbnb, will be just as or
-                even more expensive.
+                that same weekend in 2018. This means that cheaper accommodation
+                options, such as Airbnb, will be just as or even more expensive.
               </p>
             </li>
           </ul>
@@ -48,12 +46,12 @@ export class Accomodation extends PureComponent {
             </div>
             <div>
               <p className="table-cell no-left">
-                Discounted rate incl. breakfast
+                Daily rate incl. breakfast
               </p>
             </div>
             <div>
               <p className="table-cell no-left">
-                Discounted rate excl. breakfast
+                Daily rate excl. breakfast
               </p>
             </div>
           </div>
@@ -62,32 +60,32 @@ export class Accomodation extends PureComponent {
               <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Economy-Room">Economy Room</a></span></p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 170 per night</p>
+              <p className="table-cell no-left">CHF 170</p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 130 per night</p>
+              <p className="table-cell no-left">CHF 130</p>
             </div>
           </div>
           <div className="table-row dark">
             <div>
-              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony">Comfort Double Room with balcony</a></span></p>
+              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony">Comfort Double Room With Balcony</a></span></p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 190 per night</p>
+              <p className="table-cell no-left">CHF 190</p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 150 per night</p>
+              <p className="table-cell no-left">CHF 150</p>
             </div>
           </div>
           <div className="table-row">
             <div>
-              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view">Panorama Double Room with view</a></span></p>
+              <p className="table-cell"><span className="allegro-room-links"><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view">Panorama Double Room With View</a></span></p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 220 per night</p>
+              <p className="table-cell no-left">CHF 220</p>
             </div>
             <div>
-              <p className="table-cell no-left">CHF 180 per night</p>
+              <p className="table-cell no-left">CHF 180</p>
             </div>
           </div>
         </div>
@@ -103,7 +101,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="room-card">
             <div className="room-text">
-              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony" className="room-title">Comfort Double with Balcony</a></p>
+              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Comfort-Double-Room-with-balcony" className="room-title">Comfort Double With Balcony</a></p>
               <p className="bold">Daily rate incl. breakfast</p>
               <p>CHF 190</p>
               <p className="bold">Daily rate excl. breakfast</p>
@@ -112,7 +110,7 @@ export class Accomodation extends PureComponent {
           </div>
           <div className="room-card">
             <div className="room-text">
-              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view" className="room-title">Panoram Double with View</a></p>
+              <p><a href="http://www.kursaal-bern.ch/Hotel/Rooms/Panorama-Double-Room-with-view" className="room-title">Panoram Double With View</a></p>
               <p className="bold">Daily rate incl. breakfast</p>
               <p>CHF 170</p>
               <p className="bold">Daily rate excl. breakfast</p>
@@ -128,7 +126,8 @@ export class Accomodation extends PureComponent {
               importantly, a Bern Mobility Ticket, covering all travel by public
               transport within Bern during your
               stay. Prices exclude an additional city tax of CHF 5.30 per adult
-              per night.
+              per night and are based on double occupancy (prices would be reduced
+              for single occupancy).
             </p>
           </div>
           <div className="booking-process">

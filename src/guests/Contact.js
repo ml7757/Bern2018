@@ -60,7 +60,7 @@ export class Contact extends PureComponent {
           <div className="newly-weds">
             <div className="contact-person">
               <img src={couple} alt="contact for RSVP enquiries" className="contact-person-img" data-pin-nopin="true"/>
-              <p><span>Bride/Groom</span></p>
+              <p><span>Bride & Groom</span></p>
               <p><span>Email: </span><a href="mailto:julesandmatt2018@gmail.com">julesandmatt2018@gmail.com</a></p>
               <p><span>Only for:</span></p>
               <ul>

@@ -14,8 +14,8 @@ export class PlanYourTrip extends PureComponent {
               <img src= {accomodation} className="tripPhoto" data-pin-nopin="true" alt="the hotel" />
             </div>
             <div className="text-info">
-              <h5>Accomodation</h5>
-              <p>{"We have negotiated rates and have reserved a number of rooms at the Hotel Allegro Kursaal Bern. This hotel was selected based on it's location, standard of rooms and competitive pricing. To find out more, please click on the button below. "}</p>
+              <h5>Accommodation</h5>
+              <p>{"We have negotiated rates and have reserved a number of rooms at the Hotel Allegro Kursaal Bern. This hotel was selected based on its central location, standard of rooms and competitive pricing. To find out more, please click on the button below. "}</p>
               <a href="/accomodation" className="learn-more button">Learn more</a>
             </div>
           </div>
@@ -25,9 +25,15 @@ export class PlanYourTrip extends PureComponent {
             </div>
             <div className="text-info" id="gifts">
                 <h5>Flights</h5>
-                <p>If you know that you will be attending, book your flight as soon as possible. It will be high season and deals are few and far between.</p>
-                <p>Although Bern has an international airport, it is quite expensive to fly to. Guests are advised to fly into these airports if travelling by air.</p>
-                <p>Zurich {"("}<span>ZRH</span>{") - "}<span className="italic">Best Option</span></p>
+                <p>If you know that you will be attending, book your flight as
+                  soon as possible. It will be high season and deals are few and
+                  far between.
+                </p>
+                <p>It is possible for guests to travel in an out of the following
+                  airports (in order of convenience):
+                </p>
+                <p>Bern-Belp {"("}<span>BRN</span>{")"}</p>
+                <p>Zurich {"("}<span>ZRH</span>{")"}</p>
                 <p>Basel {"("}<span>BSL</span>{")"}</p>
                 <p>Geneva {"("}<span>GVA</span>{")"}</p>
             </div>

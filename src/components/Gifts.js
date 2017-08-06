@@ -7,7 +7,8 @@ export class Gifts extends PureComponent {
       <div className="giftsSection">
         <h2 className="titlegifts">Gifts</h2>
         <div className="gift-text">
-          <p>We do not expect any gifts. <span>Seriously</span>! Your presence at our wedding is a wonderful gift in itself.</p>
+          <p>We do not expect any gifts.</p>
+          <p>Your presence at our wedding is a wonderful gift in itself.</p>
         </div>
       </div>
     );
