@@ -29,7 +29,7 @@ export class PlanYourTrip extends PureComponent {
                   soon as possible. It will be high season and deals are few and
                   far between.
                 </p>
-                <p>It is possible for guests to travel in an out of the following
+                <p>It is possible for guests to travel in and out of the following
                   airports (in order of convenience):
                 </p>
                 <p>Bern-Belp {"("}<span>BRN</span>{")"}</p>
