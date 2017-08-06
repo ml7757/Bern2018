@@ -281,7 +281,7 @@ class RSVP extends PureComponent {
           <Checkbox
             disabled={this.state.attending === "Sorry, I cannot make it"}
             className="event1"
-            label="Casual Meet & Greet (Apero)"
+            label="Meet & Greet"
             onCheck={this.setEvent1.bind(this)}
             labelStyle={{'font-weight':'normal', color: '#5c5c5c'}}
             iconStyle={{'fill': '#5c5c5c'}}
