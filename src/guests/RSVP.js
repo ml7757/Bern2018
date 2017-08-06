@@ -234,7 +234,7 @@ class RSVP extends PureComponent {
         <div className="rsvpeditor" id="RSVP-section">
           <form className="rsvpform" id="rsvp-form">
             <h2 className="titlersvp">RSVP</h2>
-            <div className="rsvp-by">Please RSVP by January 31, 2018</div>
+            <div className="rsvp-by">Please RSVP by 31 Jan 2018</div>
             <div className="block">
               <input
                 type="text"
