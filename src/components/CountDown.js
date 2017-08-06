@@ -23,7 +23,7 @@ export class CountDown extends PureComponent {
     } else {
       return (
         <div className="count-down">
-          <h3>COUNTING DOWN THE DAYS...</h3>
+          <h3>Counting Down the Days...</h3>
           <div>{this.countDownTimer()}</div>
         </div>
       );
