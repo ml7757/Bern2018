@@ -15,7 +15,7 @@ export class Accomodation extends PureComponent {
             season, it will become very apparent that
             Switzerland is darn expensive. In order to minimise cost as much as
             possible, we have negotiated competitive fixed rates (reflected in
-            the table below) for a number of room categories at the <a href="http://www.kursaal-bern.ch/Hotel">Hotel Allegro Kursaal Bern</a>. Of course this is only a suggestion and
+            the table below) for a number of room categories at the <a href="http://www.kursaal-bern.ch/Hotel-en">Hotel Allegro Kursaal Bern</a>. Of course this is only a suggestion and
             not matter what the situation,
             you should always book early to avoid disappointment…but please do
             bare in mind that:
