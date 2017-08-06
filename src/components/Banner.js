@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import bannerLogo from "../assets/imgs/banner-logo.png";
-import banner from "../assets/imgs/banner_small.png";
+import banner from "../assets/imgs/banner_small.jpg";
 import "./Banner.css";
 
 export class Banner extends PureComponent {
