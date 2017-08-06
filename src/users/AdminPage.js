@@ -5,7 +5,6 @@ import { replace } from 'react-router-redux'
 import AdminNavigation from './AdminNavigation'
 import AdminTable from './AdminTable'
 import PoiForm from './PoiForm'
-import GuestItem from './GuestItem'
 import fetchGuests from '../actions/guests/fetch'
 import fetchPois from '../actions/points/fetch-pois'
 

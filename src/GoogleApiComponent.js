@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { ScriptCache } from './lib/ScriptCache'
 import GoogleApi from './lib/GoogleApi'
 
-const defaultMapConfig = {}
 const defaultCreateCache = (options) => {
     options = options || {};
     const apiKey = options.apiKey;

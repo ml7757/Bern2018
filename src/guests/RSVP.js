@@ -8,7 +8,6 @@ import Checkbox from 'material-ui/Checkbox'
 import ContentMinus from 'material-ui/svg-icons/content/remove'
 import addGuest from '../actions/guests/create-guest'
 import gopfried from '../assets/imgs/gopfriedstutz.png'
-import heart from "../assets/imgs/heart.png"
 import './RSVP.css'
 
 const ATTENDING = [
