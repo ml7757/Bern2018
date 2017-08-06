@@ -29,7 +29,7 @@ export class WhenWhere extends PureComponent {
               <p className="date-for-phones"><span className="bold">Date:</span> Sat, 21 Jul 2018</p>
               <p><span className="bold">Time:</span> 4:30PM - Late</p>
               <p><span className="bold">Location:</span> Ostermundigen, Switzerland</p>
-              <p><span className="bold">Dress:</span> Semi-formal (tie optinal)</p>
+              <p><span className="bold">Dress:</span> Semi-formal (tie optional)</p>
             </div>
           </div>
           <div className="column-rest">
