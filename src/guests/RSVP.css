@@ -1,294 +1,61 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes");
-@import url("https://fonts.googleapis.com/css?family=Raleway:500");
-.rsvpeditor {
-  background-image: url("../assets/imgs/bern_streets.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 50px;
-  padding-top: 80px;
-  padding-bottom: 100px; }
-
-.rsvpeditor .rsvpform {
-  background-color: #f4f4f6;
-  width: 80%;
-  height: 50%;
-  margin-left: 10%;
-  padding: 60px; }
-
-.rsvp-by {
-  font-size: 18px;
-  font-weight: bolder;
-  text-align: center;
-  margin-top: -25px;
-  margin-bottom: 25px;
-}
-
-.attendradio {
-  display: flex;
-  flex-direction: column; }
-
-label {
-  margin-right: 10px; }
-
-label input[type="radio"] {
-  margin-right: 3px; }
-
-#adult {
-  color: #526152;
-  background-color: white;
-  border-radius: 2px;
-  font-size: 17px;
-  width: 172px;
-  padding: 8px 0px 6px 25px; }
-
-#child {
-  color: #526152;
-  background-color: white;
-  font-size: 17px;
-  border-radius: 2px;
-  width: 172px;
-  padding: 8px 0px 6px 25px; }
-
-.hiddendiv {
-  display: none; }
-
-.visiblediv {
-  display: block; }
-
-.updown {
-  color: white;
-  width: auto;
-  height: 30px;
-  margin-left: 28px; }
-
-.titlersvp {
+.rsvp-title {
   font-family: 'Great Vibes', Helvetica, Arial, sans-serif;
   color: #ddbea1;
   font-size: 60px;
   text-align: center;
-  margin-bottom: 30px; }
+  margin-top: 100px;
+  margin-bottom: 40px; }
 
-
-.afterform {
+.rsvp-text {
+  background-color: #526A52;
+  height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  justify-content: center; }
 
-.titleafter {
+.rsvp-text p {
   text-align: center;
-  font-size: 100px;
-  margin-top: 10px;
-  font-weight: bold; }
-
-.textafter {
-  text-align: center;
-  font-size: 50px; }
-
-.textafterbold {
-  text-align: center;
-  font-size: 50px;
-  font-weight: bold; }
-
-.imggop {
-  margin-top: 30px;
-  margin-bottom: 40px; }
-
-.contact-button {
+  font-size: 24px;
   color: white;
+  max-width: 90%;
+  margin-left: 5%;
+}
+
+.rsvp-text p.submit-by {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color: white;
+  max-width: 90%;
+  margin-left: 5%; }
+
+.rsvp-section .rsvp-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rsvp-section .rsvp-text .rsvp-button {
+  width: 10%;
+  background-color: #F4F4F6;
+  border-radius: 5px;
+  color: #5C5C5C;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
   font-weight: bold;
-  font-size: 17px;
-  background-color: #526A52;
-  padding: 14px 40px;
-  border-radius: 6px;
-  font-style: normal;
-  margin-top: 60px;
-  margin-bottom: 40px; }
-  .contact-button:hover {
-    text-decoration: none;
-    color: white; }
-
-.rsvpform .firstname {
-  border-color: #294b2d;
-  border-width: 1px;
-  padding: 3%;
-  border-radius: 3px;
-  width: 100%; }
-
-.rsvpform .lastname {
-  border-color: #294b2d;
-  border-width: 1px;
-  padding: 3%;
-  border-radius: 3px;
-  width: 100%; }
-
-.rsvpform .block {
-  width: 45%;
-  float: left;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: flex-start; }
-  .rsvpform .block.right {
-    float: right; }
-
-.rsvpform .fullname {
-  border-color: #294b2d;
-  border-width: 1px;
-  width: 45%;
-  margin-right: 5%;
-  padding: 1.5%;
-  border-radius: 3px; }
-
-.rsvpform .email-block {
-  margin-bottom: 30px; }
-  .rsvpform .email-block .email {
-    border-color: #294b2d;
-    border-width: 1px;
-    width: 100%;
-    padding: 1.5%;
-    border-radius: 3px; }
-
-.rsvpform .diet {
-  border-color: #294b2d;
-  border-width: 1px;
-  width: 100%;
-  padding: 1.5%;
-  height: 100px;
-  border-radius: 3px; }
-
-.rsvpform .songs {
-  border-color: #294b2d;
-  border-width: 1px;
-  width: 100%;
-  padding: 1.5%;
-  border-radius: 3px; }
-
-.rsvpform #type-field-form {
-  float: left; }
-
-.rsvpform .plusones {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-  margin-top: 20px; }
-
-.rsvpform button.guest-type, .rsvpform select.guest-type {
-  background-color: #526A52;
-  border-color: #294b2d;
-  padding: 8px 0 6px 10px;
-  border-radius: 2px;
-  font-size: 16px;
-  color: white; }
-
-.rsvpform .attend-radio-button {
-  margin-right: 5px;
-  margin-left: 5px; }
-
-.rsvpform .addone {
-  display: flex;
-  height: 40px; }
-
-.sub {
-  font-size: 16px;
-  font-style: italic; }
-  @media screen and (max-width: 500px) {
-    .sub {
-      font-size: 12px; } }
-
-.add {
-  font-size: 16px;
-  margin-left: 4%;
-  margin-top: 10px; }
-
-.minus {
-  background-color: black;
-  margin-right: 8%;
-  display: flex;
-  height: 40px; }
-
-.RSVPbutton {
-  margin-left: 30%;
-  margin-right: 5%;
-  width: 20%; }
-
-.cancelbutton {
-  width: 20%;
-  color: grey;
-}
-
-.error {
-  font-size: 13px;
-  color: #294B2D;
-  font-weight: bold; }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .titleafter{
-    font-size: 75px; }
-
-  .textafter {
-    font-size: 35px; }
-
-  .textafterbold {
-    font-size: 35px; }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  .rsvpeditor{
-    background-image: none;
-    background-color: #526A52;
-    padding: 30px 0 30px 0;
-  }
-
-  .rsvpeditor .rsvpform {
-    width: 90%;
-    margin-left: 6%;
-  }
-
-  .rsvpform select.guest-type {
-    padding-right: 0;
-  }
-
-  .titleafter{
-    font-size: 70px; }
-
-  .textafter {
-    font-size: 30px; }
-
-  .textafterbold {
-    font-size: 30px; }
-}
+  padding: 8px 40px; }
 
 @media (max-width: 575px) {
-  .rsvpeditor {
-    background-image: none;
-    padding-top: 0;
-    padding-bottom: 0;
+  .rsvp-tite {
+    margin-top: 90px; }
+
+  .rsvp-text {
+    background-color: #5C5C5C;
   }
 
-  .rsvpeditor .rsvpform {
-    width: 100%;
-    margin-left: 0;
-    padding: 20px;
+  .rsvp-text p {
+    font-size: 18px;
+    padding: 0;
   }
-
-  .rsvpform select.guest-type {
-    padding-right: 0;
-  }
-
-  .RSVPbutton {
-    margin-left: 15%;
-  }
-  .titleafter{
-    font-size: 40px; }
-
-  .textafter {
-    font-size: 25px; }
-
-  img.imggop {
-    height: 300px;
-  }
-
-  .textafterbold {
-    font-size: 25px; }
 }
