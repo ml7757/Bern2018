@@ -59,6 +59,10 @@
     .poi-info-container .point-of-interest .poi-text {
       width: 65%;
     }
+
+    .poi-info-container .point-of-interest .more-button {
+      background-color: #526A52;
+    }
   }
 
   @media (min-width: 576px) and (max-width: 767px) {
@@ -77,6 +81,10 @@
 
     .poi-info-container .point-of-interest .poi-text {
       width: 60%;
+    }
+
+    .poi-info-container .point-of-interest .more-button {
+      background-color: #526A52;
     }
   }
 
@@ -99,6 +107,7 @@
     }
 
     .poi-info-container .point-of-interest .more-button {
+      background-color: #526A52;
       padding: 8px 20px;
     }
   }
