@@ -5,7 +5,7 @@ import './RSVP.css'
 class RSVP extends PureComponent {
   render() {
     return (
-      <div className="rsvp-section">
+      <div className="rsvp-section" id="trip-planning">
         <h2 className="rsvp-title">RSVP</h2>
         <div className="rsvp-text">
           <p>Joining us in Switzerland? Wish you could but can't make it?</p>
