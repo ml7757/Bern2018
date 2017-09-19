@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "./CountDown.css";
 
-const weddingDay = new Date("July 21, 2018 16:00:00");
+const weddingDay = new Date("July 23, 2018 17:00:00"); /* offset date to account for time zones */
 const rightNow = new Date();
 
 export class CountDown extends PureComponent {
