@@ -1,4 +1,3 @@
-import { history } from '../../store'
 import API from '../../api'
 import {
   APP_LOADING,

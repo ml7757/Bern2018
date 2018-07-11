@@ -5,7 +5,6 @@ import isabelle from "../assets/imgs/isabelle.jpg";
 import matt from "../assets/imgs/matt-bw.jpg";
 import maple from "../assets/imgs/maple.png";
 import cross from "../assets/imgs/cross.gif";
-import couple from "../assets/imgs/story.jpg";
 import "./Contact.css";
 
 export class Contact extends PureComponent {
