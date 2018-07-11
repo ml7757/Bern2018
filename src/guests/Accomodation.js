@@ -28,14 +28,7 @@ export class Accomodation extends PureComponent {
               </p>
             </li>
             <li>
-              <p>The bride and groom will also be staying at the hotel</p>
-            </li>
-            <li>
-              <p>
-                There is a chance that the Gurten Music Festival will be held on
-                that same weekend in 2018. This means that cheaper accommodation
-                options, such as Airbnb, will be just as or even more expensive.
-              </p>
+              <p>The bride and groom will also be staying at the hotel (Friday - Monday)</p>
             </li>
           </ul>
         </div>
