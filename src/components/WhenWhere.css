@@ -11,6 +11,12 @@
     .titlewhen {
       font-size: 50px; } }
 
+.subtitlewhen {
+  font-weight: bold;
+  text-align: center;
+  margin: -20px 300px 20px 300px;
+}
+
 .whenwhere {
   margin-top: 60px;
   width: 100%;
@@ -67,6 +73,10 @@
   font-weight: bold; }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .subtitlewhen {
+    margin: -20px 25px 20px 25px;
+  }
+
   .pic {
     height: 150px;
   }
@@ -92,6 +102,10 @@
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+  .subtitlewhen {
+    margin: -20px 20px 20px 20px;
+  }
+
   .pic, .date {
     display: none; }
 
@@ -120,6 +134,10 @@
 }
 
 @media (max-width: 575px) {
+  .subtitlewhen {
+    margin: -20px 25px 20px 25px;
+  }
+
   .pic, .date {
     display: none; }
 

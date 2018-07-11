@@ -9,6 +9,11 @@ export class WhenWhere extends PureComponent {
     return (
       <div className="whenwhere">
         <h2 className="titlewhen">When & Where</h2>
+        <p className="subtitlewhen">
+          For those who answered "Yes" to organised transport for the events
+          outlined below, times and locations have been provided in the final
+          wedding correspondence emailed to you on 11 July 2018.
+        </p>
         <div className="columns">
           <div className="column-margin">
             <img src={ pic1 } className="pic" data-pin-nopin="true" alt="bridge in bern" />
