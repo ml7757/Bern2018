@@ -11,6 +11,10 @@
     .title-contact {
       font-size: 50px; } }
 
+.subtitle-contact {
+  text-align: center;
+}
+
 .contact-section .intro {
   text-align: justify;
   margin: 10px 60px; }
