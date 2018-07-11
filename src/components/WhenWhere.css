@@ -82,6 +82,10 @@
     margin-top: -40%;
   }
 
+  .textbox {
+    height: 410px;
+  }
+
   .textbox p {
     font-size: 18px;
   }
@@ -109,7 +113,10 @@
   }
 
   .textbox {
-    margin-bottom: 20px; }
+    margin-bottom: 30px;
+    height: 300px;
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -135,10 +142,15 @@
 
   .textbox {
     width: 100%;
-    margin-bottom: 20px;
-    height: 250px;
+    margin-bottom: 30px;
+    height: 275px;
     padding-top: 20px;
     background-color: #5C5C5C;
     color: #FFFFFF;
+  }
+
+  .textbox a {
+    color: #FFFFFF;
+    text-decoration: underline;
   }
 }
